@@ -162,34 +162,37 @@ main{
 	padding-bottom: 20px;
 	}
 
-	footer{
-		background: maroon;
-		padding: 10px;
+footer{
+	background: maroon;
+	padding: 10px;
+	}
+	#adresse dd{
+		color: white;
+	}
+	#docCV{
+		font-size: 1.5em;
+		float:left;
+		width: 70%;
 		}
-		#docCV{
-			font-size: 1.5em;
-			float:left;
-			width: 70%;
-			}
-			#docCV a{
-				width: 50%;
-				color: cyan;
-				margin: 0 auto;
-				margin-left: 55%;
-			}
-		#social{
-			float:left;
-			width: 30%;
-			color: #c0c5cd;
-			text-align: right;
-			}
-				#social li{
-					margin: 5px;
-					display: inline;
-					}
-					#social a{
-						color: white;
-					}
+		#docCV a{
+			width: 50%;
+			color: cyan;
+			margin: 0 auto;
+			margin-left: 55%;
+		}
+	#social{
+		float:left;
+		width: 30%;
+		color: #c0c5cd;
+		text-align: right;
+		}
+			#social li{
+				margin: 5px;
+				display: inline;
+				}
+				#social a{
+					color: white;
+				}
 
 					.cadre-rond{
 						border-radius: 50%;
@@ -232,6 +235,15 @@ main{
 						padding: 10px;
 					}
  /*********************      i n d e x . h t m l     *****************************/
+ #presentation .cadre1 {
+	padding: 10px;
+	width: 75%;
+	margin: 20px auto;
+	border:1px solid;
+	border-radius: 10px;
+	font-size: 2em;
+ }
+
  #coordonnees{
 	width: 25%;
 	margin: auto;
