@@ -1,114 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Mon CV">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mon CV</title>
-    <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
-</head>
-<body>
-    <header>
-        <div id="portrait">
-            <a href="index.html">
-                <p>Pascal HUITOREL</p>
-                <img class="cadre-rond" src="img/portrait.png" alt="portrait">
-            </a>
-        </div>
-        <div id="titre">
-            <p>Développeur web junior</p>
-        </div>
-        <div id="icones">
-            <img src="img/langages.png" alt="logos langage">
-        </div>
+<?php include('head.php'); ?>
+<main id="presentation">
+    <h1>Présentation</h1>
+    <section class="cadre1">
 
-    </header>
+        <p>Je suis passionné de l'informatique, plus précisément de la programmation.</p>
+        <br>
+        <p>Mon projet est de devenir développeur web.</p>
+        <p>Pour commencer, j'ai créé mon premier site web (mypetstar.fr) pour CRIS Production à sa grande satisfaction.</p>
+        <p>Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.</p>
+    </section>
+    <div class="flex">
+        <section id="forts" class="cadre">
+            <h2>Points forts</h2>
+            <ul>
+                <li>Avenant</li>
+                <li>Curieux</li>
+                <li>Logique</li>
+                <li>Esprit d’équipe</li>
+                <li>Observateur</li>
+                <li>Persévérant</li>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Présentation</a></li>
-            <li><a href="parcours.html">Parcours professionnel</a></li>
-            <li><a href="formations.html">Formations</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="interets.html">Centre d'intérêts</a></li>
-        </ul>
-    </nav>
-
-    <main id="presentation">
-        <h1>Présentation</h1>
-        <section class="cadre1">
-
-            <p>Je suis passionné de l'informatique, plus précisément de la programmation.</p>
-            <br>
-            <p>Mon projet est de devenir développeur web.</p>
-            <p>Pour commencer, j'ai créé mon premier site web (mypetstar.fr) pour CRIS Production à sa grande satisfaction.</p>
-            <p>Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.</p>
+            </ul>
         </section>
-        <!-- <section id="coordonnees" class="cadre">
-        <dl>
-        <dt>Pascal HUITOREL</dt>
-        <dd>10 rue Henri Barbusse</dd>
-        <dd>92390 Villeneuve-la-Garenne</dd>
-        <dd>01-74-54-64-06</dd>
-        <dd>pascal.huitorel@gmail.com</dd>
-    </dl>
-</section> -->
-<div class="flex">
-    <section id="forts" class="cadre">
-        <h2>Points forts</h2>
-        <ul>
-            <li>Avenant</li>
-            <li>Curieux</li>
-            <li>Logique</li>
-            <li>Esprit d’équipe</li>
-            <li>Observateur</li>
-            <li>Persévérant</li>
-
-        </ul>
-    </section>
-    <section id="interets" class="cadre">
-        <h2>Centre d'intérêts</h2>
-        <ul>
-            <li>Président du conseil syndical</li>
-            <li>Trésorier d’une association</li>
-            <li>Billard</li>
-            <li>Marche</li>
-            <li>Tennis de table</li>
-            <li>Broderie (point de croix compté)</li>
-            <li>Développement informatique</li>
-        </ul>
-    </section>
-</div>
-
+        <section id="interets" class="cadre">
+            <h2>Centre d'intérêts</h2>
+            <ul>
+                <li>Président du conseil syndical</li>
+                <li>Trésorier d’une association</li>
+                <li>Billard</li>
+                <li>Marche</li>
+                <li>Tennis de table</li>
+                <li>Broderie (point de croix compté)</li>
+                <li>Développement informatique</li>
+            </ul>
+        </section>
+    </div>
 </main>
-
-<footer>
-    <div id="adresse">
-        <dl>
-            <dd>Pascal HUITOREL</dd>
-            <dd>10 rue Henri Barbusse</dd>
-            <dd>92390 Villeneuve-la-Garenne</dd>
-            <dd>01-74-54-64-06</dd>
-            <dd>pascal.huitorel@gmail.com</dd>
-        </dl>
-    </div>
-    <div id="docCV">
-        <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
-    </div>
-    <div id="social">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/pascal-huitorel-14ab96133/?ppe=1" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.viadeo.com/p/00221cjstha3qxtp/edit" target="_blank"><i class="fa fa-viadeo-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://github.com/PH276" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100018829567115&sk=about&section=work" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/PH276" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-    <div class="clear"></div>
-
-</footer>
-</body>
-</html>
+<?php include('footer.php'); ?>

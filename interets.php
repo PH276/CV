@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Mon CV">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mon CV</title>
-    <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
-</head>
-<body>
-    <header>
-        <div id="portrait">
-            <a href="index.html">
-                <p>Pascal HUITOREL</p>
-                <img class="cadre-rond" src="img/portrait.png" alt="portrait">
-            </a>
-        </div>
-        <div id="titre">
-            <p>Développeur web junior</p>
-        </div>
-        <div id="icones">
-            <img src="img/langages.png" alt="logos langage">
-        </div>
-        <div class="clear"></div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Présentation</a></li>
-            <li><a href="parcours.html">Parcours professionnel</a></li>
-            <li><a href="formations.html">Formations</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="interets.html">Centre d'intérêts</a></li>
-        </ul>
-    </nav>
-
+<?php include('head.php'); ?>
     <main>
         <div id="contenu">
             <h1>Présentation</h1>
@@ -50,22 +13,4 @@
             </section>
          </div>
     </main>
-
-    <footer>
-        <div id="docCV">
-            <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
-        </div>
-        <div id="social">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/pascal-huitorel-14ab96133/?ppe=1" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.viadeo.com/p/00221cjstha3qxtp/edit" target="_blank"><i class="fa fa-viadeo-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100018829567115&sk=about&section=work" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-
-    </footer>
-</body>
-</html>
+    <?php include('footer.php'); ?>

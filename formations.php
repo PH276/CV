@@ -1,125 +1,71 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Mon CV">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mon CV</title>
-    <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
-</head>
-<body>
-    <header>
-        <div id="portrait">
-            <a href="index.html">
-                <p>Pascal HUITOREL</p>
-                <img class="cadre-rond" src="img/portrait.png" alt="portrait">
-            </a>
-        </div>
-        <div id="titre">
-            <p>Développeur web junior</p>
-        </div>
-        <div id="icones">
-            <img src="img/langages.png" alt="logos langage">
-        </div>
-        <div class="clear"></div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Présentation</a></li>
-            <li><a href="parcours.html">Parcours professionnel</a></li>
-            <li><a href="formations.html">Formations</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="interets.html">Centre d'intérêts</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div id="formations">
-            <h1>Formations</h1>
-            <section id="diplomes">
-                <h2>Diplômes</h2>
-                <div class="flex">
-                    <article class="cadre">
-                        <h3>Licence parcours MIAGE</h3>
-                        <p><strong>2014</strong> – ESIAG à Créteil (94)<br>
-                        Droit, économie et gestion filiale économie et gestion</p>
-                    </article>
-
-                    <article class="cadre">
-                        <h3>DUT Réseaux et Télécommunications</h3>
-                        <p><strong>2013</strong> – Vitry sur Seine (94)</p>
-                    </article>
-
-                    <article class="cadre">
-                        <h3>DUT GEII</h3>
-                        <p><strong>1989</strong> - Nîmes (30)</p>
-                    </article>
-
-                    <article class="cadre">
-                        <h3>Bac F3 (Electrotechnique)</h3>
-                        <p><strong>1987</strong> - Dreux (28)</p>
-                    </article>
-
-                    <article class="cadre">
-                        <h3>BEP et CAP d'électrotechnique</h3>
-                        <p><strong>1985</strong> - LEP de Rambouillet (78)</p>
-                    </article>
-                </div>
-            </section>
+<?php include('head.php'); ?>
+<main>
+    <div id="formations">
+        <h1>Formations</h1>
+        <section id="diplomes">
+            <h2>Diplômes</h2>
             <div class="flex">
+                <article class="cadre">
+                    <h3>Licence parcours MIAGE</h3>
+                    <p>
+                        <strong>2014</strong> – ESIAG à Créteil (94)<br>
+                        Droit, économie et gestion filiale économie et gestion
+                    </p>
+                </article>
 
-                <section>
-                    <h2>Partiel</h2>
-                    <article class="cadre">
-                        <h3>Master1 MIAGE</h3>
-                        <p><strong>09/2014 à 05/2016</strong> – ESIAG à Créteil (94)</p>
-                        <p>Projet de synthèse – (UML2, JEE, MySQL, XML, Tomcat, JMS, ECLIPSE)</p>
-                        <p>50 ECTS acquis</p>
-                    </article>
+                <article class="cadre">
+                    <h3>DUT Réseaux et Télécommunications</h3>
+                    <p><strong>2013</strong> – Vitry sur Seine (94)</p>
+                </article>
 
-                </section>
-                <section>
-                    <h2>Certificats</h2>
-                    <article class="cadre">
+                <article class="cadre">
+                    <h3>DUT GEII</h3>
+                    <p><strong>1989</strong> - Nîmes (30)</p>
+                </article>
 
-                        <h3>2017</h3>
-                        <p>Openclassrooms.com</p>
-                        <ul>
-                            <li>Créez des pages web interactives avec JavaScript,</li>
-                            <li>Apprenez à créer votre site web avec HTML5 et CSS3,</li>
-                            <li>Comprendre le Web,</li>
-                            <li>Découvrez les solutions CMS,</li>
-                            <li>Gérez votre code avec Git et GitHub,</li>
-                            <li>Apprenez à coder avec JavaScript</li>
-                        </ul>
-                        <p></p>
-                    </article>
-                </section>
-                <div class="clear"></div>
+                <article class="cadre">
+                    <h3>Bac F3 (Electrotechnique)</h3>
+                    <p><strong>1987</strong> - Dreux (28)</p>
+                </article>
 
+                <article class="cadre">
+                    <h3>BEP et CAP d'électrotechnique</h3>
+                    <p><strong>1985</strong> - LEP de Rambouillet (78)</p>
+                </article>
             </div>
-        </div>
-    </main>
+        </section>
+        <div class="flex">
 
-    <footer>
-        <div id="docCV">
-            <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
-        </div>
-        <div id="social">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/pascal-huitorel-14ab96133/?ppe=1" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.viadeo.com/p/00221cjstha3qxtp/edit" target="_blank"><i class="fa fa-viadeo-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/PH276" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100018829567115&sk=about&section=work" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/devweb276" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
+            <section>
+                <h2>Partiel</h2>
+                <article class="cadre">
+                    <h3>Master1 MIAGE</h3>
+                    <p><strong>09/2014 à 05/2016</strong> – ESIAG à Créteil (94)</p>
+                    <p>Projet de synthèse – (UML2, JEE, MySQL, XML, Tomcat, JMS, ECLIPSE)</p>
+                    <p>50 ECTS acquis</p>
+                </article>
 
-    </footer>
-</body>
-</html>
+            </section>
+            <section>
+                <h2>Certificats</h2>
+                <article class="cadre">
+
+                    <h3>2017</h3>
+                    <p>Openclassrooms.com</p>
+                    <ul>
+                        <li>Créez des pages web interactives avec JavaScript,</li>
+                        <li>Apprenez à créer votre site web avec HTML5 et CSS3,</li>
+                        <li>Comprendre le Web,</li>
+                        <li>Découvrez les solutions CMS,</li>
+                        <li>Gérez votre code avec Git et GitHub,</li>
+                        <li>Apprenez à coder avec JavaScript</li>
+                    </ul>
+                    <p></p>
+                </article>
+            </section>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</main>
+<?php include('footer.php'); ?>
