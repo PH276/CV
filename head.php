@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Mon CV">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mon CV</title>
+    <title><?php echo $page."Pascal HUITOREL"; ?></title>
     <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
 </head>
 <body>
@@ -19,9 +19,20 @@
         </div>
         <div id="titre">
             <p>Développeur web junior</p>
+            <p><span>!!! Site en construction !!!</span></p>
         </div>
         <div id="icones">
-            <img src="img/langages.png" alt="logos langage">
+            <div>
+                <img src="img/html-css.png" alt="HTML5/CSS3">
+                <img src="img/bootstrap-logo.png" alt="Bootstrap">
+                <img src="img/js.png" alt="javascript">
+                <img src="img/jQuery.png" alt="jQuery">
+            </div>
+            <div>
+                <img src="img/wordpress.jpg" alt="javascript">
+                <img id="php" src="img/PHP.jpg" alt="PHP">
+                <img src="img/MySQL.png" alt="MySQL">
+            </div>
         </div>
 
     </header>
@@ -32,6 +43,5 @@
             <li><a href="parcours.php">Parcours professionnel</a></li>
             <li><a href="formations.php">Formations</a></li>
             <li><a href="competences.php">Compétences</a></li>
-            <li><a href="interets.php">Centre d'intérêts</a></li>
         </ul>
     </nav>

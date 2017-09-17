@@ -117,21 +117,37 @@ header{
 			}
 
 	#titre{
-
 		width: 70%;
 		}
-		#titre p{
+		#titre p:first-child{
 			font-family: arial;
 			font-weight:bold;
 			font-size: 4em;
 			text-align: center;
 		}
+		#titre p:last-child{
+			font-style: italic;
+			font-size: 2em;
+			margin-top: .5em;
+			text-align: center;
+		}
+		#titre span{
+			background: #ccc;
+			padding: 0 10px;
+		}
 
 	#icones{
 		width: 15%;
 		}
+		#php{
+			border-radius: 50%;
+		}
+		#icones div{
+			text-align: center;
+		}
 		#icones img{
-			width: 50%;
+			width: 30px;
+			margin: 5px;
 		}
 
 nav{
@@ -163,11 +179,11 @@ main{
 	}
 
 footer{
-	background: maroon;
+	background: orange;
 	padding: 10px;
 	}
 	#adresse dd{
-		color: white;
+		/*color: white;*/
 	}
 	#docCV{
 		font-size: 1.5em;
@@ -176,7 +192,7 @@ footer{
 		}
 		#docCV a{
 			width: 50%;
-			color: cyan;
+			color: blue;
 			margin: 0 auto;
 			margin-left: 55%;
 		}
@@ -235,6 +251,7 @@ footer{
 						padding: 10px;
 					}
  /*********************      i n d e x . h t m l     *****************************/
+
  #presentation .cadre1 {
 	padding: 10px;
 	width: 75%;
@@ -244,14 +261,16 @@ footer{
 	font-size: 2em;
  }
 
- #coordonnees{
-	width: 25%;
-	margin: auto;
-	margin-bottom: 20px;
-}
+ #presentation p{
+	 margin: 1em 0;
+ }
 
  #presentation dl, #presentation ul{
 	 margin: 10px;
+ }
+
+ #forts li, #interets li{
+	 font-size: 1.3em;
  }
 
  /*********************   fin    i n d e x . h t m l     *****************************/

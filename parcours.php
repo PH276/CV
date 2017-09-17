@@ -1,4 +1,7 @@
-<?php include('head.php'); ?>
+<?php
+$page = "Parcours - ";
+include('head.php');
+ ?>
 <main>
     <section id="parcours">
         <h1>Parcours professionnel</h1>

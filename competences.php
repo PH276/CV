@@ -1,4 +1,7 @@
-<?php include('head.php'); ?>
+<?php
+$page = "Compétences - ";
+include('head.php');
+?>
 <main>
     <section id="competences">
         <h1>compétences</h1>
@@ -10,7 +13,17 @@
                     <li>CSS3</li>
                     <li>Bootstrap</li>
                     <li>Javascript</li>
+                    <li>jQuery</li>
                     <li>PHP</li>
+                </ul>
+            </article>
+            <article class="cadre">
+                <h3>SGBD</h3>
+                <ul>
+                    <li>MS SQL Server</li>
+                    <li>ORACLE</li>
+                    <li>MySQL</li>
+                    <li>Access</li>
                 </ul>
             </article>
             <article class="cadre">
@@ -30,15 +43,6 @@
                     <li>WINDOWS Server 2012, 2008, 2003,</li>
                     <li>WINDOWS 10, 8.1, 7, Vista, XP,</li>
                     <li>MS/DOS</li>
-                </ul>
-            </article>
-            <article class="cadre">
-                <h3>SGBD</h3>
-                <ul>
-                    <li>MS SQL Server</li>
-                    <li>ORACLE</li>
-                    <li>MySQL</li>
-                    <li>Access</li>
                 </ul>
             </article>
             <article class="cadre">

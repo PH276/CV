@@ -1,4 +1,7 @@
-<?php include('head.php'); ?>
+<?php
+$page = "Formations - ";
+include('head.php');
+?>
 <main>
     <div id="formations">
         <h1>Formations</h1>
