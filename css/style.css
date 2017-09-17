@@ -87,7 +87,7 @@ em{
 }
 
 a{
-	text-decoration: none;
+	/*text-decoration: none;*/
 }
 
 ul{
@@ -169,6 +169,7 @@ nav{
 			nav li a{
 				color: white;
 				padding: 10px;
+				text-decoration: none;
 			}
 
 main{
@@ -179,11 +180,11 @@ main{
 	}
 
 footer{
-	background: orange;
+	background: #383838;
 	padding: 10px;
 	}
 	#adresse dd{
-		/*color: white;*/
+		color: white;
 	}
 	#docCV{
 		font-size: 1.5em;
@@ -192,7 +193,7 @@ footer{
 		}
 		#docCV a{
 			width: 50%;
-			color: blue;
+			color: cyan;
 			margin: 0 auto;
 			margin-left: 55%;
 		}
@@ -250,6 +251,9 @@ footer{
 					.cadre article{
 						padding: 10px;
 					}
+.expose{
+	vertical-align:super;
+}
  /*********************      i n d e x . h t m l     *****************************/
 
  #presentation .cadre1 {
@@ -301,6 +305,10 @@ footer{
 		margin: 10px;
 	}
 
+	#formations .flex article{
+		margin-bottom: 20px;
+
+	}
 
 /*********************   fin    f o r m a t i o n . h t m l     *****************************/
 /*********************   début    c o m p e t e n c e . h t m l     *****************************/

@@ -85,7 +85,7 @@ include('head.php');
                 <article class="cadre">
                     <h3>12/2016 à 05/2017</h3>
                     <p><strong>développeur web</strong></p>
-                    <p>Création d’un site web de type e-business (mypetstar.fr)</p>
+                    <p>Création d’un site web de type e-business (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>)</p>
                     <p><em>Environnement : PC – Windows – HTML – CSS – Javascript - PHP - MySQL</em></p>
                 </article>
 

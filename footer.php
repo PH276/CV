@@ -18,7 +18,7 @@
             <li><a href="https://github.com/PH276" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
             <li><a href="https://www.facebook.com/profile.php?id=100018829567115&sk=about&section=work" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
             <li><a href="https://twitter.com/PH276" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-            <!-- <li><a href="#" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li> -->
+            <li><a href="https://www.instagram.com/pascalh276/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
         </ul>
     </div>
     <div class="clear"></div>

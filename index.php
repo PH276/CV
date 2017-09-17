@@ -5,7 +5,7 @@ include('head.php');
 <main id="presentation">
     <h1>Présentation</h1>
     <section class="cadre1">
-
+        <h2></h2>
         <p>Je suis passionné de l'informatique, plus précisément de la programmation.</p>
         <p>Mon projet est de devenir développeur web.</p>
         <p>Pour commencer, j'ai créé mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.<br>
