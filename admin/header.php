@@ -21,6 +21,14 @@ if($sql -> rowCount() > 0){
 </head>
 
 <body>
+    <nav>
+    <ul>
+        <li><a href="index.php">index.php</a></li>
+        <li><a href="competences.php">competences.php</a></li>
+    </ul>
+</nav>
+
+
     <h1>Admin du site cv de <?= $ligne_utilisateur['pseudo']; ?></h1>
     <p>texte</p>
     <hr>

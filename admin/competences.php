@@ -29,7 +29,7 @@ if(isset($_GET['id_competence'])){// on récupère la comp. par son id dans l'UR
 
 ?>
 
-    <h2>il y a <?= $nbr_competences; ?> compétence<?= ($nbr_competences>1)?'s':'' ?></h2>
+    <h2>il y a <?= ($nbr_competences==0)?'aucune':$nbr_competences; ?> compétence<?= ($nbr_competences>1)?'s':'' ?></h2>
 
     <table border=2>
 
