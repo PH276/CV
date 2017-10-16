@@ -19,22 +19,21 @@ CREATE TABLE t_utilisateurs (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_titre_cv (
-    id_titre_cv (INT, 3, AI, PK)
-    ● titre_cv (TEXT)
-    ● accroche (TEXT)
-    ● logo (VARCHAR, 20)
-    ● utilisateur_id (INT, 3)
+    id_titre_cv INT,
+    titre_cv TEXT,
+    accroche TEXT,
+    utilisateur_id INT (3)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_loisirs (
-    id_loisir (INT, 3, AI, PK)
-    ● loisir (VARCHAR, 30)
-    ● utilisateur_id (INT, 3)
+    id_loisir INT (3),
+    loisir VARCHAR (30),
+    utilisateur_id INT (3)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_competences (
-    id_competence (INT, 3, AI, PK)
-    ● competence (VARCHAR, 30)
-    ● c_niveau (INT, 3)
-    ● utilisateur_id (INT, 3)
+    id_competence INT (3),
+    competence VARCHAR (30),
+    c_niveau INT (3),
+    utilisateur_id INT (3)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

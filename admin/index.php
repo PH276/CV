@@ -13,5 +13,4 @@ echo '</table>';
 
 ?>
 <hr>
-</body>
-</html>
+<?php include ('footer.php') ?>

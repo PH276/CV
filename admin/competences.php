@@ -59,11 +59,10 @@ if(isset($_GET['id_competence'])){// on récupère la comp. par son id dans l'UR
 
         <label for="competence">Competence</label>
         <input type="text" name="competence" id="competence" placeholder="Inserez une compétence">
-        <input type="text" name="c_niveau" id="c_niveau" placeholder="Inserez le niveau">
+        <input type="number" name="c_niveau" id="c_niveau" placeholder="Inserez le niveau">
         <input type="submit" value="Inserez">
 
     </form>
 
 
-</body>
-</html>
+<?php include ('footer.php') ?>
