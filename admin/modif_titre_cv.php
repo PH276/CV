@@ -1,5 +1,12 @@
 <?php
-require 'header.php';
+require_once('inc/init.inc.php');
+
+$titre_page = 'Modification d\'un titre du CV- ';
+$page = 'modiftitrecv';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
+
 if(isset($_POST['titre_cv']) ){// si on a posté une nouvelle compétence
     if(!empty($_POST['titre_cv']) && !empty($_POST['accroche']) && !empty($_POST['logo'])){
         $titre_cv = addslashes($_POST['titre_cv']);
@@ -25,17 +32,22 @@ if (isset($_GET['id_titre_cv']) && !empty($_GET['id_titre_cv'])){
 
 <h3>Modification de la compétence <?= $titre_cv ?></h3>
 
-<form method="post" action="">
+<form method="post" action="" class="form-inline">
 
-    <label for="titre_cv">Titre CV</label>
-    <input type="text" name="titre_cv" id="titre_cv" value="<?= $ligne_titre_cv['titre_cv'] ?>">
-    <input type="text" name="accroche" value="<?= $ligne_titre_cv['accroche'] ?>">
-    <input type="text" name="logo" value="<?= $ligne_titre_cv['logo'] ?>">
-    <input hidden name="id_titre_cv" value="<?= $ligne_titre_cv['id_titre_cv'] ?>">
-    <input type="submit" value="Mettre à jour">
+<div class="form-group">
+    <input class="form-control" type="text" name="titre_cv" id="titre_cv" value="<?= $ligne_titre_cv['titre_cv'] ?>">
+</div>
+<div class="form-group">
+    <input class="form-control" type="text" name="accroche" value="<?= $ligne_titre_cv['accroche'] ?>">
+</div>
+<div class="form-group">
+    <input class="form-control" type="text" name="logo" value="<?= $ligne_titre_cv['logo'] ?>">
+</div>
+<div class="form-group">
+    <input class="form-control" hidden name="id_titre_cv" value="<?= $ligne_titre_cv['id_titre_cv'] ?>">
+</div>
+ <button type="submit" class="btn btn-primary">Mettre à jour</button>
 
 </form>
 
-
-</body>
-</html>
+<?php include ('inc/footer.inc.php') ?>

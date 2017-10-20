@@ -1,4 +1,11 @@
-<?php require_once('header.php');
+<?php
+require_once('inc/init.inc.php');
+
+$titre_page = 'Loisirs - ';
+$page = 'loisirs';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
 
 $req= $pdoCV->prepare("SELECT * FROM t_loisirs");
 $req->execute();
@@ -25,32 +32,48 @@ if(isset($_GET['id_loisir'])){// on récupère la comp. par son id dans l'URL
 }//Ferme le if isset
 
 ?>
+<section>
 
     <h2>il y a <?= ($nbr_loisirs==0)?'aucun':$nbr_loisirs; ?> loisir<?= ($nbr_loisirs>1)?'s':'' ?></h2>
 
-    <table border=2>
-        <tr>
-            <th>Loisirs</th>
-            <th>Suppression</th>
-            <th>Modification</th>
-        </tr>
-        <?php while($ligne_loisir = $req->fetch()) : ?>
+    <div class="row">
+        <div class="col-md-3">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Loisirs</th>
+                    <th>Actions</th>
+                </tr>
+                <?php while($ligne_loisir = $req->fetch()) : ?>
 
-            <tr>
-                <td><?= $ligne_loisir['loisir']; ?></td>
-                <td><a href="loisirs.php?id_loisir=<?= $ligne_loisir['id_loisir'];?>">Supprimer</a></td>
-                <td><a href="modif_loisir.php?id_loisir=<?= $ligne_loisir['id_loisir'] ?>">Modifier</a></td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
-    <hr>
+                    <tr>
+                        <td><?= $ligne_loisir['loisir']; ?></td>
+                        <td>
+                            <a href="modif_loisir.php?id_loisir=<?= $ligne_loisir['id_loisir'] ?>">
+                                <button type="button" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </button>
+                            </a>
+                            <a href="loisirs.php?id_loisir=<?= $ligne_loisir['id_loisir'];?>">
+                                <button type="button" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
 
-    <h3>Insertion d'un loisir</h3>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+        </section>
+        <section>
 
-    <form method="post" action="">
-        <label for="loisir">loisir</label>
-        <input type="text" name="loisir" id="loisir" placeholder="Inserez une loisir">
-        <input type="submit" value="Inserez">
-    </form>
+            <h3>Insertion d'un loisir</h3>
 
-<?php include ('footer.php') ?>
+            <form method="post" action="" class="form-inline">
+                <div class="form-group">
+                    <input type="text" name="loisir" id="loisir" placeholder="Inserez une loisir">
+                </div>
+                <button type="submit" class="btn btn-primary">Inserez</button>
+            </form>
+        </section>
+
+        <?php include ('inc/footer.inc.php') ?>

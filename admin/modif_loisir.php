@@ -1,5 +1,12 @@
 <?php
-require 'header.php';
+require_once('inc/init.inc.php');
+
+$titre_page = 'Modification d\'un loisir - ';
+$page = 'modifloisir';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
+
 if(isset($_POST['loisir']) ){// si on a posté une nouvelle compétence
     if(!empty($_POST['loisir'])){
         $loisir = addslashes($_POST['loisir']);
@@ -24,15 +31,16 @@ if (isset($_GET['id_loisir'])){
 
 <h3>Modification de la compétence <?= $loisir ?></h3>
 
-<form method="post" action="">
-
-    <label for="loisir">Loisir</label>
-    <input type="text" name="loisir" id="loisir" value="<?= $ligne_loisir['loisir'] ?>">
-    <input hidden name="id_loisir" value="<?= $ligne_loisir['id_loisir'] ?>">
-    <input type="submit" value="Mettre à jour">
+<form method="post" action="" class="form-inline">
+    <div class="form-group">
+        <input class="form-control" type="text" name="loisir" id="loisir" value="<?= $ligne_loisir['loisir'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control" hidden name="id_loisir" value="<?= $ligne_loisir['id_loisir'] ?>">
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
 
 </form>
 
 
-</body>
-</html>
+<?php include ('inc/footer.inc.php') ?>

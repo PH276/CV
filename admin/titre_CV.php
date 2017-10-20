@@ -1,4 +1,11 @@
-<?php require_once('header.php');
+<?php
+require_once('inc/init.inc.php');
+
+$titre_page = 'Titrailles - ';
+$page = 'titrailles';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
 
 $req= $pdoCV->prepare("SELECT * FROM t_titre_CV");
 $req->execute();
@@ -30,41 +37,56 @@ if(isset($_GET['id_titre_cv'])){// on récupère la comp. par son id dans l'URL
 
 ?>
 
-    <h2>Il <?= ($nbr_titre_cv==0)?'n\'':$nbr_titre_cv; ?>y a <?= ($nbr_titre_cv==0)?'aucun':$nbr_titre_cv; ?> titre cv<?= ($nbr_titre_cv>1)?'s':'' ?></h2>
-
-    <table border=2>
-
-        <tr>
-
-            <th>titre</th>
-            <th>accroche</th>
-            <th>logo</th>
-            <th>Suppression</th>
-            <th>Modification</th>
-        </tr>
-        <?php while($ligne_titre_cv = $req->fetch()) : ?>
+<h2>Il <?= ($nbr_titre_cv==0)?'n\'':'' ?>y a <?= ($nbr_titre_cv==0)?'aucun':$nbr_titre_cv; ?> titre cv<?= ($nbr_titre_cv>1)?'s':'' ?></h2>
+<section class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered">
 
             <tr>
-                <td><?= $ligne_titre_cv['titre_cv']; ?></td>
-                <td><?= $ligne_titre_cv['accroche']; ?></td>
-                <td><?= $ligne_titre_cv['logo']; ?></td>
-                <td><a href="titre_cv.php?id_titre_cv=<?= $ligne_titre_cv['id_titre_cv'];?>">Supprimer</a></td>
-                <td><a href="modif_titre_cv.php?id_titre_cv=<?= $ligne_titre_cv['id_titre_cv'] ?>">Modifier</a></td>
 
+                <th>titre</th>
+                <th>accroche</th>
+                <th>logo</th>
+                <th>Actions</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
-    <hr>
+            <?php while($ligne_titre_cv = $req->fetch()) : ?>
+
+                <tr>
+                    <td><?= $ligne_titre_cv['titre_cv']; ?></td>
+                    <td><?= $ligne_titre_cv['accroche']; ?></td>
+                    <td><?= $ligne_titre_cv['logo']; ?></td>
+                    <td class="text-center">
+                        <a href="modif_titre_cv.php?id_titre_cv=<?= $ligne_titre_cv['id_titre_cv'] ?>">
+                            <button type="button" class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
+                        </a>
+                        <a href="titre_cv.php?id_titre_cv=<?= $ligne_titre_cv['id_titre_cv'];?>">
+                            <button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+</section>
+<section>
 
     <h3>Insertion d'un titre cv</h3>
-
-    <form method="post" action="">
-
-        <label for="titre_cv">titre CV</label>
-        <input type="text" name="titre_cv" id="titre_cv" placeholder="Inserez un titre cv">
-        <input type="text" name="accroche" placeholder="Inserez une accroche">
-        <input type="text" name="logo" placeholder="Inserez un logo">
-        <input type="submit" value="Insérez">
-
+    <form method="post" action="" class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" name="titre_cv" id="titre_cv" placeholder="Inserez un titre cv">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="accroche" placeholder="Inserez une accroche">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="logo" placeholder="Inserez un logo">
+        </div>
+        <button type="submit" class="btn btn-primary">Insérer</button>
     </form>
-<?php include ('footer.php') ?>
+</section>
+
+<?php include ('inc/footer.inc.php') ?>

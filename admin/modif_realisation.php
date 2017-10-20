@@ -1,5 +1,12 @@
 <?php
-require 'header.php';
+require_once('inc/init.inc.php');
+
+$titre_page = 'Modification d\'une réalisation - ';
+$page = 'modifrealisation';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
+
 if(isset($_POST['r_titre']) ){// si on a posté une nouvelle compétence
     if(!empty($_POST['r_dates']) && !empty($_POST['r_description']) && !empty($_POST['r_soustitre']) && !empty($_POST['r_titre'])){
         $r_dates = addslashes($_POST['r_dates']);
@@ -30,18 +37,25 @@ if (isset($_GET['id_realisation']) && !empty($_GET['id_realisation'])){
 
 <h3>Modification de la réalisation <?= $r_titre ?></h3>
 
-<form method="post" action="">
+<form method="post" action="" class="form-inline">
 
-    <label for="realisation">Titre</label>
-    <input type="text" name="r_titre" id="realisation" value="<?= $ligne_realisation['r_titre'] ?>">
-    <input type="text" name="r_soustitre" id="realisation" value="<?= $ligne_realisation['r_soustitre'] ?>">
-    <input type="text" name="r_dates" id="realisation" value="<?= $ligne_realisation['r_dates'] ?>">
-    <input type="text" name="r_description" id="realisation" value="<?= $ligne_realisation['r_description'] ?>">
-    <input hidden name="id_realisation" value="<?= $ligne_realisation['id_realisation'] ?>">
-    <input type="submit" value="Mettre à jour">
+    <div class="form-group">
+        <input class="form-control" type="text" name="r_titre" id="realisation" value="<?= $ligne_realisation['r_titre'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="r_soustitre" id="realisation" value="<?= $ligne_realisation['r_soustitre'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="r_dates" id="realisation" value="<?= $ligne_realisation['r_dates'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="r_description" id="realisation" value="<?= $ligne_realisation['r_description'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control" hidden name="id_realisation" value="<?= $ligne_realisation['id_realisation'] ?>">
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
 
 </form>
 
-
-</body>
-</html>
+<?php include ('inc/footer.inc.php') ?>

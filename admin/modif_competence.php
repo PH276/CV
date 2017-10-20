@@ -1,5 +1,12 @@
 <?php
-require 'header.php';
+require_once('inc/init.inc.php');
+
+$titre_page = 'Modification d\'une compétence - ';
+$page = 'modifcompetence';
+
+require_once('inc/head.inc.php');
+require_once('inc/nav.inc.php');
+
 if(isset($_POST['competence']) ){// si on a posté une nouvelle compétence
     if(!empty($_POST['competence']) && !empty($_POST['c_niveau'])){
         $competence = addslashes($_POST['competence']);
@@ -25,16 +32,19 @@ if (isset($_GET['id_competence']) && !empty($_GET['id_competence'])){
 
 <h3>Modification de la compétence <?= $competence ?></h3>
 
-<form method="post" action="">
+<form method="post" action="" class="form-inline">
 
-    <label for="competence">Compétence</label>
-    <input type="text" name="competence" id="competence" value="<?= $ligne_competence['competence'] ?>">
-    <input type="number" name="c_niveau" value="<?= $ligne_competence['c_niveau'] ?>">
-    <input hidden name="id_competence" value="<?= $ligne_competence['id_competence'] ?>">
-    <input type="submit" value="Mettre à jour">
+    <div class="form-group">
+        <input class="form-control"  type="text" name="competence" id="competence" value="<?= $ligne_competence['competence'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control"  type="number" name="c_niveau" value="<?= $ligne_competence['c_niveau'] ?>">
+    </div>
+    <div class="form-group">
+        <input class="form-control"  hidden name="id_competence" value="<?= $ligne_competence['id_competence'] ?>">
+    </div>
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
 
 </form>
 
-
-</body>
-</html>
+<?php include ('inc/footer.inc.php') ?>

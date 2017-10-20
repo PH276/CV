@@ -7,33 +7,6 @@ $page = 'competences';
 require_once('inc/head.inc.php');
 require_once('inc/nav.inc.php');
 
-$req= $pdoCV->prepare("SELECT * FROM t_competences");
-$req->execute();
-$nbr_competences = $req-> rowCount();
-//gestion des contenus de la bdd compétences
-//Insertion d'une competence
-if(isset($_POST['competence']) ){// si on a posté une nouvelle compétence
-    if(!empty($_POST['competence']) && !empty($_POST['c_niveau'])){
-        $competence = addslashes($_POST['competence']);
-        $c_niveau = addslashes($_POST['c_niveau']);
-        $pdoCV->exec("INSERT INTO t_competences VALUES (NULL,'$competence','$c_niveau','1')");//mettre $id_utilisateur quand on l'aura dans la variable de session
-        header("location: competences.php");//pour revenir sur la page
-        exit();
-
-    }
-}
-
-//suppression d'une compétence
-
-if(isset($_GET['id_competence'])){// on récupère la comp. par son id dans l'URL
-    $efface = $_GET['id_competence'];// je mets cela dans une variable
-
-    $req="DELETE FROM t_competences WHERE id_competence = '$efface'";
-    $pdoCV->query($req);// on peut utiliser avec exec aussi si on veut
-    header("location: competences.php");
-
-}//Ferme le if isset
-
 ?>
 <section>
 
@@ -73,15 +46,18 @@ if(isset($_GET['id_competence'])){// on récupère la comp. par son id dans l'UR
     </div>
 </section>
 <section>
+
     <h3>Insertion d'une compétence</h3>
     <form method="post" action="" class="form-inline">
         <div class="form-group">
+
             <input type="text" class="form-control" name="competence" id="competence" placeholder="Inserez une compétence">
         </div>
         <div class="form-group">
             <input type="number" class="form-control" name="c_niveau" id="c_niveau" placeholder="Inserez le niveau">
         </div>
         <button type="submit" class="btn btn-primary">Insérer</button>
+
     </form>
 </section>
 
