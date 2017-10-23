@@ -14,66 +14,70 @@ $nbr_loisirs = $req-> rowCount();
 //Insertion d'une loisir
 if(isset($_POST['loisir']) ){// si on a posté une nouvelle compétence
     if(!empty($_POST['loisir'])){
-        $loisir = addslashes($_POST['loisir']);
-        $pdoCV->exec("INSERT INTO t_loisirs VALUES (NULL,'$loisir','1')");//mettre $id_utilisateur quand on l'aura dans la variable de session
+        $loisir = htmlspecialchars($_POST['loisir']);
+        $pdoCV->exec("INSERT INTO t_loisirs VALUES (NULL,'$loisir','1')");//mettre l'id de l'utilisateur quand on l'aura dans la variable de session
         header("location: loisirs.php");//pour revenir sur la page
         exit();
     }
 }
 
 //suppression d'une compétence
-if(isset($_GET['id_loisir'])){// on récupère la comp. par son id dans l'URL
-    $efface = $_GET['id_loisir'];// je mets cela dans une variable
+if(isset($_GET['id'])){// on récupère la comp. par son id dans l'URL
+    $efface = $_GET['id'];// je mets cela dans une variable
 
-    $req="DELETE FROM t_loisirs WHERE id_loisir = '$efface'";
+    $req="DELETE FROM t_loisirs WHERE id = '$efface'";
     $pdoCV->query($req);// on peut utiliser avec exec aussi si on veut
     header("location: loisirs.php");
 
 }//Ferme le if isset
 
 ?>
-<section>
+<main class="container-fluid">
+    <section>
 
-    <h2>il y a <?= ($nbr_loisirs==0)?'aucun':$nbr_loisirs; ?> loisir<?= ($nbr_loisirs>1)?'s':'' ?></h2>
+        <h2>il y a <?= ($nbr_loisirs==0)?'aucun':$nbr_loisirs; ?> loisir<?= ($nbr_loisirs>1)?'s':'' ?></h2>
 
-    <div class="row">
-        <div class="col-md-3">
-            <table class="table table-bordered">
-                <tr>
-                    <th>Loisirs</th>
-                    <th>Actions</th>
-                </tr>
-                <?php while($ligne_loisir = $req->fetch()) : ?>
-
+        <div class="row">
+            <div class="col-md-3">
+                <table class="table table-bordered">
                     <tr>
-                        <td><?= $ligne_loisir['loisir']; ?></td>
-                        <td>
-                            <a href="modif_loisir.php?id_loisir=<?= $ligne_loisir['id_loisir'] ?>">
-                                <button type="button" class="btn btn-info">
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                            <a href="loisirs.php?id_loisir=<?= $ligne_loisir['id_loisir'];?>">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                </button>
-
-                            </a>
-                        </td>
+                        <th class="text-center">Loisirs</th>
+                        <th class="text-center">Actions</th>
                     </tr>
-                <?php endwhile; ?>
-            </table>
-        </section>
-        <section>
+                    <?php while($ligne_loisir = $req->fetch()) : ?>
 
-            <h3>Insertion d'un loisir</h3>
+                        <tr>
+                            <td><?= $ligne_loisir['loisir']; ?></td>
+                            <td class="text-center">
+                                <a href="modif_loisir.php?id=<?= $ligne_loisir['id'] ?>">
+                                    <button type="button" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                                <a href="loisirs.php?id=<?= $ligne_loisir['id'];?>">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
 
-            <form method="post" action="" class="form-inline">
-                <div class="form-group">
-                    <input type="text" name="loisir" id="loisir" placeholder="Inserez une loisir">
-                </div>
-                <button type="submit" class="btn btn-primary">Inserez</button>
-            </form>
-        </section>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
 
-        <?php include ('inc/footer.inc.php') ?>
+        <h3>Insertion d'un loisir</h3>
+
+        <form method="post" action="" class="form-inline">
+            <div class="form-group">
+                <input type="text" name="loisir" id="loisir" placeholder="Inserez une loisir">
+            </div>
+            <button type="submit" class="btn btn-primary">Inserez</button>
+        </form>
+    </section>
+</main>
+
+<?php include ('inc/footer.inc.php') ?>

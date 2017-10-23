@@ -12,13 +12,13 @@ $req->execute();
 $nbr_experiences = $req-> rowCount();
 //gestion des contenus de la bdd compétences
 //Insertion d'une competence
-if(isset($_POST['experience']) ){// si on a posté une nouvelle compétence
-    if(!empty($_POST['experience']) && !empty($_POST['c_niveau'])){
-        $titre = addslashes($_POST['e_titre']);
-        $sous_titre = addslashes($_POST['e_soustitre']);
-        $dates = addslashes($_POST['e_dates']);
-        $description = addslashes($_POST['e_description']);
-        $pdoCV->exec("INSERT INTO t_experiences VALUES (NULL,'$titre','$sous_titre','$dates','$description','1')");//mettre $id_utilisateur quand on l'aura dans la variable de session
+if(!empty($_POST) ){// si on a posté une nouvelle compétence
+    if(!empty($_POST['e_titre']) && !empty($_POST['e_soustitre']) && !empty($_POST['e_dates']) && !empty($_POST['e_description'])) {
+        $titre = htmlspecialchars($_POST['e_titre']);
+        $sous_titre = htmlspecialchars($_POST['e_soustitre']);
+        $dates = htmlspecialchars($_POST['e_dates']);
+        $description = htmlspecialchars($_POST['e_description']);
+        $pdoCV->exec("INSERT INTO t_experiences VALUES (NULL,'$titre','$sous_titre','$dates','$description','1')");//mettre l'id de l'utilisateur quand on l'aura dans la variable de session
         header("location: experiences.php");//pour revenir sur la page
         exit();
     }
@@ -26,67 +26,75 @@ if(isset($_POST['experience']) ){// si on a posté une nouvelle compétence
 
 //suppression d'une compétence
 
-if(isset($_GET['id_experience'])){// on récupère la comp. par son id dans l'URL
-    $efface = $_GET['id_experience'];// je mets cela dans une variable
+if(isset($_GET['id'])){// on récupère la comp. par son id dans l'URL
+    $efface = $_GET['id'];// je mets cela dans une variable
 
-    $req="DELETE FROM t_experience WHERE id_experience = '$efface'";
+    $req="DELETE FROM t_experiences WHERE id = '$efface'";
     $pdoCV->query($req);// on peut utiliser avec exec aussi si on veut
-    header("location: experience.php");
+    header("location: experiences.php");
 }//Ferme le if isset
 
 ?>
-<section>
+<main class="container-fluid">
 
-    <h2>il <?= ($nbr_experiences==0)?'n\'':''; ?>y a <?= ($nbr_experiences==0)?'aucune':$nbr_experiences; ?> expérience<?= ($nbr_experiences>1)?'s':'' ?></h2>
+    <section>
 
-    <div class="row">
-        <div class="col-md-3">
-            <table class="table table-bordered">
-                <tr>
-                    <th>Titre</th>
-                    <th>Sous-titre</th>
-                    <th>Dates</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
-                <?php while ($ligne_experience = $req->fetch()) : ?>
+        <h2>il <?= ($nbr_experiences==0)?'n\'':''; ?>y a <?= ($nbr_experiences==0)?'aucune':$nbr_experiences; ?> expérience<?= ($nbr_experiences>1)?'s':'' ?></h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-bordered">
                     <tr>
-                        <td><?= $ligne_experience['e_titre']; ?></td>
-                        <td><?= $ligne_experience['e_soustitre']; ?></td>
-                        <td><?= $ligne_experience['e_dates']; ?></td>
-                        <td><?= $ligne_experience['e_description']; ?></td>
-                        <td class="text-center">
-                            <a href="modif_experience.php?id_experience=<?= $ligne_experience['id_experience'] ?>">
-                                <button type="button" class="btn btn-info">
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                            <a href="experiences.php?id_experience=<?= $ligne_experience['id_experience'];?>">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </td>
-
+                        <th class="text-center">Titre</th>
+                        <th class="text-center">Sous-titre</th>
+                        <th class="text-center">Dates</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Actions</th>
                     </tr>
-                <?php endwhile; ?>
-            </table>
+                    <?php while ($ligne_experience = $req->fetch()) : ?>
+                        <tr>
+                            <td><?= $ligne_experience['e_titre']; ?></td>
+                            <td><?= $ligne_experience['e_soustitre']; ?></td>
+                            <td><?= $ligne_experience['e_dates']; ?></td>
+                            <td><?= $ligne_experience['e_description']; ?></td>
+                            <td class="text-center">
+                                <a href="modif_experience.php?id=<?= $ligne_experience['id'] ?>">
+                                    <button type="button" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                                <a href="experiences.php?id=<?= $ligne_experience['id'];?>">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </a>
+                            </td>
 
-        </div>
-    </div>
-</section>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
 
-<!-- <section>
-    <h3>Insertion d'une expérience</h3>
-    <form method="post" action="" class="form-inline">
-        <div class="form-group">
-            <input type="text" class="form-control" name="experience" id="experience" placeholder="Inserez une expérience">
+            </div>
         </div>
-        <div class="form-group">
-            <input type="number" class="form-control" name="c_niveau" id="c_niveau" placeholder="Inserez le niveau">
-        </div>
-        <button type="submit" class="btn btn-primary">Insérer</button>
-    </form>
-</section> -->
+    </section>
+    <section>
+        <h3>Insertion d'une expérience</h3>
+        <form method="post" action="" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="e_titre" placeholder="Inserez un titre">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="e_soustitre" placeholder="Inserez le sous-titre">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="e_dates" placeholder="Inserez les dates">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="e_description" placeholder="Inserez une description">
+            </div>
+            <button type="submit" class="btn btn-primary">Insérer</button>
+        </form>
+    </section>
+</main>
 
 <?php include ('inc/footer.inc.php') ?>

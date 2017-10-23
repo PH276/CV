@@ -45,9 +45,9 @@ if(isset($_GET['id'])){// on récupère la comp. par son id dans l'URL
             <div class="col-md-3">
                 <table class="table table-bordered">
                     <tr>
-                        <th class="text-center">Compétences</th>
-                        <th class="text-center">Niveau en %</th>
-                        <th class="text-center">Actions</th>
+                        <th>Compétences</th>
+                        <th>Niveau en %</th>
+                        <th>Actions</th>
                     </tr>
                     <?php while ($ligne_competence = $req->fetch()) : ?>
 

@@ -18,7 +18,7 @@
                 <li><a href="#">Link</a></li> -->
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="utilisateur.php">Profil</a></li>
-                <li><a href="titre_CV.php">Titrailles</a></li>
+                <li class="<?= ($page=='titrailles')?'active':'' ?>"><a href="titre_CV.php">Titrailles</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parcours<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -35,6 +35,17 @@
                         <li><a href="reseaux.php">Réseaux</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="page-table" href="#">Titrailles</a></li>
+                        <li><a class="page-table" href="#">Experiences</a></li>
+                        <li><a class="page-table" href="#">Réalisations</a></li>
+                        <li><a class="page-table" href="#">Formations</a></li>
+                        <li><a class="page-table" href="#">Compétences</a></li>
+                        <li><a class="page-table" href="#">Loisirs</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -43,7 +54,7 @@
                 <button type="submit" class="btn btn-default">Chercher</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Déconnexion</a></li>
+                <li><a href="utilisateur.php">Déconnexion</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

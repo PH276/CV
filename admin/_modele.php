@@ -26,12 +26,12 @@ require_once('inc/nav.inc.php');
                         <td><?= $ligne_competence['competence']; ?></td>
                         <td><?= $ligne_competence['c_niveau']; ?></td>
                         <td class="text-center">
-                            <a href="modif_competence.php?id_competence=<?= $ligne_competence['id_competence'] ?>">
+                            <a href="modif_competence.php?id=<?= $ligne_competence['id'] ?>">
                                 <button type="button" class="btn btn-info">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                 </button>
                             </a>
-                            <a href="competences.php?id_competence=<?= $ligne_competence['id_competence'];?>">
+                            <a href="competences.php?id=<?= $ligne_competence['id'];?>">
                                 <button type="button" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                 </button>
