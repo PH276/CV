@@ -38,12 +38,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="page-table" href="#">Titrailles</a></li>
-                        <li><a class="page-table" href="#">Experiences</a></li>
-                        <li><a class="page-table" href="#">Réalisations</a></li>
-                        <li><a class="page-table" href="#">Formations</a></li>
-                        <li><a class="page-table" href="#">Compétences</a></li>
-                        <li><a class="page-table" href="#">Loisirs</a></li>
+                        <li><a href="table_liste.php?table=t_competences">Compétences</a></li>
+                        <li><a href="table_liste.php?table=t_titre_cv">Titrailles</a></li>
+                        <li><a href="table_liste.php?table=t_experiences">Experiences</a></li>
+                        <li><a href="table_liste.php?table=t_realisations">Réalisations</a></li>
+                        <li><a href="table_liste.php?table=t_formations">Formations</a></li>
+                        <li><a href="table_liste.php?table=t_loisirs">Loisirs</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('parametres.inc.php');
 require_once('fonctions.inc.php');
 
