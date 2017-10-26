@@ -7,7 +7,6 @@ if(isset($_POST['id'])){// on récupère la comp. par son id dans l'URL
 
     $req="DELETE FROM ".$_SESSION['table']['table']." WHERE id = '$efface'";
     $pdoCV->query($req);// on peut utiliser avec exec aussi si on veut
-    echo json_encode(table_liste($pdoCV));
 
 //    header("location: competences.php");
 

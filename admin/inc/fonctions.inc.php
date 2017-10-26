@@ -46,7 +46,7 @@ function table_choisie($table){
 				break;
 				case 't_realisations' :
 					$data =  array(
-						'table' => 't_realisation',
+						'table' => 't_realisations',
 						'affiche_nom_table' => 'realisation',
 						'colonnes' => array('r_titre', 'r_soustitre','r_dates','r_description'),
 						'colonnes_titre' => array('Titre', 'Sous-titre','Dates','Description'),
@@ -55,7 +55,7 @@ function table_choisie($table){
 					break;
 				case 't_experiences' :
 					$data =  array(
-						'table' => 't_experience',
+						'table' => 't_experiences',
 						'affiche_nom_table' => 'experience',
 						'colonnes' => array('e_titre', 'e_soustitre','e_dates','e_description'),
 						'colonnes_titre' => array('Titre', 'Sous-titre','Dates','Description'),
@@ -79,8 +79,8 @@ function table_choisie($table){
 
 	}
 
-function table_liste($pdoCV){
-	$req= $pdoCV->prepare("SELECT * FROM ".$_GET['table']);
+function table_liste($pdoCV, $table){
+	$req= $pdoCV->prepare("SELECT * FROM ".$table);
 	$req->execute();
 	$nbr_lignes = $req-> rowCount();
 	$contenu = '';
@@ -121,7 +121,7 @@ function table_liste($pdoCV){
 	    $contenu .= '                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>';
 	    $contenu .= '                            </button>';
 	    $contenu .= '                        </a>';
-	    $contenu .= '                        <a class="supp" href="id='. $ligne['id'].'">';
+	    $contenu .= '                        <a class="supp" href="?id='. $ligne['id'].'">';
 	    $contenu .= '                            <button type="button" class="btn btn-danger">';
 	    $contenu .= '                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>';
 	    $contenu .= '                            </button>';
@@ -136,11 +136,8 @@ function table_liste($pdoCV){
 	$contenu .= '</div>';
 
 
-	$_SESSION['table']['contenu'] = $contenu;
-	// $SESSION['table']['titre_page'] = 'test - ';
-	$_SESSION['table']['titre_page'] = $_SESSION['table']['affiche_nom_table'].' - ';
-
 	return $contenu;
+
 
 }
 

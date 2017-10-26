@@ -1,11 +1,16 @@
 <?php
 require_once('inc/init.inc.php');
-if (isset($_GET['table'])){
-    $_SESSION['table'] = table_choisie($_GET['table']);
-    debug($_SESSION);
-} else {
-    header('index.php');
-}
+if (isset($_POST['table'])){
+    $_SESSION['table'] = table_choisie($_POST['table']);
 
-$contenu = table_liste($pdoCV);
-header ('location: page_table_bdd.php');
+}
+// else {
+//     header('index.php');
+// }
+
+// $_SESSION['table']['contenu'] = table_liste($pdoCV, $_SESSION['table']['table']);
+
+$_SESSION['table']['titre_page'] = $_SESSION['table']['affiche_nom_table'].' - ';
+echo json_encode(table_liste($pdoCV, $_SESSION['table']['table']));
+// debug($_SESSION);
+// header ('location: page_table_bdd.php');
