@@ -10,6 +10,6 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title><?= $titre_page ?>Admin : <?= ($ligne_utilisateur['pseudo']); ?></title>
+    <title>Admin : <?= ($ligne_utilisateur['pseudo']); ?></title>
 </head>
 <body>

@@ -39,11 +39,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
                     <ul id="menu" class="dropdown-menu">
                         <li><a href="?table=t_competences">Compétences</a></li>
-                        <li><a href="page_table_bdd.php?table=t_titre_cv">Titrailles</a></li>
-                        <li><a href="page_table_bdd.php?table=t_experiences">Experiences</a></li>
-                        <li><a href="page_table_bdd.php?table=t_realisations">Réalisations</a></li>
-                        <li><a href="page_table_bdd.php?table=t_formations">Formations</a></li>
-                        <li><a href="page_table_bdd.php?table=t_loisirs">Loisirs</a></li>
+                        <li><a href="?table=t_titre_cv">Titrailles</a></li>
+                        <li><a href="?table=t_experiences">Experiences</a></li>
+                        <li><a href="?table=t_realisations">Réalisations</a></li>
+                        <li><a href="?table=t_formations">Formations</a></li>
+                        <li><a href="?table=t_loisirs">Loisirs</a></li>
                     </ul>
                 </li>
             </ul>
