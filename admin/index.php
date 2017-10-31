@@ -11,5 +11,10 @@
  ?>
 <main id="affichage" class="container-fluid">
 </main>
+<div class="">
+    <?php
+     echo (isset($_SESSION['id']))?'id='.$_SESSION['id']:'';
+    ?>
+</div>
 
 <?php include ('inc/footer.inc.php') ?>

@@ -110,13 +110,15 @@ function table_choisie($table){
 					$contenu .= '                    <td>'.$ligne["$key"].'</td>';
 				}
 				$contenu .= '                    <td class="text-center">';
+
 				$contenu .= '                            <button type="button" onclick="form_ajout('.$ligne['id'].')" class="btn btn-info">';
 				$contenu .= '                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>';
 				$contenu .= '                            </button>';
-				$contenu .= '                        </a>';
+
 				$contenu .= '                            <button onclick="supp('.$ligne['id'].')"  type="button" class="btn btn-danger">';
 				$contenu .= '                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>';
 				$contenu .= '                            </button>';
+
 				$contenu .= '                    </td>';
 
 				$contenu .= '                </tr>';
@@ -125,7 +127,6 @@ function table_choisie($table){
 
 			$contenu .= '    </div>';
 			$contenu .= '</div>';
-			// onclick="modif('.$ligne['id'].')"
 			$contenu .= '<div class="row">';
 			$contenu .= '    <button onclick="form_ajout(0)" type="button" class="btn btn-primary">';
 			$contenu .= '    Ajout';
@@ -140,6 +141,8 @@ function table_choisie($table){
 		}
 
 		function table_form($pdoCV, $table, $id){
+			$action=($id==0)?'ajouter':'modifier';
+
 			$contenu = '';
 			$req= $pdoCV->prepare("SELECT * FROM " . $table . " WHERE id=" . $id);
 			$req->execute();
@@ -152,8 +155,9 @@ function table_choisie($table){
 			// 	$c_niveau = '';
 			// }
 
-			$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à ajouter</h1>';
-			$contenu .= '		<form id="frm" method="post" class="form-inline">';
+			$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à '.$action.' </h1>';
+			$contenu .= '		<form id="formulaire" action="table_ins.php" method="post" class="form-inline">';
+			// $contenu .= '		<form id="formulaire"  class="form-inline">';
 			$contenu .= '				<input hidden type="number" name="id" value="'.$id.'">';
 			foreach ($_SESSION['table']['colonnes'] as $key => $col){
 

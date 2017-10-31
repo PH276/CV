@@ -2,4 +2,4 @@
 define ('HOST' , 'localhost');
 define ('BDD' , 'pascal_cv');
 define ('USER' , 'root');
-define ('PASSWORD' , '');
+define ('PASSWORD' , '1111');
