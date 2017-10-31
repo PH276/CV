@@ -27,10 +27,14 @@ function supp(id){
     };
 }
 
-// $('form')
-function enregistrer(id){
-    console.log(id);
-}
+$('#frm').on('submit', function(e){
+    e.preventDefault();
+    var id = this.id.value;
+    var competence = this.competence.value;
+    var c_niveau = this.c_niveau.value;
+    console.log(competence + ' ' + c_niveau);
+    
+})
 
 function form_ajout(id){
     var xhr = new XMLHttpRequest();

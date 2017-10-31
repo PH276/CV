@@ -153,7 +153,7 @@ function table_choisie($table){
 			// }
 
 			$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à ajouter</h1>';
-			$contenu .= '		<form method="post" class="form-inline">';
+			$contenu .= '		<form id="frm" method="post" class="form-inline">';
 			$contenu .= '				<input hidden type="number" name="id" value="'.$id.'">';
 			foreach ($_SESSION['table']['colonnes'] as $key => $col){
 
