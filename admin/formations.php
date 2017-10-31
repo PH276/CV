@@ -1,4 +1,5 @@
 <?php
+print_r($_POST);
 require_once('inc/init.inc.php');
 
 $titre_page = 'Formations - ';

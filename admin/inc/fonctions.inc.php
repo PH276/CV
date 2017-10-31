@@ -153,8 +153,9 @@ function table_choisie($table){
 			// }
 
 			$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à ajouter</h1>';
-			$contenu .= '		<form method="post" class="form-inline">';
-			$contenu .= '				<input hidden type="number" name="id" value="'.$id.'">';
+			$contenu .= '		<form id="formulaire" action="table_ins.php" method="post" class="form-inline">';
+			// $contenu .= '		<form id="formulaire"  class="form-inline">';
+			// $contenu .= '				<input hidden type="number" name="id" value="'.$id.'">';
 			foreach ($_SESSION['table']['colonnes'] as $key => $col){
 
 				$contenu .= '			<div class="form-group">';

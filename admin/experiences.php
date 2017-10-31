@@ -1,4 +1,5 @@
 <?php
+print_r($)
 require_once('inc/init.inc.php');
 
 $titre_page = 'Expériences - ';

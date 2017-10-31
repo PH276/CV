@@ -1,3 +1,37 @@
+$('#formulaire').on('submit', function(e){
+    e.preventDefault();
+    tab = $(this)[0].elements;
+    parameters = '';
+    var i, j=0;
+
+    for (i=1;i<tab.length;i++){
+        j++;
+        if (i==tab.length-1) {
+            parameters += tab[i].name + "=" + tab[i].value;
+        }else{
+            parameters += tab[i].name + "=" + tab[i].value + '&';
+        }
+    }
+    console.log( j);
+    console.log(parameters);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "table_ins.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(parameters);
+
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status == 200){
+            var obj = JSON.parse(xhr.responseText);
+            // $("#affichage").html(obj);
+        }
+    };
+
+
+    // console.log($(this)[0].elements);
+    // console.log($(this)[0].elements['c_niveau'].value);
+});
+
 function supp(id){
 
     var indexId = id;
