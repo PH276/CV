@@ -4,7 +4,7 @@
             <dd>Pascal HUITOREL</dd>
             <dd>10 rue Henri Barbusse</dd>
             <dd>92390 Villeneuve-la-Garenne</dd>
-            <dd>01-74-54-64-06</dd>
+            <dd>01 74 54 64 06</dd>
             <dd>pascal.huitorel@gmail.com</dd>
         </dl>
     </div>

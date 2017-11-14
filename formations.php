@@ -11,29 +11,29 @@ include('head.php');
                 <article class="cadre">
                     <h3>Licence parcours MIAGE</h3>
                     <p>
-                        <strong>2014</strong> – ESIAG à Créteil (94)<br>
+                        <strong>2014</strong> – ESIAG à Créteil<br>
                         Droit, économie et gestion filiale économie et gestion
                     </p>
                 </article>
 
                 <article class="cadre">
                     <h3>DUT Réseaux et Télécommunications</h3>
-                    <p><strong>2013</strong> – IUT de Vitry sur Seine (94)</p>
+                    <p><strong>2013</strong> – IUT de Vitry sur Seine</p>
                 </article>
 
                 <article class="cadre">
                     <h3>DUT Génie Electrique et Informatique Industrielle</h3>
-                    <p><strong>1989</strong> - IUT de Nîmes (30)</p>
+                    <p><strong>1989</strong> - IUT de Nîmes</p>
                 </article>
 
                 <article class="cadre">
                     <h3>Bac F3 (Electrotechnique)</h3>
-                    <p><strong>1987</strong> - Lycée Edouard Branly - Dreux (28)</p>
+                    <p><strong>1987</strong> - Lycée Edouard Branly - Dreux</p>
                 </article>
 
                 <article class="cadre">
                     <h3>BEP et CAP d'électrotechnique</h3>
-                    <p><strong>1985</strong> - LEP de Rambouillet (78)</p>
+                    <p><strong>1985</strong> - LEP de Rambouillet</p>
                 </article>
             </div>
         </section>
@@ -43,7 +43,7 @@ include('head.php');
                 <h2>Partiels</h2>
                 <article class="cadre">
                     <h3>Master MIAGE (1ère année)</h3>
-                    <p><strong>09/2014 à 05/2016</strong> – ESIAG à Créteil (94)</p>
+                    <p><strong>09/2014 à 05/2016</strong> – ESIAG à Créteil</p>
                     <p>Projet de synthèse (UML2, JEE, MySQL, XML, Tomcat, JMS, ECLIPSE)</p>
                     <p>1<span class="expose">er</span> semestre validé, 50 ECTS acquis au total</p>
                 </article>
@@ -64,8 +64,8 @@ include('head.php');
                         <li>Apprenez à coder avec JavaScript,</li>
                         <li>Créez des pages web interactives avec JavaScript,</li>
                         <li>Introduction à jQuery</li>
+                        <li>Concevez votre site web avec PHP et MySQL</li>
                     </ul>
-                    <p></p>
                 </article>
             </section>
             <div class="clear"></div>

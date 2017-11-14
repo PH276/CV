@@ -32,6 +32,7 @@
                 <img src="img/wordpress.jpg" alt="javascript">
                 <img id="php" src="img/PHP.jpg" alt="PHP">
                 <img src="img/MySQL.png" alt="MySQL">
+                <img src="img/silex.jpg" width="20" alt="MySQL">
             </div>
         </div>
 
