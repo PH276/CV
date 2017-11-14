@@ -25,7 +25,7 @@ include('head.php');
                 </ul>
             </section>
             <section id="interets" class="cadre">
-                <h2>Centre d'intérêts</h2>
+                <h2>Centres d'intérêt</h2>
                 <ul>
                     <li>Président du conseil syndical de ma résidence</li>
                     <li>Trésorier du Billard Club de Villeneuve-la-Garenne</li>
