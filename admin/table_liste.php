@@ -2,7 +2,6 @@
 require_once('inc/init.inc.php');
 if (isset($_POST['table'])){
     $_SESSION['table'] = table_choisie($_POST['table']);
-
 }
 // else {
 //     header('index.php');

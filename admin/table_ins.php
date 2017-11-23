@@ -9,14 +9,19 @@ if(!empty($_POST) ){// si on a posté une nouvelle compétence
     if (empty($id)){
         echo 'if<br>';
 
+
         $query = 'INSERT INTO '
         . $_SESSION['table']['table']
         . '('
         . implode(', ', array_keys($_POST))
+
         .', id_utilisateur) VALUES (:'
+
         . implode(', :', array_keys($_POST))
-        . '
-        , "1")';
+
+        . ' , "1"'
+
+        .')';
 
         // $competence = htmlspecialchars($_POST['competence']);
         // $c_niveau = htmlspecialchars($_POST['c_niveau']);

@@ -18,10 +18,36 @@ function debug($tab){
 function table_choisie($table){
 	switch ($table) {
 		// table t_compétences
+		case 't_utilisateurs' :
+		$data = array(
+			'table' => 't_utilisateurs',
+			'affiche_nom_table' => 'utilisateurs',
+			'colonnes' => array(
+			    'prenom' => 'prenom',
+			    'nom' => 'nom',
+			    'email' => 'email',
+			    'telephone' => 'telephone',
+			    'autre_tel' => 'autre_tel',
+			    'mdp' => 'mdp',
+			    'pseudo' => 'pseudo',
+			    'avatar' => 'avatar',
+			    'date_naissance' => 'date_naissance',
+			    'sexe' => 'sexe',
+			    'etat_civil' => 'etat_civil',
+			    'adresse' => 'adresse',
+			    'code_postal' => 'code_postal',
+			    'ville' => 'ville',
+			    'pays' => 'pays',
+			    'site_web' =>'site_web'
+		 ),
+			'largeur_tableau' => '12'
+		);
+		break;
+
 		case 't_competences' :
 		$data = array(
 			'table' => 't_competences',
-			'affiche_nom_table' => 'compétence',
+			'affiche_nom_table' => 'competences',
 			'colonnes' => array('competence' => 'Compétence', 'c_niveau' => 'Niveau en %'),
 			'largeur_tableau' => '4'
 		);
@@ -41,7 +67,7 @@ function table_choisie($table){
 		case 't_formations' :
 			$data = array(
 				'table' => 't_formations',
-				'affiche_nom_table' => 'formation',
+				'affiche_nom_table' => 'formations',
 				'colonnes' => array('f_titre' => 'Titre', 'f_soustitre' => 'Sous-titre', 'f_dates' => 'Dates','f_description' => 'Description'),
 				'largeur_tableau' => '8'
 			);
@@ -51,7 +77,7 @@ function table_choisie($table){
 			case 't_realisations' :
 			$data =  array(
 				'table' => 't_realisations',
-				'affiche_nom_table' => 'réalisation',
+				'affiche_nom_table' => 'réalisations',
 				'colonnes' => array('r_titre' => 'Titre', 'r_soustitre' => 'Sous-titre', 'r_dates' => 'Dates','r_description' => 'Description'),
 				'largeur_tableau' => '8'
 			);
@@ -61,7 +87,7 @@ function table_choisie($table){
 			case 't_experiences' :
 			$data =  array(
 				'table' => 't_experiences',
-				'affiche_nom_table' => 'expérience',
+				'affiche_nom_table' => 'expériences',
 				'colonnes' => array('e_titre' => 'Titre', 'e_soustitre' => 'Sous-titre', 'e_dates' => 'Dates','e_description' => 'Description'),
 				'largeur_tableau' => '8'
 			);
@@ -71,8 +97,18 @@ function table_choisie($table){
 			case 't_loisirs' :
 			$data =  array(
 				'table' => 't_loisirs',
-				'affiche_nom_table' => 'loisir',
+				'affiche_nom_table' => 'loisirs',
 				'colonnes' => array('loisir' => 'Loisirs'),
+				'largeur_tableau' => '4'
+			);
+			break;
+
+			// table t_reseaux
+			case 't_reseaux' :
+			$data =  array(
+				'table' => 't_reseaux',
+				'affiche_nom_table' => 'réseaux',
+				'colonnes' => array('nom' => 'Nom', 'lien' => 'Lien', 'logo' => 'Logo'),
 				'largeur_tableau' => '4'
 			);
 			break;
@@ -93,14 +129,14 @@ function table_choisie($table){
 
 		$lignes = $req->fetchAll(PDO::FETCH_ASSOC);
 		// debug($lignes);
-		$contenu .= '<h1>Liste des '.$_SESSION['table']['affiche_nom_table'].'s</h1>';
+		$contenu .= '<h1>Liste des '.$_SESSION['table']['affiche_nom_table'].'</h1>';
 
 		$contenu .= '<p>Il ';
 
-		$contenu .= ($nbr_lignes==0)?'n\'y a pas de ':'y a ';
+		$contenu .= ($nbr_lignes==0)?'n\'y en a pas':'y en a ';
 		$contenu .= ($nbr_lignes==0)?'':$nbr_lignes.' ';
-		$contenu .= $_SESSION['table']['affiche_nom_table'];
-		$contenu .= ($nbr_lignes>1)?'s':'';
+		// $contenu .= $_SESSION['table']['affiche_nom_table'];
+		// $contenu .= ($nbr_lignes>1)?'s':'';
 
 		$contenu .= ' </p>';
 
@@ -135,6 +171,7 @@ function table_choisie($table){
 
 			$contenu .= '                </tr>';
 		}
+
 		$contenu .= '        </table>';
 
 		$contenu .= '    </div>';
@@ -159,13 +196,6 @@ function table_choisie($table){
 		$req= $pdoCV->prepare("SELECT * FROM " . $table . " WHERE id=" . $id);
 		$req->execute();
 		$ligne = $req->fetch(PDO::FETCH_ASSOC);
-		// if ($id != 0) {
-		// 	extract($ligne);
-		// } else{
-		// 	$id = '';
-		// 	$competence = '';
-		// 	$c_niveau = '';
-		// }
 
 		$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à '.$action.' </h1>';
 		$contenu .= '		<form id="formulaire" action="table_ins.php" method="post" class="form-inline">';

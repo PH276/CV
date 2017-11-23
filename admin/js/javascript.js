@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    $('#menu li a').on('click', function(e){
+    // $('#menu li a').on('click', function(e){
+    $('.menu-ajax').on('click', function(e){
         e.preventDefault();
         var url= e.currentTarget.toString();
         var indexTable = url.lastIndexOf('table');

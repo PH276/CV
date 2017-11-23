@@ -17,22 +17,22 @@
                 <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li> -->
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="utilisateur.php">Profil</a></li>
-                <li class="<?= ($page=='titrailles')?'active':'' ?>"><a href="titre_CV.php">Titrailles</a></li>
+                <li><a class="menu-ajax" href="?table=t_utilisateurs">Profil</a></li>
+                <li class="<?= ($page=='titrailles')?'active':'' ?>"><a class="menu-ajax" href="?table=t_titre_cv">Titrailles</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parcours<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="experiences.php">Experiences</a></li>
-                        <li><a href="realisations.php">Réalisations</a></li>
-                        <li><a href="formations.php">Formations</a></li>
+                        <li><a class="menu-ajax" href="?table=t_experiences">Experiences</a></li>
+                        <li><a class="menu-ajax" href="?table=t_realisations">Réalisations</a></li>
+                        <li><a class="menu-ajax" href="?table=t_formations">Formations</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compétences<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="competences.php">Compétences</a></li>
-                        <li><a href="loisirs.php">Loisirs</a></li>
-                        <li><a href="reseaux.php">Réseaux</a></li>
+                        <li><a class="menu-ajax" href="?table=t_competences">Compétences</a></li>
+                        <li><a class="menu-ajax" href="?table=t_loisirs">Loisirs</a></li>
+                        <li><a class="menu-ajax" href="?table=t_reseaux">Réseaux</a></li>
                     </ul>
                 </li>
                 <!-- <li class="dropdown">
@@ -54,7 +54,7 @@
                 <button type="submit" class="btn btn-default">Chercher</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="utilisateur.php">Déconnexion</a></li>
+                <li><a href="index.php">Déconnexion</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
