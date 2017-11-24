@@ -23,23 +23,23 @@ function table_choisie($table){
 			'table' => 't_utilisateurs',
 			'affiche_nom_table' => 'utilisateurs',
 			'colonnes' => array(
-			    'prenom' => 'prenom',
-			    'nom' => 'nom',
-			    'email' => 'email',
-			    'telephone' => 'telephone',
-			    'autre_tel' => 'autre_tel',
-			    'mdp' => 'mdp',
-			    'pseudo' => 'pseudo',
-			    'avatar' => 'avatar',
-			    'date_naissance' => 'date_naissance',
-			    'sexe' => 'sexe',
-			    'etat_civil' => 'etat_civil',
-			    'adresse' => 'adresse',
-			    'code_postal' => 'code_postal',
-			    'ville' => 'ville',
-			    'pays' => 'pays',
-			    'site_web' =>'site_web'
-		 ),
+				'prenom' => 'Prénom',
+				'nom' => 'nom',
+				'email' => 'email',
+				'telephone' => 'téléphone',
+				'autre_tel' => 'Autre téléphone',
+				// 'mdp' => 'mdp',
+				'pseudo' => 'Pseudo',
+				'avatar' => 'avatar',
+				'date_naissance' => 'date de naissance',
+				'sexe' => 'Sexe',
+				'etat_civil' => 'Etat civil',
+				'adresse' => 'Adresse',
+				'code_postal' => 'Code postal',
+				'ville' => 'Ville',
+				'pays' => 'Pays',
+				'site_web' =>'Site web'
+			),
 			'largeur_tableau' => '12'
 		);
 		break;
@@ -118,7 +118,6 @@ function table_choisie($table){
 
 		}
 		return $data;
-
 	}
 
 	function table_liste($pdoCV, $table){
@@ -177,10 +176,11 @@ function table_choisie($table){
 		$contenu .= '    </div>';
 		$contenu .= '</div>';
 		$contenu .= '<div class="row">';
-		$contenu .= '    <button onclick="form_ajout(0)" type="button" class="btn btn-primary">';
-		$contenu .= '    Ajout';
-		$contenu .= '                            </button>';
-
+		if ($table != 't_utilisateurs'){
+			$contenu .= '    <button onclick="form_ajout(0)" type="button" class="btn btn-primary">';
+			$contenu .= '    Ajout';
+			$contenu .= '                            </button>';
+		}
 		$contenu .= '</div>';
 
 		$contenu .= '<script src="js/ajax.js"></script>';
@@ -230,7 +230,7 @@ function table_choisie($table){
 
 	// fonction pour voir si un utilisateur est connecté:
 	function userConnecte(){
-		if(isset($_SESSION['membre'])){
+		if(isset($_SESSION['utilisateur'])){
 			return TRUE;
 		}
 		else{
@@ -241,7 +241,7 @@ function table_choisie($table){
 
 	// Fonction pour voir si l'utilisateur est admin :
 	function userAdmin(){
-		if(userConnecte() && $_SESSION['membre']['statut'] == 1){
+		if(userConnecte() && $_SESSION['utilisateur']['statut'] == 1){
 			return TRUE;
 		}
 		else{

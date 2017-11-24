@@ -17,7 +17,8 @@
                 <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li> -->
                 <li><a href="index.php">Accueil</a></li>
-                <li><a class="menu-ajax" href="?table=t_utilisateurs">Profil</a></li>
+                <li><a href="utilisateur.php">Profil</a></li>
+                <!-- <li><a class="menu-ajax" href="?table=t_utilisateurs">Profil</a></li> -->
                 <li class="<?= ($page=='titrailles')?'active':'' ?>"><a class="menu-ajax" href="?table=t_titre_cv">Titrailles</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parcours<span class="caret"></span></a>
@@ -54,7 +55,7 @@
                 <button type="submit" class="btn btn-default">Chercher</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">Déconnexion</a></li>
+                <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
