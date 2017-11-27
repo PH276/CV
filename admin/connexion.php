@@ -1,16 +1,35 @@
 <?php
-require_once ('inc/init.inc.php');
+session_start();
+require_once('inc/parametres.inc.php');
+
+// Connexion à la base de donnée
+$pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+	PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+// initialisation de variables
+$titre_page = '';
+$page = '';
+$msg = ''; // message pour l'utilisateur
+
+
+// chemins
+define('RACINE_SITE', '/cv_V2/admin/');
+
+require_once('inc/fonctions.inc.php');
+
 $page = 'connexion';
 
 if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
+    session_destroy();
     unset($_SESSION['utilisateur']);
-    header('location:connexion.php');
+    header('location:../.');
 }
 
-if (userAdmin()){
-    header('location:utilisateur.php');
-}
-
+// if (userAdmin()){
+//     header('location:utilisateur.php');
+// }
+//
 if (!empty($_POST)){
     debug($_POST);
 
@@ -30,7 +49,7 @@ if (!empty($_POST)){
                     }
                 }
                 // debug($_SESSION);
-                header("location:utilisateur.php");
+                header("location:index.php");
             }
             else{
                 $msg .= '<div class="erreur">mot de passe erroné.</div>';

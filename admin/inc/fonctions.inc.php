@@ -154,7 +154,28 @@ function table_choisie($table){
 			$contenu .= '                <tr>';
 			foreach($_SESSION['table']['colonnes'] as $key =>$colonne) {
 				// debug($ligne);
-				$contenu .= '                    <td>'.$ligne["$key"].'</td>';
+
+				switch ($key){
+					case 'telephone' :
+					case 'autre_tel' :
+					$affiche = wordwrap($ligne["$key"], 2, ' ', true);
+					break;
+
+					case 'date_naissance' :
+					$affiche = substr($ligne["$key"], 8) . '/';
+					$affiche .= substr($ligne["$key"], 5, 2) . '/';
+					$affiche .= substr($ligne["$key"], 0, 4);
+					break;
+
+					default:
+					$affiche = $ligne["$key"];
+
+				}
+
+
+
+				$contenu .= '                    <td>'.$affiche.'</td>';
+				// $contenu .= '                    <td>'.$ligne["$key"].'</td>';
 			}
 			$contenu .= '                    <td class="text-center">';
 

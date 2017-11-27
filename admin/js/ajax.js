@@ -1,3 +1,4 @@
+// validation d'un formulaire de saisie pour la modification ou l'insertion de données pour une table
 $('#formulaire').on('submit', function(e){
     e.preventDefault();
     tab = $(this)[0].elements;
@@ -33,6 +34,7 @@ $('#formulaire').on('submit', function(e){
 
 });
 
+// fonction déclenchée à la demande de supprimer la ligne d'une liste  d'une table
 function supp(id){
 
     var indexId = id;
@@ -61,6 +63,7 @@ function supp(id){
     };
 }
 
+// fonction déclenchée à la demande d'jouter ligne à une table
 function form_ajout(id){
     var xhr = new XMLHttpRequest();
 

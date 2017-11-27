@@ -17,8 +17,8 @@
                 <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li> -->
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="utilisateur.php">Profil</a></li>
-                <!-- <li><a class="menu-ajax" href="?table=t_utilisateurs">Profil</a></li> -->
+                <!-- <li><a href="utilisateur.php">Profil</a></li> -->
+                <li><a class="menu-ajax" href="?table=t_utilisateurs">Profil</a></li>
                 <li class="<?= ($page=='titrailles')?'active':'' ?>"><a class="menu-ajax" href="?table=t_titre_cv">Titrailles</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parcours<span class="caret"></span></a>
@@ -37,26 +37,28 @@
                     </ul>
                 </li>
                 <!-- <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
-                    <ul id="menu" class="dropdown-menu">
-                        <li><a href="?table=t_competences">Compétences</a></li>
-                        <li><a href="?table=t_titre_cv">Titrailles</a></li>
-                        <li><a href="?table=t_experiences">Experiences</a></li>
-                        <li><a href="?table=t_realisations">Réalisations</a></li>
-                        <li><a href="?table=t_formations">Formations</a></li>
-                        <li><a href="?table=t_loisirs">Loisirs</a></li>
-                    </ul>
-                </li> -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
+                <ul id="menu" class="dropdown-menu">
+                <li><a href="?table=t_competences">Compétences</a></li>
+                <li><a href="?table=t_titre_cv">Titrailles</a></li>
+                <li><a href="?table=t_experiences">Experiences</a></li>
+                <li><a href="?table=t_realisations">Réalisations</a></li>
+                <li><a href="?table=t_formations">Formations</a></li>
+                <li><a href="?table=t_loisirs">Loisirs</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Chercher</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </li> -->
+    </ul>
+    <form class="navbar-form navbar-left">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Chercher</button>
+    </form>
+    <?php if (userConnecte()) : ?>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
+        </ul>
+    <?php endif; ?>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>

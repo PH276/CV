@@ -1,9 +1,5 @@
 <?php require_once('inc/init.inc.php'); ?>
 <?php
-if (!userConnecte()) {
-    header('location:connexion.php');
-}
-
 $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id='1'");
 $ligne_utilisateur = $sql->fetch(PDO::FETCH_ASSOC);
 
@@ -27,11 +23,13 @@ $ligne_utilisateur = $sql->fetch(PDO::FETCH_ASSOC);
                     switch ($indice){
                         case 'telephone' :
                         case 'autre_tel' :
-                         $affiche = wordwrap($valeur, 2, ' ', true);
+                        $affiche = wordwrap($valeur, 2, ' ', true);
                         break;
 
                         case 'date_naissance' :
-                        $affiche = date ('d m Y', $valeur);
+                        $affiche = substr($valeur, 8);
+                        $affiche .= substr($valeur, 5);
+                        $affiche .= substr($valeur, 0, 4);
                         break;
 
                         default:

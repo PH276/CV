@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once('parametres.inc.php');
 
 // Connexion à la base de donnée
@@ -17,7 +18,11 @@ $msg = ''; // message pour l'utilisateur
 define('RACINE_SITE', '/WF3-PHP/site/');
 
 require_once('fonctions.inc.php');
-
+// debug($_SESSION);
 // récupération de l'utilisateur principal (le 1er de la table)
 // $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id='1'");
 // $ligne_utilisateur = $sql->fetch(PDO::FETCH_ASSOC);
+
+if (!userConnecte()) {
+    header('location:connexion.php');
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 23 nov. 2017 à 15:48
+-- Généré le :  lun. 27 nov. 2017 à 09:20
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -152,7 +152,7 @@ CREATE TABLE `t_utilisateurs` (
 --
 
 INSERT INTO `t_utilisateurs` (`id`, `prenom`, `nom`, `email`, `telephone`, `autre_tel`, `mdp`, `pseudo`, `avatar`, `date_naissance`, `sexe`, `etat_civil`, `adresse`, `code_postal`, `ville`, `pays`, `site_web`, `statut`) VALUES
-(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@lepoles', NULL, 0174546406, '123456789', 'PH276', 'pashuit.jpg', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 0);
+(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@lepoles.com', 0000000000, 0174546406, '123456', 'PH276', 'pashuit.jpg', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 1);
 
 --
 -- Index pour les tables déchargées
@@ -233,7 +233,7 @@ ALTER TABLE `t_formations`
 -- AUTO_INCREMENT pour la table `t_loisirs`
 --
 ALTER TABLE `t_loisirs`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `t_realisations`
@@ -245,7 +245,7 @@ ALTER TABLE `t_realisations`
 -- AUTO_INCREMENT pour la table `t_reseaux`
 --
 ALTER TABLE `t_reseaux`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `t_titre_cv`

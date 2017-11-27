@@ -3,6 +3,8 @@ $(document).ready(function() {
     // $('#menu li a').on('click', function(e){
     $('.menu-ajax').on('click', function(e){
         e.preventDefault();
+        // document.location.href = "http://localhost/CV_v2/admin/index.php";
+        // console.log(document.location.href);
         var url= e.currentTarget.toString();
         var indexTable = url.lastIndexOf('table');
 
