@@ -35,8 +35,8 @@ $('#formulaire').on('submit', function(e){
 });
 
 // fonction déclenchée à la demande de supprimer la ligne d'une liste  d'une table
-function supp(id){
-
+function suppr(id){
+console.log('test');
     var indexId = id;
     var xhr = new XMLHttpRequest();
     var parameters = "id="+id;
@@ -51,20 +51,22 @@ function supp(id){
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", "table_liste.php", true);
-    xhr.setRequestHeader("Content-type",
-    "application/x-www-form-urlencoded");
+    // xhr.setRequestHeader("Content-type",    "application/x-www-form-urlencoded");
     xhr.send();
 
     xhr.onreadystatechange = function(){
         if (xhr.readyState == 4 && xhr.status == 200){
             var obj = JSON.parse(xhr.responseText);
-            $("#affichage").html(obj);
+            // console.log(obj);
+            $("#affichage").html(obj.contenu);
+            $("#title").html(obj.title);
         }
     };
 }
 
 // fonction déclenchée à la demande d'jouter ligne à une table
 function form_ajout(id){
+    console.log('ajout');
     var xhr = new XMLHttpRequest();
 
     xhr.open("POST", "table_form.php", true);

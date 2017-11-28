@@ -11,11 +11,12 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
 // initialisation de variables
 $titre_page = '';
 $page = '';
+$title = '';
 $msg = ''; // message pour l'utilisateur
 
 
 // chemins
-define('RACINE_SITE', '/WF3-PHP/site/');
+define('RACINE_SITE', '/admin/');
 
 require_once('fonctions.inc.php');
 // debug($_SESSION);

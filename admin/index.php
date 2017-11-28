@@ -7,7 +7,6 @@
 // $ligne = $req->fetch(PDO::FETCH_ASSOC);
 // debug($req->getColumnMeta(0));
 // debug($pdoCV);
-
  ?>
 <main id="affichage" class="container-fluid">
 </main>

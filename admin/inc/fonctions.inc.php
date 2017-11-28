@@ -47,7 +47,7 @@ function table_choisie($table){
 		case 't_competences' :
 		$data = array(
 			'table' => 't_competences',
-			'affiche_nom_table' => 'competences',
+			'affiche_nom_table' => 'compétences',
 			'colonnes' => array('competence' => 'Compétence', 'c_niveau' => 'Niveau en %'),
 			'largeur_tableau' => '4'
 		);
@@ -57,7 +57,7 @@ function table_choisie($table){
 		case 't_titre_cv' :
 		$data = array(
 			'table' => 't_titre_cv',
-			'affiche_nom_table' => 'Titre CV',
+			'affiche_nom_table' => 'titre CV',
 			'colonnes' => array('titre_cv' => 'Titre', 'accroche' => 'Accroche', 'logo' => 'Logo'),
 			'largeur_tableau' => '6'
 		);
@@ -124,6 +124,7 @@ function table_choisie($table){
 		$req= $pdoCV->prepare("SELECT * FROM ".$table);
 		$req->execute();
 		$nbr_lignes = $req-> rowCount();
+		$retour = array();
 		$contenu = '';
 
 		$lignes = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -183,7 +184,7 @@ function table_choisie($table){
 			$contenu .= '                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>';
 			$contenu .= '                            </button>';
 
-			$contenu .= '                            <button onclick="supp('.$ligne['id'].')"  type="button" class="btn btn-danger">';
+			$contenu .= '                            <button onclick="suppr('.$ligne['id'].')"  type="button" class="btn btn-danger">';
 			$contenu .= '                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>';
 			$contenu .= '                            </button>';
 
@@ -204,9 +205,15 @@ function table_choisie($table){
 		}
 		$contenu .= '</div>';
 
-		$contenu .= '<script src="js/ajax.js"></script>';
+		// $contenu .= '<script src="js/ajax.js"></script>';
+		// return $contenu;
 
-		return $contenu;
+		$retour['contenu'] = $contenu;
+		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur']['pseudo'];
+
+
+		return $retour;
+
 
 	}
 
@@ -214,6 +221,7 @@ function table_choisie($table){
 		$action=($id==0)?'ajouter':'modifier';
 
 		$contenu = '';
+		$retour = array();
 		$req= $pdoCV->prepare("SELECT * FROM " . $table . " WHERE id=" . $id);
 		$req->execute();
 		$ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -244,8 +252,12 @@ function table_choisie($table){
 		$contenu .= '		</form>';
 
 		$contenu .= '<script src="js/ajax.js"></script>';
-		return $contenu;
 
+		// return $contenu;
+		$retour['contenu'] = $contenu;
+		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur']['pseudo'];
+
+		return $retour;
 
 	}
 

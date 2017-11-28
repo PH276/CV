@@ -36,29 +36,18 @@
                         <li><a class="menu-ajax" href="?table=t_reseaux">Réseaux</a></li>
                     </ul>
                 </li>
-                <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tables<span class="caret"></span></a>
-                <ul id="menu" class="dropdown-menu">
-                <li><a href="?table=t_competences">Compétences</a></li>
-                <li><a href="?table=t_titre_cv">Titrailles</a></li>
-                <li><a href="?table=t_experiences">Experiences</a></li>
-                <li><a href="?table=t_realisations">Réalisations</a></li>
-                <li><a href="?table=t_formations">Formations</a></li>
-                <li><a href="?table=t_loisirs">Loisirs</a></li>
             </ul>
-        </li> -->
-    </ul>
-    <form class="navbar-form navbar-left">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Chercher</button>
-    </form>
-    <?php if (userConnecte()) : ?>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
-        </ul>
-    <?php endif; ?>
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Chercher</button>
+            </form>
+            <?php if (userConnecte()) : ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
+                </ul>
+            <?php endif; ?>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>

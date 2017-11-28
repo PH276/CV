@@ -5,88 +5,97 @@ require_once('inc/parametres.inc.php');
 // Connexion à la base de donnée
 $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-	PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
-// initialisation de variables
-$titre_page = '';
-$page = '';
-$msg = ''; // message pour l'utilisateur
+    // initialisation de variables
+    $titre_page = '';
+    $title = 'connexion - Admin';
+    $msg = ''; // message pour l'utilisateur
 
 
-// chemins
-define('RACINE_SITE', '/cv_V2/admin/');
+    // chemins
+    define('RACINE_SITE', '/cv_V2/admin/');
 
-require_once('inc/fonctions.inc.php');
+    require_once('inc/fonctions.inc.php');
 
-$page = 'connexion';
+    $page = 'connexion';
 
-if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
-    session_destroy();
-    unset($_SESSION['utilisateur']);
-    header('location:../.');
-}
+    if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
+        session_destroy();
+        unset($_SESSION['utilisateur']);
+        header('location:../.');
+    }
 
-// if (userAdmin()){
-//     header('location:utilisateur.php');
-// }
-//
-if (!empty($_POST)){
-    debug($_POST);
+    // if (userAdmin()){
+    //     header('location:utilisateur.php');
+    // }
+    //
+    if (!empty($_POST)){
+        debug($_POST);
 
-    // verification pseudo
-    if (!empty($_POST['email']) && !empty($_POST['mdp'])){
-        $resultat = $pdoCV->prepare("SELECT * FROM t_utilisateurs WHERE email = :email");
-        $resultat->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-        $resultat->execute();
-        if ($resultat->rowCount() > 0){
-            // nous aurions pu proposer 2 à 3 variantes de  son pseudo, en ayant vérifié qu'ils sont dispo
-            $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
+        // verification pseudo
+        if (!empty($_POST['email']) && !empty($_POST['mdp'])){
+            $resultat = $pdoCV->prepare("SELECT * FROM t_utilisateurs WHERE email = :email");
+            $resultat->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+            $resultat->execute();
+            if ($resultat->rowCount() > 0){
+                // nous aurions pu proposer 2 à 3 variantes de  son pseudo, en ayant vérifié qu'ils sont dispo
+                $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
 
-            if ($ligne_utilisateur['mdp'] == $_POST['mdp']){ // tout est OK
-                foreach($ligne_utilisateur as $key => $val){
-                    if ($key != 'mdp'){
-                        $_SESSION['utilisateur'][$key] = $val;
+                if ($ligne_utilisateur['mdp'] == $_POST['mdp']){ // tout est OK
+                    foreach($ligne_utilisateur as $key => $val){
+                        if ($key != 'mdp'){
+                            $_SESSION['utilisateur'][$key] = $val;
+                        }
                     }
+                    // debug($_SESSION);
+                    header("location:index.php");
                 }
-                // debug($_SESSION);
-                header("location:index.php");
+                else{
+                    $msg .= '<div class="erreur">mot de passe erroné.</div>';
+                }
             }
             else{
-                $msg .= '<div class="erreur">mot de passe erroné.</div>';
+                $msg .= '<div class="erreur">L\'email '.$_POST['email'].' n\'existe pas disponible, Veuillez en choisir un autre.</div>';
             }
         }
         else{
-            $msg .= '<div class="erreur">L\'email '.$_POST['email'].' n\'existe pas disponible, Veuillez en choisir un autre.</div>';
+            $msg .=  '<div class="erreur">Veuillez renseigner un email et un mot de passe</div>';
         }
+        // -----------------------------------------------------------
     }
-    else{
-        $msg .=  '<div class="erreur">Veuillez renseigner un email et un mot de passe</div>';
-    }
-    // -----------------------------------------------------------
-}
 
-require_once ('inc/head.inc.php');
-require_once ('inc/nav.inc.php');
-?>
+    require_once ('inc/head.inc.php');
+    // require_once ('inc/nav.inc.php');
+    ?>
 
-<!--  contenu HTML  -->
-<h1>Connexion</h1>
-<form method="post" action="">
-    <?= $msg; ?>
+    <!--  contenu HTML  -->
+    <div class="container">
+        <div class="row">
+            <div id="connexion" class="col-md-4 col-md-offset-4">
+                <h1>Connexion</h1>
 
-    <div class="form-group">
+                <form method="post" action="">
+                    <?= $msg; ?>
 
-    <label for="pseudo">Email :</label>
-    <input type="text" id="email" name="email" value="<?= (isset($_POST['email']))?$_POST['email']:'' ?>" >
-</div>
+                    <div class="form-group">
 
-<div class="form-group">
-    <label for="mdp">Mot de passe :</label>
-    <input type="password" id="mdp" name="mdp"  value="<?= (isset($mdp))?$mdp:'' ?>">
-</div>
+                        <div class="form-group">
+                            <label for="pseudo">Email</label>
+                            <input class="form-control" type="text" id="email" name="email" value="<?= (isset($_POST['email']))?$_POST['email']:'' ?>" >
+                        </div>
+                    </div>
 
-    <input type="submit" class="btn btn-primary" value="Connexion">
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe</label>
+                        <input class="form-control" type="password" id="mdp" name="mdp"  value="<?= (isset($mdp))?$mdp:'' ?>">
+                    </div>
 
-</form>
+                    <input type="submit" class="btn btn-primary btn-block" value="Se connecter">
+                </form>
+            </div><!-- fin <div class="col-md-4 col-mad-offset-4"> -->
+        </div><!-- fin <div class="row">         -->
+    </div><!-- fin     <div class="container"> -->
 
-<?php require_once ('inc/footer.inc.php'); ?>
+
+                <?php require_once ('inc/footer.inc.php'); ?>

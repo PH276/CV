@@ -10,6 +10,10 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Admin : <?= ($ligne_utilisateur['pseudo']); ?></title>
+    <?php
+    $title = (isset($_SESSION['utilisateur']))?'Admin : '.$_SESSION['utilisateur']['pseudo']:$title;
+    ?>
+
+    <title id="title"><?= $title ?></title>
 </head>
 <body>
