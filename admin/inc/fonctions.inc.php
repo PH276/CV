@@ -180,11 +180,13 @@ function table_choisie($table){
 			}
 			$contenu .= '                    <td class="text-center">';
 
-			$contenu .= '                            <button type="button" onclick="form_ajout('.$ligne['id'].')" class="btn btn-info">';
+			// $contenu .= '                            <button type="button" onclick="form_ajout('.$ligne['id'].')" class="btn btn-info">';
+			$contenu .= '                            <button type="button" class="btn btn-info modif" data-id="' . $ligne['id'] . '">';
 			$contenu .= '                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>';
 			$contenu .= '                            </button>';
 
-			$contenu .= '                            <button onclick="suppr('.$ligne['id'].')"  type="button" class="btn btn-danger">';
+			// $contenu .= '                            <button onclick="suppr('.$ligne['id'].')"  type="button" class="btn btn-danger">';
+			$contenu .= '                            <button type="button" class="btn btn-danger suppr" data-id="' . $ligne['id'] . '">';
 			$contenu .= '                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>';
 			$contenu .= '                            </button>';
 
@@ -199,7 +201,7 @@ function table_choisie($table){
 		$contenu .= '</div>';
 		$contenu .= '<div class="row">';
 		if ($table != 't_utilisateurs'){
-			$contenu .= '    <button onclick="form_ajout(0)" type="button" class="btn btn-primary">';
+			$contenu .= '    <button id="ajout" type="button" class="btn btn-primary" data-id="0">';
 			$contenu .= '    Ajout';
 			$contenu .= '                            </button>';
 		}
@@ -251,7 +253,7 @@ function table_choisie($table){
 		$contenu .= '			<button type="submit" class="btn btn-primary"  >Enregistrer</button>';
 		$contenu .= '		</form>';
 
-		$contenu .= '<script src="js/ajax.js"></script>';
+		// $contenu .= '<script src="js/ajax.js"></script>';
 
 		// return $contenu;
 		$retour['contenu'] = $contenu;
