@@ -1,14 +1,29 @@
 @charset "utf_8";
 body{
-    background: #39f;
+    background: ;
+    /*background: #39f;*/
 }
 
 h1{
     text-align: center;
 }
+
+/*.parent-table{
+    padding: 20px;
+}*/
+
 table{
-    border-collapse: collapse;
+    min-width : 200px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    border: 5px solid silver;
 }
+
+th, td{
+    padding: 5px;
+    border: 1px solid;
+}
+
 
 #connexion{
     border: 1px solid black;
@@ -17,3 +32,19 @@ table{
     padding-bottom: 30px;
     background: #f9f9f9;
 }
+
+.cadre-form{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    background: silver;
+}
+
+#adresse{
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-family: 'Lato', sans-serif;
+}
+
+#adresse {

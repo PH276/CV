@@ -49,7 +49,7 @@ function table_choisie($table){
 			'table' => 't_competences',
 			'affiche_nom_table' => 'compétences',
 			'colonnes' => array('competence' => 'Compétence', 'c_niveau' => 'Niveau en %'),
-			'largeur_tableau' => '4'
+			'largeur_tableau' => '3'
 		);
 		break;
 
@@ -99,7 +99,7 @@ function table_choisie($table){
 				'table' => 't_loisirs',
 				'affiche_nom_table' => 'loisirs',
 				'colonnes' => array('loisir' => 'Loisirs'),
-				'largeur_tableau' => '4'
+				'largeur_tableau' => '3'
 			);
 			break;
 
@@ -131,7 +131,10 @@ function table_choisie($table){
 		// debug($lignes);
 		$contenu .= '<h1>Liste des '.$_SESSION['table']['affiche_nom_table'].'</h1>';
 
-		$contenu .= '<p>Il ';
+
+		$contenu .= '<div class="row">';
+		$contenu .= '    <div class="parent-table">';
+		$contenu .= '<p class="text-center">Il ';
 
 		$contenu .= ($nbr_lignes==0)?'n\'y en a pas':'y en a ';
 		$contenu .= ($nbr_lignes==0)?'':$nbr_lignes.' ';
@@ -140,9 +143,7 @@ function table_choisie($table){
 
 		$contenu .= ' </p>';
 
-		$contenu .= '<div class="row">';
-		$contenu .= '    <div class="col-md-'.$_SESSION['table']['largeur_tableau'].'">';
-		$contenu .= '        <table class="table table-bordered">';
+		$contenu .= '        <table>';
 		$contenu .= '            <tr>';
 		foreach($_SESSION['table']['colonnes'] as $titre){
 			$contenu .= '                <th class="text-center">'.$titre.'</th>';
@@ -173,8 +174,6 @@ function table_choisie($table){
 
 				}
 
-
-
 				$contenu .= '                    <td>'.$affiche.'</td>';
 				// $contenu .= '                    <td>'.$ligne["$key"].'</td>';
 			}
@@ -201,7 +200,7 @@ function table_choisie($table){
 		$contenu .= '</div>';
 		$contenu .= '<div class="row">';
 		if ($table != 't_utilisateurs'){
-			$contenu .= '    <button id="ajout" type="button" class="btn btn-primary" data-id="0">';
+			$contenu .= '    <button id="ajout" type="button" class="btn btn-primary center-block" data-id="0">';
 			$contenu .= '    Ajout';
 			$contenu .= '                            </button>';
 		}
@@ -222,20 +221,24 @@ function table_choisie($table){
 	function table_form($pdoCV, $table, $id){
 		$action=($id==0)?'ajouter':'modifier';
 
-		$contenu = '';
 		$retour = array();
 		$req= $pdoCV->prepare("SELECT * FROM " . $table . " WHERE id=" . $id);
 		$req->execute();
 		$ligne = $req->fetch(PDO::FETCH_ASSOC);
 
+		$contenu = '';
+		$contenu = '		<div class="container">';
+		$contenu = '	        <div class="row">';
+		$contenu = '	            <div class="col-md-4 col-md-offset-4 cadre-form">';
+
 		$contenu .= '<h1>'.$_SESSION['table']['affiche_nom_table'].' à '.$action.' </h1>';
-		$contenu .= '		<form id="formulaire" action="table_ins.php" method="post" class="form-inline">';
+		$contenu .= '		<form id="formulaire" action="table_ins.php" method="post">';
 		// $contenu .= '		<form id="formulaire"  class="form-inline">';
 		$contenu .= '				<input hidden type="number" name="id" value="'.$id.'">';
 		foreach ($_SESSION['table']['colonnes'] as $key => $col){
 
 			$contenu .= '			<div class="form-group">';
-			// $contenu .= '				<input type="text" class="form-control">';
+			$contenu .= '				<label for="' . $key . '">' . $_SESSION['table']['colonnes'][$key] . '</label>';
 			$contenu .= '				<input type="text" class="form-control"  name="'
 			.$key
 			.'" placeholder="'
@@ -250,8 +253,11 @@ function table_choisie($table){
 		// $contenu .= '				<input type="number" class="form-control" name="c_niveau" id="c_niveau" placeholder="Inserez le niveau"  value="'.$c_niveau.'">';
 		// $contenu .= '			</div>';
 
-		$contenu .= '			<button type="submit" class="btn btn-primary"  >Enregistrer</button>';
+		$contenu .= '			<button type="submit" class="btn btn-primary center-block"  >Enregistrer</button>';
 		$contenu .= '		</form>';
+		$contenu .= '			</div>';
+		$contenu .= '			</div>';
+		$contenu .= '			</div>';
 
 		// $contenu .= '<script src="js/ajax.js"></script>';
 

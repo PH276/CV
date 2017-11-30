@@ -14,7 +14,7 @@
         <div id="portrait">
             <a href="index.php">
                 <p>Pascal HUITOREL</p>
-                <img class="cadre-rond" src="img/portrait.png" alt="portrait">
+                <img class="cadre-rond" src="photos/portrait.png" alt="portrait">
             </a>
         </div>
         <div id="titre">

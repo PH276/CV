@@ -81,7 +81,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                     <div class="form-group">
 
                         <div class="form-group">
-                            <label for="pseudo">Email</label>
+                            <label for="email">Email</label>
                             <input class="form-control" type="text" id="email" name="email" value="<?= (isset($_POST['email']))?$_POST['email']:'' ?>" >
                         </div>
                     </div>
@@ -91,7 +91,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                         <input class="form-control" type="password" id="mdp" name="mdp"  value="<?= (isset($mdp))?$mdp:'' ?>">
                     </div>
 
-                    <input type="submit" class="btn btn-primary btn-block" value="Se connecter">
+                    <input type="submit" class="btn btn-primary center-block" value="Se connecter">
                 </form>
             </div><!-- fin <div class="col-md-4 col-mad-offset-4"> -->
         </div><!-- fin <div class="row">         -->
