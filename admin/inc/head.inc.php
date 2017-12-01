@@ -9,7 +9,12 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- ckeditor -->
+    <!-- <script src="https://cdn.ckeditor.com/4.7.3/standard-all/ckeditor.js"></script>
+	<link href="http://sdk.ckeditor.com/theme/css/sdk-inline.css" rel="stylesheet"> -->
+    
     <link rel="stylesheet" href="css/style.css">
+
 
     <?php
     $title = (isset($_SESSION['utilisateur']))?'Admin : '.$_SESSION['utilisateur']['pseudo']:$title;

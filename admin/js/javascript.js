@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+
+
+
+
+
+
     // $('#menu li a').on('click', function(e){
     $('.menu-ajax').on('click', function(e){
         e.preventDefault();

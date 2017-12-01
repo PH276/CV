@@ -121,7 +121,7 @@ function table_choisie($table){
 	}
 
 	function table_liste($pdoCV, $table){
-		$req= $pdoCV->prepare("SELECT * FROM ".$table);
+		$req= $pdoCV->prepare("SELECT * FROM ".$table." WHERE id_utilisateur=".$_SESSION['utilisateur']['id']);
 		$req->execute();
 		$nbr_lignes = $req-> rowCount();
 		$retour = array();

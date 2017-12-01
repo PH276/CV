@@ -1,7 +1,7 @@
 @charset "utf_8";
 body{
-    background: ;
-    /*background: #39f;*/
+    /*background: ;*/
+    background: #39f;
 }
 
 h1{
@@ -47,4 +47,6 @@ th, td{
     font-family: 'Lato', sans-serif;
 }
 
-#adresse {
+.text-leger{
+    color: silver;
+}
