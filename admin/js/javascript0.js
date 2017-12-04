@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         var parameters = url.substring(indexTable);
 
-        xhr.open("POST", "table_liste.php", true);
+        xhr.open("POST", "table_liste.php", false);
         xhr.setRequestHeader("Content-type",
         "application/x-www-form-urlencoded");
         xhr.send(parameters);

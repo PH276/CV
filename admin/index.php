@@ -2,11 +2,32 @@
 <?php require_once('inc/head.inc.php'); ?>
 <?php require_once('inc/nav.inc.php'); ?>
 <?php
-$req = $pdoCV -> query("SELECT e_titre FROM t_experiences WHERE id_utilisateur='1' LIMIT 0, 3");
+
+// données de l'utilisateur
+extract ($_SESSION['utilisateur']);
+
+// réseaux
+$req = $pdoCV -> query("SELECT * FROM t_reseaux WHERE id_utilisateur=$statut LIMIT 0, 10");
+$req -> execute();
+$reseaux = $req->fetchAll(PDO::FETCH_ASSOC);
+
+// experiences
+$req = $pdoCV -> query("SELECT e_titre FROM t_experiences WHERE id_utilisateur=$statut LIMIT 0, 3");
 $req -> execute();
 $experiences = $req->fetchAll(PDO::FETCH_ASSOC);
-debug($experiences);
-extract ($_SESSION['utilisateur']);
+
+// formations
+$req = $pdoCV -> query("SELECT f_titre FROM t_formations WHERE id_utilisateur=$statut LIMIT 0, 3");
+$req -> execute();
+$formations = $req->fetchAll(PDO::FETCH_ASSOC);
+
+// realisations
+$req = $pdoCV -> query("SELECT r_titre FROM t_realisations WHERE id_utilisateur=$statut LIMIT 0, 3");
+$req -> execute();
+$realisations = $req->fetchAll(PDO::FETCH_ASSOC);
+
+// debug($experiences);
+
 ?>
 <main id="affichage" class="container-fluid">
     <div class="row">
@@ -21,6 +42,17 @@ extract ($_SESSION['utilisateur']);
             <?= wordwrap($telephone, 2, ' ', true)  ?><br>
             <?= wordwrap($autre_tel, 2, ' ', true) ?><br>
             <?= $email ?><br>
+            <?php foreach ($reseaux as $reseau) : ?>
+                <?php
+                // $img = ($reseau['logo'] == '')?'':"img/" . $reseau['logo'];
+                $logo = (substr($reseau['logo'], 0, 3) == "fa-")?
+                "<i class='fa " . $reseau['logo'] . "' aria-hidden='true'></i>":
+                "<img width='20' src='img/" . $reseau['logo'] . "' alt=''>";
+                 ?>
+                <a href="<?= $reseau['lien'] ?>" target="_blank"><?= $logo ?></a>
+
+            <?php endforeach; ?>
+
             <!-- <div id="introduction">
                 <h1>Inline Editor <a class="documentation" href="http://docs.ckeditor.com/#!/guide/dev_inline">Documentation</a></h1>
 
@@ -64,15 +96,33 @@ extract ($_SESSION['utilisateur']);
     </div>
     <div class="row">
         <div class="col-md-4">
-            <?php foreach ($experiences as $experience) {
-                echo '<p>' . $experience . '</p>';
-            } ?>
-        </div>
-        <div class="col-md-4">
+            <h2>Expériences :</h2>
+            <ul>
+                <?php foreach ($experiences as $experience) {
+                    echo '<li>' . $experience['e_titre'] . '</li>';
+                } ?>
 
+            </ul>
         </div>
-        <div class="col-md-4">
 
+        <div class="col-md-4">
+            <h2>Formations :</h2>
+            <ul>
+                <?php foreach ($formations as $formation) {
+                    echo '<li>' . $formation['f_titre'] . '</li>';
+                } ?>
+
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Réalisations :</h2>
+            <ul>
+                <?php foreach ($realisations as $realisation) {
+                    echo '<li>' . $realisation['r_titre'] . '</li>';
+                } ?>
+
+            </ul>
         </div>
     </div>
 </main>
