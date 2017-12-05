@@ -6,10 +6,12 @@ body{
 
 h1{
     text-align: center;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 h2{
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
 }
@@ -17,6 +19,33 @@ h2{
 /*.parent-table{
     padding: 20px;
 }*/
+
+.fond-cadre{
+    background: #fff;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/*.centre{
+    width: 90%;
+    margin: auto;
+}*/
+
+/*.img-centre{
+    width: 70%;
+    margin: auto;
+}*/
+
+.row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img[alt="ciel étoilé"]{
+    margin-top: 20px;
+}
 
 table{
     min-width : 200px;

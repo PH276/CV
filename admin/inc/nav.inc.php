@@ -34,6 +34,7 @@
                         <li><a class="menu-ajax" href="?table=t_competences">Compétences</a></li>
                         <li><a class="menu-ajax" href="?table=t_loisirs">Loisirs</a></li>
                         <li><a class="menu-ajax" href="?table=t_reseaux">Réseaux</a></li>
+                        <li><a class="menu-ajax" href="?table=t_logos">Logos</a></li>
                     </ul>
                 </li>
             </ul>

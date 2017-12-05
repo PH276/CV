@@ -23,7 +23,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
         session_destroy();
         unset($_SESSION['utilisateur']);
-        header('location:../.');
+        header('location:../');
     }
 
     // if (userAdmin()){
@@ -48,6 +48,9 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                             $_SESSION['utilisateur'][$key] = $val;
                         }
                     }
+                    $resultat = $pdoCV->query("SELECT titre_cv FROM t_titre_cv WHERE id_utilisateur=".$_SESSION['utilisateur']['id']);
+                    $_SESSION['titre_cv'] = $resultat->fetch(PDO::FETCH_ASSOC);
+
                     // debug($_SESSION);
                     header("location:index.php");
                 }

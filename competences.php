@@ -1,6 +1,6 @@
 <?php
 $page = "Compétences - ";
-include('head.php');
+include('inc/head.inc.php');
 ?>
 <main>
     <section id="competences">
@@ -103,4 +103,4 @@ include('head.php');
         </div>
     </section>
 </main>
-<?php include('footer.php'); ?>
+<?php include('inc/footer.inc.php'); ?>

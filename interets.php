@@ -1,4 +1,4 @@
-<?php include('head.php'); ?>
+<?php include('inc/head.inc.php'); ?>
     <main>
         <div id="contenu">
             <h1>Présentation</h1>
@@ -13,4 +13,4 @@
             </section>
          </div>
     </main>
-    <?php include('footer.php'); ?>
+    <?php include('inc/footer.inc.php'); ?>

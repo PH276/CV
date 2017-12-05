@@ -25,5 +25,5 @@ require_once('fonctions.inc.php');
 // $ligne_utilisateur = $sql->fetch(PDO::FETCH_ASSOC);
 
 if (!userConnecte()) {
-    header('location:connexion.php');
+    header('location:connexion.php#email');
 }

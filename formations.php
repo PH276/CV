@@ -1,6 +1,6 @@
 <?php
 $page = "Formations - ";
-include('head.php');
+include('inc/head.inc.php');
 ?>
 <main>
     <div id="formations">
@@ -73,4 +73,4 @@ include('head.php');
         </div>
     </div>
 </main>
-<?php include('footer.php'); ?>
+<?php include('inc/footer.inc.php'); ?>

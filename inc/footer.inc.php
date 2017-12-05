@@ -23,6 +23,8 @@
     </div>
     <div class="clear"></div>
 
+    <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
+
 </footer>
 </body>
 </html>

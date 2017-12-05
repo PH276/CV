@@ -1,6 +1,6 @@
 <?php
 $page = "Parcours - ";
-include('head.php');
+include('inc/head.inc.php');
  ?>
 <main>
     <section id="parcours">
@@ -103,4 +103,4 @@ include('head.php');
 
     </section>
 </main>
-<?php include('footer.php'); ?>
+<?php include('inc/footer.inc.php'); ?>

@@ -20,7 +20,7 @@ function table_choisie($table){
 		// table t_compétences
 		case 't_utilisateurs' :
 		$data = array(
-			'table' => 't_utilisateurs',
+			'table' => $table,
 			'affiche_nom_table' => 'utilisateurs',
 			'colonnes' => array(
 				'prenom' => 'Prénom',
@@ -46,7 +46,7 @@ function table_choisie($table){
 
 		case 't_competences' :
 		$data = array(
-			'table' => 't_competences',
+			'table' => $table,
 			'affiche_nom_table' => 'compétences',
 			'colonnes' => array('competence' => 'Compétence', 'c_niveau' => 'Niveau en %'),
 			'largeur_tableau' => '3'
@@ -56,8 +56,8 @@ function table_choisie($table){
 		// table t_titre_CV
 		case 't_titre_cv' :
 		$data = array(
-			'table' => 't_titre_cv',
-			'affiche_nom_table' => 'titre CV',
+			'table' => $table,
+			'affiche_nom_table' => 'titres CV',
 			'colonnes' => array('titre_cv' => 'Titre', 'accroche' => 'Accroche', 'logo' => 'Logo'),
 			'largeur_tableau' => '6'
 		);
@@ -66,7 +66,7 @@ function table_choisie($table){
 		// table t_formations
 		case 't_formations' :
 			$data = array(
-				'table' => 't_formations',
+				'table' => $table,
 				'affiche_nom_table' => 'formations',
 				'colonnes' => array('f_titre' => 'Titre', 'f_soustitre' => 'Sous-titre', 'f_dates' => 'Dates','f_description' => 'Description'),
 				'largeur_tableau' => '8'
@@ -76,7 +76,7 @@ function table_choisie($table){
 			// table t_realisations
 			case 't_realisations' :
 			$data =  array(
-				'table' => 't_realisations',
+				'table' => $table,
 				'affiche_nom_table' => 'réalisations',
 				'colonnes' => array('r_titre' => 'Titre', 'r_soustitre' => 'Sous-titre', 'r_dates' => 'Dates','r_description' => 'Description'),
 				'largeur_tableau' => '8'
@@ -86,7 +86,7 @@ function table_choisie($table){
 			// table t_experiences
 			case 't_experiences' :
 			$data =  array(
-				'table' => 't_experiences',
+				'table' => $table,
 				'affiche_nom_table' => 'expériences',
 				'colonnes' => array('e_titre' => 'Titre', 'e_soustitre' => 'Sous-titre', 'e_dates' => 'Dates','e_description' => 'Description'),
 				'largeur_tableau' => '8'
@@ -96,7 +96,7 @@ function table_choisie($table){
 			// table t_loisirs
 			case 't_loisirs' :
 			$data =  array(
-				'table' => 't_loisirs',
+				'table' => $table,
 				'affiche_nom_table' => 'loisirs',
 				'colonnes' => array('loisir' => 'Loisirs'),
 				'largeur_tableau' => '3'
@@ -106,9 +106,19 @@ function table_choisie($table){
 			// table t_reseaux
 			case 't_reseaux' :
 			$data =  array(
-				'table' => 't_reseaux',
+				'table' => $table,
 				'affiche_nom_table' => 'réseaux',
 				'colonnes' => array('nom' => 'Nom', 'lien' => 'Lien', 'logo' => 'Logo'),
+				'largeur_tableau' => '4'
+			);
+			break;
+
+			// table t_reseaux
+			case 't_logos' :
+			$data =  array(
+				'table' => $table,
+				'affiche_nom_table' => 'logos',
+				'colonnes' => array('src' => 'Source', 'alt' => 'Alternative'),
 				'largeur_tableau' => '4'
 			);
 			break;
@@ -121,7 +131,8 @@ function table_choisie($table){
 	}
 
 	function table_liste($pdoCV, $table){
-		$req= $pdoCV->prepare("SELECT * FROM ".$table." WHERE id_utilisateur=".$_SESSION['utilisateur']['id']);
+		$noUtilisateur = ($table != "t_utilisateurs")?" WHERE id_utilisateur=".$_SESSION['utilisateur']['id']:"";
+		$req= $pdoCV->prepare("SELECT * FROM ".$table.$noUtilisateur);
 		$req->execute();
 		$nbr_lignes = $req-> rowCount();
 		$retour = array();
@@ -239,13 +250,34 @@ function table_choisie($table){
 
 			$contenu .= '			<div class="form-group">';
 			$contenu .= '				<label for="' . $key . '">' . $_SESSION['table']['colonnes'][$key] . '</label>';
-			$contenu .= '				<input type="text" class="form-control"  name="'
+
+			// cas d'un champ textarea
+			$textarea = '				<textarea name="'
+			. $key
+			.'" class="form-control" placeholder="'
+			.$_SESSION["table"]["colonnes"]["$key"]
+			.' à saisir">'
+			. ((isset($ligne["$key"]))?$ligne["$key"]:"")
+			.'</textarea>';
+
+			// cas d'un champ input
+			$input = '				<input type="text" class="form-control"  name="'
 			.$key
 			.'" placeholder="'
 			.$_SESSION["table"]["colonnes"]["$key"]
 			.' à saisir"  value="'
 			. ((isset($ligne["$key"]))?$ligne["$key"]:"")
 			. '">';
+
+			// choix d'un champ textarea pour le champ 'accroche' de la table 'titre_cv'  et les champs 'description' des tables
+			$contenu .= (!strstr($key, 'description') && $key != 'accroche')?$input:$textarea;
+
+
+
+
+
+
+
 			$contenu .= '			</div>';
 		}
 

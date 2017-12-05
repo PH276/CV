@@ -1,6 +1,6 @@
 <?php
 $page = "";
-include('head.php');
+include('inc/head.inc.php');
  ?>
 <main id="presentation">
     <h1>Présentation</h1>
@@ -38,4 +38,4 @@ include('head.php');
             </section>
         </div>
     </main>
-    <?php include('footer.php'); ?>
+    <?php include('inc/footer.inc.php'); ?>
