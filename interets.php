@@ -1,4 +1,7 @@
-<?php include('inc/head.inc.php'); ?>
+<?php require_once('inc/init.inc.php');
+$page = "centres d'intérêt";
+include('inc/head.inc.php');
+ ?>
     <main>
         <div id="contenu">
             <h1>Présentation</h1>

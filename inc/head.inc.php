@@ -15,30 +15,32 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title><?php echo $page."Pascal HUITOREL"; ?></title><!-- Latest compiled and minified CSS -->
+    <title><?= $page."Pascal HUITOREL"; ?></title><!-- Latest compiled and minified CSS -->
 
 </head>
 <body>
     <header class="container-fluid">
         <div class="row">
-
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
                     <p>Pascal HUITOREL</p>
                     <img class="cadre-rond" src="photos/portrait.png" alt="portrait">
                 </a>
             </div>
+
             <div class="col-md-8" id="titre">
-                <p>Développeur web junior</p>
-                <p><span>!!! Site en construction !!!</span></p>
+                <p><strong>Développeur web junior</strong></p>
+                <!-- <p><span>!!! Site en construction !!!</span></p> -->
             </div>
-            <?php foreach ($_SESSION['logos'] as $logo) : ?>
-            <div class="col-md-2" id="icones">
-                <div class="col-md-3">
-                    <img src="img/<?= $logo['src'] ?>" width="20" alt="<?= $logo['alt'] ?>">
+
+            <div class="col-md-2">
+                <div id="icones">
+                    <!-- <div id="icones" class="col-md-10 col-md-offset-1"> -->
+                    <?php foreach ($_SESSION['logos'] as $logo) : ?>
+                        <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>">
+                    <?php endforeach; ?>
                 </div>
             </div>
-        <?php endforeach; ?>
         </div>
 
     </header>

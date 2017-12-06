@@ -1,4 +1,4 @@
-<?php
+<?php require_once('inc/init.inc.php');
 $page = "Formations - ";
 include('inc/head.inc.php');
 ?>

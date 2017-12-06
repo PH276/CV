@@ -16,7 +16,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
 
     if (!isset($_SESSION['logos'])){
 
-        $req = $pdoCV -> query("SELECT src, alt FROM t_logos WHERE id_utilisateurs='1'");
+        $req = $pdoCV -> query("SELECT src, alt FROM t_logos WHERE id_utilisateur='1'");
         $_SESSION['logos'] = $req -> fetchAll(PDO::FETCH_ASSOC);
     }
 

@@ -1,5 +1,5 @@
 <footer>
-    <div id="adresse">
+    <div class="col-md-3" id="adresse">
         <dl>
             <dd>Pascal HUITOREL</dd>
             <dd>10 rue Henri Barbusse</dd>
@@ -8,10 +8,10 @@
             <dd>pascal.huitorel@gmail.com</dd>
         </dl>
     </div>
-    <div id="docCV">
+    <div class="col-md-6" id="docCV">
         <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
     </div>
-    <div id="social">
+    <div class="col-md-3" id="social">
         <ul>
             <li><a href="https://www.linkedin.com/in/pascal-huitorel-14ab96133/?ppe=1" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
             <li><a href="https://www.viadeo.com/p/00221cjstha3qxtp/edit" target="_blank"><i class="fa fa-viadeo-square fa-2x" aria-hidden="true"></i></a></li>

@@ -4,18 +4,18 @@ body{
 
 header{
 	background: cyan;
-	padding-bottom: 10px; 
+	padding-bottom: 10px;
 	/*display: flex;
 	align-items: center;*/
 }
 
 h1{
 	padding: 25px 0;
-    font-size: 45px;
-    /*font-family: 'Anton', sans-serif;*/
-    color:#2980b9;
-    text-align: center;
-    letter-spacing: 1px;
+	font-size: 3.8em;
+	/*font-family: 'Anton', sans-serif;*/
+	color:#2980b9;
+	text-align: center;
+	letter-spacing: 1px;
 }
 
 #portrait img{
@@ -23,11 +23,46 @@ h1{
 	width: 45%;
 }
 
+#titre p:first-child{
+	font-family: arial;
+	font-weight:bold;
+	font-size: 4em;
+	line-height: 3em;
+	text-align: center;
+}
+
+/*site en construction*/
+/*#titre p:last-child{
+font-style: italic;
+font-size: 2em;
+margin-top: .5em;
+text-align: center;
+}
+
+#titre span{
+background: #ccc;
+padding: 0 10px;
+}*/
+/* fin site en construction*/
+
+
+
+#icones{
+	width: 80%;
+	margin-top:15%;
+	margin-left:10%;
+}
+
 #icones img{
-	width: 30px;
-	margin: 5px;
+	width: 20%;
+	margin: 1px;
 }
 
 .cadre-rond{
 	border-radius: 50%;
+}
+
+footer{
+	background: #383838;
+	padding: 10px;
 }
