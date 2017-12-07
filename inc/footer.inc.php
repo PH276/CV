@@ -1,29 +1,48 @@
-<footer>
-    <div class="col-md-3" id="adresse">
-        <dl>
-            <dd>Pascal HUITOREL</dd>
-            <dd>10 rue Henri Barbusse</dd>
-            <dd>92390 Villeneuve-la-Garenne</dd>
-            <dd>01 74 54 64 06</dd>
-            <dd>pascal.huitorel@gmail.com</dd>
-        </dl>
-    </div>
-    <div class="col-md-6" id="docCV">
-        <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
-    </div>
-    <div class="col-md-3" id="social">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/pascal-huitorel-14ab96133/?ppe=1" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.viadeo.com/p/00221cjstha3qxtp/edit" target="_blank"><i class="fa fa-viadeo-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://github.com/PH276" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100018829567115&sk=about&section=work" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/PH276" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.instagram.com/pascalh276/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-    <div class="clear"></div>
+<footer class="container-fluid">
+    <div class="row">
 
-    <script src = "https://use.fontawesome.com/0c1a81064b.js"> </script>
+        <div class="col-md-3">
+            <!-- <div class="col-md-3" id="adresse"> -->
+            <ul>
+                <li>Pascal HUITOREL</li>
+                <li><?= $_SESSION['utilisateur']['adresse'] ?><li>
+                <li><?= $_SESSION['utilisateur']['code_postal'] ?>
+                <?= $_SESSION['utilisateur']['ville'] ?></li>
+                <li><?= wordwrap($_SESSION['utilisateur']['telephone'], 2, ' ', true)  ?><li>
+                <li><?= wordwrap($_SESSION['utilisateur']['autre_tel'], 2, ' ', true)  ?><li>
+
+
+                <li><?= $_SESSION['utilisateur']['email'] ?></li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-center">
+            <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
+        </div>
+        <div class="col-md-3 text-right" id="logos_reseaux">
+            <ul>
+
+                <?php foreach ($_SESSION['logos_reseaux'] as $reseau) : ?>
+                    <?php
+
+                    // $img = ($reseau['logo'] == '')?'':"img/" . $reseau['logo'];
+                    $logo = (substr($reseau['logo'], 0, 3) == "fa-")?
+                    "<i class='fa " . $reseau['logo'] . " fa-2x' aria-hidden='true'></i>":
+                    "<img width='20' src='img/" . $reseau['logo'] . "' alt=''>";
+                    ?>
+
+                    <li><a href="<?= $reseau['lien'] ?>" target="_blank"><?= $logo ?></a></li>
+
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script src = "https://use.fontawesome.com/0c1a81064b.js"></script>
 
 </footer>
 </body>

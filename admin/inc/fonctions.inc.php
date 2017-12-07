@@ -131,7 +131,7 @@ function table_choisie($table){
 	}
 
 	function table_liste($pdoCV, $table){
-		$noUtilisateur = ($table != "t_utilisateurs")?" WHERE id_utilisateur=".$_SESSION['utilisateur']['id']:"";
+		$noUtilisateur = ($table != "t_utilisateurs")?" WHERE id_utilisateur=".$_SESSION['utilisateur_bo']['id']:"";
 		$req= $pdoCV->prepare("SELECT * FROM ".$table.$noUtilisateur);
 		$req->execute();
 		$nbr_lignes = $req-> rowCount();
@@ -221,7 +221,7 @@ function table_choisie($table){
 		// return $contenu;
 
 		$retour['contenu'] = $contenu;
-		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur']['pseudo'];
+		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur_bo']['pseudo'];
 
 
 		return $retour;
@@ -295,7 +295,7 @@ function table_choisie($table){
 
 		// return $contenu;
 		$retour['contenu'] = $contenu;
-		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur']['pseudo'];
+		$retour['title'] = 't'.$_SESSION['table']['affiche_nom_table'] . ' - Admin : ' . $_SESSION['utilisateur_bo']['pseudo'];
 
 		return $retour;
 
@@ -303,7 +303,7 @@ function table_choisie($table){
 
 	// fonction pour voir si un utilisateur est connecté:
 	function userConnecte(){
-		if(isset($_SESSION['utilisateur'])){
+		if(isset($_SESSION['utilisateur_bo'])){
 			return TRUE;
 		}
 		else{
@@ -314,7 +314,7 @@ function table_choisie($table){
 
 	// Fonction pour voir si l'utilisateur est admin :
 	function userAdmin(){
-		if(userConnecte() && $_SESSION['utilisateur']['statut'] == 1){
+		if(userConnecte() && $_SESSION['utilisateur_bo']['statut'] == 1){
 			return TRUE;
 		}
 		else{

@@ -4,7 +4,7 @@
 <?php
 
 // données de l'utilisateur
-extract ($_SESSION['utilisateur']);
+extract ($_SESSION['utilisateur_bo']);
 
 // réseaux
 $req = $pdoCV -> query("SELECT * FROM t_reseaux WHERE id_utilisateur=$statut LIMIT 0, 10");

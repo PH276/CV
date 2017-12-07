@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <?php
-    $title = (isset($_SESSION['utilisateur']))?'Admin : '.$_SESSION['utilisateur']['pseudo']:$title;
+    $title = (isset($_SESSION['utilisateur_bo']))?'Admin : '.$_SESSION['utilisateur_bo']['pseudo']:$title;
     ?>
 
     <title id="title"><?= $title ?></title>

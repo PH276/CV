@@ -18,12 +18,40 @@ h1{
 	letter-spacing: 1px;
 }
 
+nav{
+	background: #bb8fce;
+}
+
+#presentation{
+	background: 
+}
+
+footer{
+	background: #383838;
+	padding: 10px;
+	color: white;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
+}
+
+#logos_reseaux{
+
+}
+
+#logos_reseaux li{
+	display: inline-block;
+
+}
+
 #portrait img{
 	margin: auto;
 	width: 45%;
 }
 
-#titre p:first-child{
+#titre p{
 	font-family: arial;
 	font-weight:bold;
 	font-size: 4em;
@@ -60,9 +88,4 @@ padding: 0 10px;
 
 .cadre-rond{
 	border-radius: 50%;
-}
-
-footer{
-	background: #383838;
-	padding: 10px;
 }

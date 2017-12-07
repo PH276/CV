@@ -22,7 +22,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
 
     if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
         session_destroy();
-        unset($_SESSION['utilisateur']);
+        unset($_SESSION['utilisateur_bo']);
         header('location:../');
     }
 
@@ -45,10 +45,10 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                 if ($ligne_utilisateur['mdp'] == $_POST['mdp']){ // tout est OK
                     foreach($ligne_utilisateur as $key => $val){
                         if ($key != 'mdp'){
-                            $_SESSION['utilisateur'][$key] = $val;
+                            $_SESSION['utilisateur_bo'][$key] = $val;
                         }
                     }
-                    $resultat = $pdoCV->query("SELECT titre_cv FROM t_titre_cv WHERE id_utilisateur=".$_SESSION['utilisateur']['id']);
+                    $resultat = $pdoCV->query("SELECT titre_cv FROM t_titre_cv WHERE id_utilisateur=".$_SESSION['utilisateur_bo']['id']);
                     $_SESSION['titre_cv'] = $resultat->fetch(PDO::FETCH_ASSOC);
 
                     // debug($_SESSION);

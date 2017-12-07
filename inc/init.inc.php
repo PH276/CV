@@ -2,6 +2,7 @@
 session_start();
 
 require_once('parametres.inc.php');
+require_once('fonctions.inc.php');
 
 // Connexion à la base de donnée
 $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
@@ -15,15 +16,23 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     $msg = ''; // message pour l'utilisateur
 
     if (!isset($_SESSION['logos'])){
-
         $req = $pdoCV -> query("SELECT src, alt FROM t_logos WHERE id_utilisateur='1'");
         $_SESSION['logos'] = $req -> fetchAll(PDO::FETCH_ASSOC);
     }
 
+    if (!isset($_SESSION['utilisateur'])){
+        $req = $pdoCV -> query("SELECT adresse, telephone, autre_tel, email, code_postal, ville FROM t_utilisateurs WHERE id='1'");
+        $_SESSION['utilisateur'] = $req -> fetch(PDO::FETCH_ASSOC);
+    }
+
+    // if (!isset($_SESSION['logos_reseaux'])){
+        $req = $pdoCV -> query("SELECT * FROM t_reseaux WHERE id_utilisateur='1'");
+        $_SESSION['logos_reseaux'] = $req -> fetchAll(PDO::FETCH_ASSOC);
+    // }
+
     // chemins
     define('RACINE_SITE', '/');
 
-    require_once('fonctions.inc.php');
     // debug($_SESSION);
     // récupération de l'utilisateur principal (le 1er de la table)
     // $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id='1'");
@@ -32,3 +41,4 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     // if (!userConnecte()) {
     //     header('location:connexion.php#email');
     // }
+    // debug($_SESSION);

@@ -16,10 +16,6 @@ h2{
     text-align: center;
 }
 
-/*.parent-table{
-    padding: 20px;
-}*/
-
 .fond-cadre{
     background: #fff;
     border: 1px solid;
@@ -27,16 +23,6 @@ h2{
     margin: 10px;
     padding: 10px;
 }
-
-/*.centre{
-    width: 90%;
-    margin: auto;
-}*/
-
-/*.img-centre{
-    width: 70%;
-    margin: auto;
-}*/
 
 .row{
     margin-top: 20px;
@@ -68,20 +54,20 @@ th, td{
     background: #f9f9f9;
 }
 
+#adresse{
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+    overflow: hidden;
+}
+
 .cadre-form{
     border: 1px solid black;
     border-radius: 10px;
     margin-top: 30px;
     padding-bottom: 30px;
     background: silver;
-}
-
-#adresse{
-    font-size: 1.5em;
-    line-height: 1.2;
-    font-family: 'Lato', sans-serif;
-    margin: auto;
-    overflow: scroll;
 }
 
 .text-leger{
