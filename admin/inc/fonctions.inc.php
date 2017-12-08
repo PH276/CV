@@ -88,7 +88,7 @@ function table_choisie($table){
 			$data =  array(
 				'table' => $table,
 				'affiche_nom_table' => 'expériences',
-				'colonnes' => array('e_titre' => 'Titre', 'e_soustitre' => 'Sous-titre', 'e_dates' => 'Dates','e_description' => 'Description'),
+				'colonnes' => array('e_titre' => 'Titre', 'e_soustitre' => 'Sous-titre', 'e_type' => 'Type', 'e_dates' => 'Dates', 'e_description' => 'Description'),
 				'largeur_tableau' => '8'
 			);
 			break;
@@ -113,13 +113,33 @@ function table_choisie($table){
 			);
 			break;
 
-			// table t_reseaux
+			// table t_logos
 			case 't_logos' :
 			$data =  array(
 				'table' => $table,
 				'affiche_nom_table' => 'logos',
 				'colonnes' => array('src' => 'Source', 'alt' => 'Alternative'),
 				'largeur_tableau' => '4'
+			);
+			break;
+
+			// table t_points_forts
+			case 't_points_forts' :
+			$data =  array(
+				'table' => $table,
+				'affiche_nom_table' => 'points forts',
+				'colonnes' => array('point_fort' => 'Point fort'),
+				'largeur_tableau' => '3'
+			);
+			break;
+
+			// table t_points_forts
+			case 't_interets' :
+			$data =  array(
+				'table' => $table,
+				'affiche_nom_table' => 'centres d\'intérêt',
+				'colonnes' => array('centre' => 'Centres d\'intérêt'),
+				'largeur_tableau' => '3'
 			);
 			break;
 

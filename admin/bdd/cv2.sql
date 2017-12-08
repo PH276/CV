@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 08 déc. 2017 à 17:01
+-- Généré le :  jeu. 07 déc. 2017 à 14:12
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -57,21 +57,20 @@ CREATE TABLE `t_experiences` (
   `e_soustitre` varchar(50) DEFAULT NULL,
   `e_dates` varchar(50) DEFAULT NULL,
   `e_description` text,
-  `id_utilisateur` int(3) DEFAULT NULL,
-  `e_type` varchar(50) NOT NULL
+  `id_utilisateur` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `t_experiences`
 --
 
-INSERT INTO `t_experiences` (`id`, `e_titre`, `e_soustitre`, `e_dates`, `e_description`, `id_utilisateur`, `e_type`) VALUES
-(1, 'ana prog', NULL, NULL, NULL, NULL, ''),
-(2, 'ope RT', NULL, NULL, NULL, NULL, ''),
-(3, 'adm sys', NULL, NULL, NULL, NULL, ''),
-(4, 'Administrateur systèmes (assistant)', '', '', '', 1, ''),
-(5, 'Opérateur réseau et télécom', '', '', '', 1, ''),
-(6, 'analyste-programmeur', '', '', '', 1, '');
+INSERT INTO `t_experiences` (`id`, `e_titre`, `e_soustitre`, `e_dates`, `e_description`, `id_utilisateur`) VALUES
+(1, 'ana prog', NULL, NULL, NULL, NULL),
+(2, 'ope RT', NULL, NULL, NULL, NULL),
+(3, 'adm sys', NULL, NULL, NULL, NULL),
+(4, 'Administrateur systèmes (assistant)', '', '', '', 1),
+(5, 'Opérateur réseau et télécom', '', '', '', 1),
+(6, 'analyste-programmeur', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -96,30 +95,6 @@ INSERT INTO `t_formations` (`id`, `f_titre`, `f_soustitre`, `f_dates`, `f_descri
 (1, 'Licence Droit, économie et gestion, filiale économie et gestion (parcours MIAGE)', '', '', '', 1),
 (2, 'DUT RT', '', '', '', 1),
 (3, 'DUT GEII', '', '', '', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `t_interets`
---
-
-CREATE TABLE `t_interets` (
-  `id` int(3) NOT NULL,
-  `centre` varchar(50) NOT NULL,
-  `id_utilisateur` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `t_interets`
---
-
-INSERT INTO `t_interets` (`id`, `centre`, `id_utilisateur`) VALUES
-(1, 'Président du conseil syndical de ma résidence', 1),
-(2, 'trésorier de mon club de billard', 1),
-(3, 'tennis de table', 1),
-(4, 'broderie (point de croix compté)', 1),
-(5, 'marche', 1),
-(6, 'développement informatique', 1);
 
 -- --------------------------------------------------------
 
@@ -169,30 +144,6 @@ INSERT INTO `t_loisirs` (`id`, `loisir`, `id_utilisateur`) VALUES
 (40, 'popo', 1),
 (41, 'yiyi', 1),
 (42, 'titi', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `t_points_forts`
---
-
-CREATE TABLE `t_points_forts` (
-  `id` int(3) NOT NULL,
-  `point_fort` varchar(50) NOT NULL,
-  `id_utilisateur` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `t_points_forts`
---
-
-INSERT INTO `t_points_forts` (`id`, `point_fort`, `id_utilisateur`) VALUES
-(1, 'logique', 1),
-(2, 'persévérant', 1),
-(3, 'curieux', 1),
-(4, 'esprit d\'équipe', 1),
-(5, 'observateur', 1),
-(6, 'avenant', 1);
 
 -- --------------------------------------------------------
 
@@ -262,7 +213,7 @@ CREATE TABLE `t_titre_cv` (
 --
 
 INSERT INTO `t_titre_cv` (`id`, `titre_cv`, `accroche`, `logo`, `id_utilisateur`) VALUES
-(1, 'intégrateur - développeur web junior', 'Je suis passionné d\'informatique, plus précisément de programmation.\n\nMon projet est de devenir développeur web.\n\nPour commencer, j\'ai créé mon premier site web (mypetstar.fr) pour CRIS Production à sa grande satisfaction.\nPour renforcer mes compétences, je suis actuellement en formation d\'intégrateur développeur web.', '', 1);
+(1, 'intégrateur - développeur web junior', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -321,12 +272,6 @@ ALTER TABLE `t_formations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `t_interets`
---
-ALTER TABLE `t_interets`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `t_logos`
 --
 ALTER TABLE `t_logos`
@@ -336,12 +281,6 @@ ALTER TABLE `t_logos`
 -- Index pour la table `t_loisirs`
 --
 ALTER TABLE `t_loisirs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `t_points_forts`
---
-ALTER TABLE `t_points_forts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -392,12 +331,6 @@ ALTER TABLE `t_formations`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `t_interets`
---
-ALTER TABLE `t_interets`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT pour la table `t_logos`
 --
 ALTER TABLE `t_logos`
@@ -408,12 +341,6 @@ ALTER TABLE `t_logos`
 --
 ALTER TABLE `t_loisirs`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
---
--- AUTO_INCREMENT pour la table `t_points_forts`
---
-ALTER TABLE `t_points_forts`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `t_realisations`

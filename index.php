@@ -1,46 +1,71 @@
 <?php require_once('inc/init.inc.php');
 $page = "";
+
+if (!isset($_SESSION['points_forts'])){
+    $req = $pdoCV -> query("SELECT * FROM t_points_forts WHERE id_utilisateur='1'");
+    $_SESSION['points_forts'] = $req -> fetchAll(PDO::FETCH_ASSOC);
+}
+
+if (!isset($_SESSION['interets'])){
+    $req = $pdoCV -> query("SELECT * FROM t_interets WHERE id_utilisateur='1'");
+    $_SESSION['interets'] = $req -> fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+
 include('inc/head.inc.php');
 ?>
 <main id="presentation" class="container">
     <h1>Présentation</h1>
     <div class="row">
+        <div class="col-md-10 col-md-offset-1">
 
-        <section class="cadre1">
-            <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
-            <p>Mon projet est de devenir développeur web.</p>
-            <p>
-                Pour commencer, j'ai créé mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.
-                <br>
-                Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.
-            </p>
-        </section>
+            <section class="thumbnail presentation">
+                <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
+                <p>Mon projet est de devenir développeur web.</p>
+                <p>
+                    Pour commencer, j'ai créé mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.
+                    <br>
+                    Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.
+                </p>
+            </section>
+        </div>
     </div>
     <div class="row">
-        <section id="forts" class="col-md-6 cadre">
-            <h2>Points forts</h2>
-            <ul>
-                <li>Avenant</li>
-                <li>Curieux</li>
-                <li>Logique</li>
-                <li>Esprit d’équipe</li>
-                <li>Observateur</li>
-                <li>Persévérant</li>
+        <div class="col-md-3 col-md-offset-1">
 
-            </ul>
-        </section>
-        <section id="interets" class="col-md-6 cadre">
-            <h2>Centres d'intérêt</h2>
-            <ul>
-                <li>Président du conseil syndical de ma résidence</li>
-                <li>Trésorier du Billard Club de Villeneuve-la-Garenne</li>
-                <li>Billard</li>
-                <li>Marche</li>
-                <li>Tennis de table</li>
-                <li>Broderie (point de croix compté)</li>
-                <li>Développement informatique</li>
-            </ul>
-        </section>
+            <section id="forts" class="panel panel-info">
+                <div class="panel-heading"><h2>Points forts</h2></div>
+                <div class="panel-body">
+                    <ul>
+                        <?php foreach ($_SESSION['points_forts'] as $pointFort) : ?>
+
+                            <li><?= $pointFort['point_fort'] ?></li>
+
+                        <?php endforeach; ?>
+
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+        <div class="col-md-4 col-md-offset-3">
+
+            <section id="interets" class="panel panel-info">
+                <div class="panel-heading"><h2>Centres d'intérêt</h2></div>
+                <div class="panel-body">
+
+                    <ul>
+                        <?php foreach ($_SESSION['interets'] as $interet) : ?>
+
+                            <li><?= $interet['centre'] ?></li>
+
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </div>
 </main>
 <?php include('inc/footer.inc.php'); ?>

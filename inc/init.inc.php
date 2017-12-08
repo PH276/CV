@@ -15,6 +15,11 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     $title = '';
     $msg = ''; // message pour l'utilisateur
 
+    if (!isset($_SESSION['titre_cv'])){
+        $req = $pdoCV -> query("SELECT titre_cv, accroche FROM t_titre_cv WHERE id_utilisateur='1'");
+        $_SESSION['titre_cv'] = $req -> fetch(PDO::FETCH_ASSOC);
+    }
+
     if (!isset($_SESSION['logos'])){
         $req = $pdoCV -> query("SELECT src, alt FROM t_logos WHERE id_utilisateur='1'");
         $_SESSION['logos'] = $req -> fetchAll(PDO::FETCH_ASSOC);
@@ -25,10 +30,10 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
         $_SESSION['utilisateur'] = $req -> fetch(PDO::FETCH_ASSOC);
     }
 
-    // if (!isset($_SESSION['logos_reseaux'])){
+    if (!isset($_SESSION['logos_reseaux'])){
         $req = $pdoCV -> query("SELECT * FROM t_reseaux WHERE id_utilisateur='1'");
         $_SESSION['logos_reseaux'] = $req -> fetchAll(PDO::FETCH_ASSOC);
-    // }
+    }
 
     // chemins
     define('RACINE_SITE', '/');

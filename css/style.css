@@ -18,13 +18,37 @@ h1{
 	letter-spacing: 1px;
 }
 
-nav{
+.navbar-default {
 	background: #bb8fce;
 }
 
-#presentation{
-	background: 
+main{
+	font-family: Times, "Times New Roman";
 }
+/*************************** index.php *****************************************/
+
+#presentation{
+	background: white;
+	margin-bottom: 20px;
+}
+
+.presentation {
+	margin: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 2em;
+}
+
+#presentation section ul{
+	font-size: 1.5em;
+	list-style: disc;
+	margin-left: 20px;
+
+}
+
+/*************************** fin index.php *****************************************/
+
+
 
 footer{
 	background: #383838;
