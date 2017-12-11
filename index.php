@@ -17,7 +17,7 @@ if (!isset($_SESSION['interets'])){
 include('inc/head.inc.php');
 ?>
 <main id="presentation" class="container">
-    <h1>Présentation</h1>
+    <h1>présentation</h1>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 

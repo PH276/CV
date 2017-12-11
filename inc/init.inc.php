@@ -26,7 +26,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     }
 
     if (!isset($_SESSION['utilisateur'])){
-        $req = $pdoCV -> query("SELECT adresse, telephone, autre_tel, email, code_postal, ville FROM t_utilisateurs WHERE id='1'");
+        $req = $pdoCV -> query("SELECT avatar, prenom, nom, adresse, telephone, autre_tel, email, code_postal, ville FROM t_utilisateurs WHERE id='1'");
         $_SESSION['utilisateur'] = $req -> fetch(PDO::FETCH_ASSOC);
     }
 

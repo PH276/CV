@@ -48,7 +48,7 @@ function table_choisie($table){
 		$data = array(
 			'table' => $table,
 			'affiche_nom_table' => 'compétences',
-			'colonnes' => array('competence' => 'Compétence', 'c_niveau' => 'Niveau en %'),
+			'colonnes' => array('competence' => 'Compétence', 'c_description' => 'Description', 'c_niveau' => 'Niveau en %'),
 			'largeur_tableau' => '3'
 		);
 		break;

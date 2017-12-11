@@ -22,8 +22,8 @@
         <div class="row">
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
-                    <p>Pascal HUITOREL</p>
-                    <img class="cadre-rond" src="photos/portrait.png" alt="portrait">
+                    <p><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></p>
+                    <img class="cadre-rond" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait">
                 </a>
             </div>
 

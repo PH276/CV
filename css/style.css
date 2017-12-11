@@ -1,9 +1,11 @@
 body{
-	background: #e3e8f8;
+	/*background: #e3e8f8;*/
+	background: #FFFCEA;
 }
 
 header{
-	background: cyan;
+	background: #A5F2E7;
+	/*background: cyan;*/
 	padding-bottom: 10px;
 	/*display: flex;
 	align-items: center;*/
@@ -12,18 +14,33 @@ header{
 h1{
 	padding: 25px 0;
 	font-size: 3.8em;
+
 	/*font-family: 'Anton', sans-serif;*/
 	color:#2980b9;
 	text-align: center;
 	letter-spacing: 1px;
 }
 
+h1::first-letter {
+    text-transform: uppercase;
+}
+
 .navbar-default {
-	background: #bb8fce;
+	/*background: #bb8fce;*/
+	background: #8983F3;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: white;
 }
 
 main{
 	font-family: Times, "Times New Roman";
+	background: white;
+}
+
+.italic{
+	font-style: italic;
 }
 /*************************** index.php *****************************************/
 
@@ -51,7 +68,12 @@ main{
 
 
 footer{
-	background: #383838;
+	margin-top: 20px;
+	padding-top: 5px;
+	background: #3A0077;
+	line-height: 1em;
+	font-family:
+	/*background: #383838;*/
 	padding: 10px;
 	color: white;
 }
