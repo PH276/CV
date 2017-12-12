@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <!-- <li class="active"><a href="index.php">Link <span class="sr-only">(current)</span></a></li> -->
-            <li class="active"><a href="index.php">Présentation<span class="sr-only">(current)</span></a></li>
+            <li><a href="index.php">Présentation<span class="sr-only">(current)</span></a></li>
             <li><a href="parcours.php">Parcours professionnel</a></li>
             <li><a href="formations.php">Formations</a></li>
             <li><a href="competences.php">Compétences</a></li>

@@ -12,8 +12,6 @@ if (!isset($_SESSION['interets'])){
 }
 
 
-
-
 include('inc/head.inc.php');
 ?>
 <main id="presentation" class="container">
@@ -22,13 +20,14 @@ include('inc/head.inc.php');
         <div class="col-md-10 col-md-offset-1">
 
             <section class="thumbnail presentation">
-                <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
+                <?= $_SESSION['titre_cv']['accroche']  ?>
+                <!-- <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
                 <p>Mon projet est de devenir développeur web.</p>
                 <p>
                     Pour commencer, j'ai créé mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.
                     <br>
                     Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.
-                </p>
+                </p> -->
             </section>
         </div>
     </div>
