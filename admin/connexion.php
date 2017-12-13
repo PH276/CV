@@ -31,7 +31,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     // }
     //
     if (!empty($_POST)){
-        debug($_POST);
+        
 
         // verification pseudo
         if (!empty($_POST['email']) && !empty($_POST['mdp'])){
