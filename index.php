@@ -16,7 +16,7 @@ include('inc/head.inc.php');
 
 ?>
 <main id="presentation" class="container">
-    <?php echo password_hash("SJpc5029", PASSWORD_DEFAULT); ?>
+    
 
     <h1>présentation</h1>
     <div class="row">
