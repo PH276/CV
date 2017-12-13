@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 13 déc. 2017 à 13:17
+-- Généré le :  ven. 08 déc. 2017 à 17:01
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -31,7 +31,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `t_competences` (
   `id` int(3) NOT NULL,
   `competence` varchar(30) DEFAULT NULL,
-  `c_description` text NOT NULL,
   `c_niveau` int(3) DEFAULT NULL,
   `id_utilisateur` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -40,18 +39,11 @@ CREATE TABLE `t_competences` (
 -- Déchargement des données de la table `t_competences`
 --
 
-INSERT INTO `t_competences` (`id`, `competence`, `c_description`, `c_niveau`, `id_utilisateur`) VALUES
-(1, 'Langages web', 'PHP, \nSilex, \nJavascript, \njQuery, \nHTML5, \nCSS3, \nBootstrap', 0, 1),
-(5, 'SGBD', 'MS SQL Server, \nORACLE, \nMySQL, \nAccess', 0, 1),
-(6, 'Matériels', 'PC et serveurs, \nROUTEUR, \nSWITCH, \nPare feu', 0, 1),
-(7, 'Systèmes', 'LINUX (Debian), \nWINDOWS Server 2012 2008 2003, \nWINDOWS 10  8.1 7 Vista XP, \nMS/DOS', 0, 1),
-(8, 'Autres langages', 'Java, \nJEE, \nXML, \nAssembleur, \nLanngage machine', 0, 1),
-(9, 'L4G', 'PL/SQL', 0, 1),
-(10, 'Réseaux', 'TCP/IP, \nDHCP, \nDNS, \nLAN/WAN, \nsans fil', 0, 1),
-(11, 'Serveurs', 'Apache, \nTomcat', 0, 1),
-(12, 'VMware', 'server, \nplayer, \nworkstation, \nESX, \nVCSA', 0, 1),
-(13, 'Outils bureautiques', 'EXCEL, \nWORD, \nPOWERPOINT, \nOUTLOOK, \nVISIO', 0, 1),
-(14, 'Langage de modélisation', 'UML2', 0, 1);
+INSERT INTO `t_competences` (`id`, `competence`, `c_niveau`, `id_utilisateur`) VALUES
+(1, 'PHP7.1.0', 80, 1),
+(2, '', 0, 1),
+(3, '', 0, 1),
+(4, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -65,24 +57,21 @@ CREATE TABLE `t_experiences` (
   `e_soustitre` varchar(50) DEFAULT NULL,
   `e_dates` varchar(50) DEFAULT NULL,
   `e_description` text,
-  `e_type` enum('entreprise','indépendant') NOT NULL,
-  `id_utilisateur` int(3) DEFAULT NULL
+  `id_utilisateur` int(3) DEFAULT NULL,
+  `e_type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `t_experiences`
 --
 
-INSERT INTO `t_experiences` (`id`, `e_titre`, `e_soustitre`, `e_dates`, `e_description`, `e_type`, `id_utilisateur`) VALUES
-(4, 'Administrateur systèmes (assistant)', 'SIAAP – Paris', '2013 à 2016', ' - Correction d’un serveur Web, \n - Evolution de scripts (batch Windows), \n - Maintenance (préventive, corrective, curative et évolutive) d’un parc informatique,  \n - industriel de 160 machines (matériel et logiciel), \n - Gestion de l’inventaire du matériel, \n - Mise en œuvre de systèmes de sécurité (Antivirus, Pare-feu, GPO), \n - Vérification quotidienne du bon fonctionnement des systèmes, \n - Tâches d’administration système, \n - Rédaction de tâches de maintenance préventive et mise à jour de documentation technique.\n\nEnvironnement : PC HP– Serveurs HP – Windows (server 2012, 2008 et 2003 – 7 - XP) – MS SQL server - Apache – PHP - GMAO – NAGIOS – Citrix – ACRONIS – VISIO – EXCEL – WORD', 'entreprise', 1),
-(5, 'Opérateur réseau et télécom', 'RTE – Nanterre', '2011 à 2013', ' - Projet de maintenance d’une salle de serveurs, \n - Etat des lieux d’une salle de serveurs, \n - Préparation de documents pour agir en cas de panne de serveur\nEnvironnement : PC – WINDOWS XP - supervision d’un réseau régional - Sharepoint - WORD – EXCEL', 'entreprise', 1),
-(6, 'analyste-programmeur', 'Sydelis (ex SDI) – Bagnolet', '1991 à 1997', 'Missions de développement, de gestion de bases de données et de support bureautique chez NCR ATT GIS, BULL, GSI ASCII, RATP, BNP, 4C', 'entreprise', 1),
-(7, 'Informaticien polyvalent', 'ECODAIR – Paris', '2007 à 2011', ' - Installation (matériel et logiciel),\n - Maintenance de PC dans le contexte de reconditionnement,\n - Clonage,\n - Maintenance de portable (niveau 1 à 4),\n - Préparation spécifique de PC à la demande de clients.\n\nEnvironnement : PC – IMPRIMANTE - PORTABLE – WINDOWS XP - CLONEZILLA', 'entreprise', 1),
-(8, 'Stage', 'Centre MOGADOR – Paris', '2000 à 2007', 'Stage de réinsertion professionnelle', 'entreprise', 1),
-(9, 'Programmeur', 'Marine Nationale – Nîmes', '1990', 'Conception d’une base de données', 'entreprise', 1),
-(10, 'développeur web', '', '2016 à 2017', 'Création d’un site web de type e-business (mypetstar.fr)\n\nEnvironnement : PC – Windows – HTML – CSS – Bootstrap – Javascript - PHP – MySQL', 'indépendant', 1),
-(11, 'développeur', '', '2015 à 2016', ' - Développement d’applications (gestion du club, compteurs de jeu),\n - Projet de maintenance du site web.\n\nEnvironnement : PC – Windows - Java – MySQL – HTML – PHP - CSS', 'indépendant', 1),
-(12, 'Intégrateur - développeur web', 'LePoleS - Villeneuve-la-Garenne', '2017 à 2018', 'projet de création d\'un site personnel et projet dévolution du site d\'une entreprise', 'entreprise', 1);
+INSERT INTO `t_experiences` (`id`, `e_titre`, `e_soustitre`, `e_dates`, `e_description`, `id_utilisateur`, `e_type`) VALUES
+(1, 'ana prog', NULL, NULL, NULL, NULL, ''),
+(2, 'ope RT', NULL, NULL, NULL, NULL, ''),
+(3, 'adm sys', NULL, NULL, NULL, NULL, ''),
+(4, 'Administrateur systèmes (assistant)', '', '', '', 1, ''),
+(5, 'Opérateur réseau et télécom', '', '', '', 1, ''),
+(6, 'analyste-programmeur', '', '', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -104,12 +93,9 @@ CREATE TABLE `t_formations` (
 --
 
 INSERT INTO `t_formations` (`id`, `f_titre`, `f_soustitre`, `f_dates`, `f_description`, `id_utilisateur`) VALUES
-(1, 'Licence Droit, économie et gestion, filiale économie et gestion (parcours MIAGE)', 'ESIAG - Créteil', '2014', '', 1),
-(2, 'DUT Réseaux et Télécommunications', 'IUT de Vitry sur Seine', '2013', '', 1),
-(3, 'DUT Génie Electrique et Informatique Industrielle', 'IUT de Nîmes', '1989', '', 1),
-(4, 'Master MIAGE', 'Partiels - ECTS : 50 / 60 (1er semestre validé) - ', '2016', 'Projet de synthèse (UML2, JEE, MySQL, XML, Tomcat, JMS, ECLIPSE)\n', 1),
-(5, 'BEP et CAP d\'électrotechnique', 'LEP de Rambouillet', '1985', '', 1),
-(6, 'Bac F3 (Electrotechnnique)', 'Lycée Edourd Branly - Dreux', '1987', '', 1);
+(1, 'Licence Droit, économie et gestion, filiale économie et gestion (parcours MIAGE)', '', '', '', 1),
+(2, 'DUT RT', '', '', '', 1),
+(3, 'DUT GEII', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -276,7 +262,7 @@ CREATE TABLE `t_titre_cv` (
 --
 
 INSERT INTO `t_titre_cv` (`id`, `titre_cv`, `accroche`, `logo`, `id_utilisateur`) VALUES
-(1, 'intégrateur - développeur web junior', '<p>Je suis passionné d\'informatique, plus précisément de programmation.</p>\n                <p>Mon projet est de devenir développeur web.</p>\n                <p>\n                    Pour commencer, j\'ai créé mon premier site web (<a href=\"https://mypetstar.fr\" target=\"_blank\">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.\n                    <br>\n                    Pour renforcer mes compétences, je suis actuellement en formation d\'intégrateur développeur web.\n                </p>', '', 1);
+(1, 'intégrateur - développeur web junior', 'Je suis passionné d\'informatique, plus précisément de programmation.\n\nMon projet est de devenir développeur web.\n\nPour commencer, j\'ai créé mon premier site web (mypetstar.fr) pour CRIS Production à sa grande satisfaction.\nPour renforcer mes compétences, je suis actuellement en formation d\'intégrateur développeur web.', '', 1);
 
 -- --------------------------------------------------------
 
@@ -310,7 +296,7 @@ CREATE TABLE `t_utilisateurs` (
 --
 
 INSERT INTO `t_utilisateurs` (`id`, `prenom`, `nom`, `email`, `telephone`, `autre_tel`, `mdp`, `pseudo`, `avatar`, `date_naissance`, `sexe`, `etat_civil`, `adresse`, `code_postal`, `ville`, `pays`, `site_web`, `statut`) VALUES
-(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@lepoles.com', 0634018341, 0174546406, '123456', 'PH276', 'portrait.PNG', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 1);
+(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@lepoles.com', 0634018341, 0174546406, '123456', 'PH276', 'pashuit.jpg', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 1);
 
 --
 -- Index pour les tables déchargées
@@ -391,19 +377,19 @@ ALTER TABLE `t_utilisateurs`
 -- AUTO_INCREMENT pour la table `t_competences`
 --
 ALTER TABLE `t_competences`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `t_experiences`
 --
 ALTER TABLE `t_experiences`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `t_formations`
 --
 ALTER TABLE `t_formations`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `t_interets`
