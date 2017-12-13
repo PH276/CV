@@ -1,6 +1,5 @@
 <?php require_once('inc/init.inc.php');
 $page = "";
-
 if (!isset($_SESSION['points_forts'])){
     $req = $pdoCV -> query("SELECT * FROM t_points_forts WHERE id_utilisateur='1'");
     $_SESSION['points_forts'] = $req -> fetchAll(PDO::FETCH_ASSOC);
@@ -13,8 +12,12 @@ if (!isset($_SESSION['interets'])){
 
 
 include('inc/head.inc.php');
+
+
 ?>
 <main id="presentation" class="container">
+    <?php echo password_hash("SJpc5029", PASSWORD_DEFAULT); ?>
+
     <h1>présentation</h1>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">

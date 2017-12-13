@@ -31,7 +31,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     // }
     //
     if (!empty($_POST)){
-        
+
 
         // verification pseudo
         if (!empty($_POST['email']) && !empty($_POST['mdp'])){
@@ -42,7 +42,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                 // nous aurions pu proposer 2 à 3 variantes de  son pseudo, en ayant vérifié qu'ils sont dispo
                 $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
 
-                if ($ligne_utilisateur['mdp'] == $_POST['mdp']){ // tout est OK
+                if (password_verify($_POST['mdp'], $ligne_utilisateur['mdp'])) { // tout est OK
                     foreach($ligne_utilisateur as $key => $val){
                         if ($key != 'mdp'){
                             $_SESSION['utilisateur_bo'][$key] = $val;

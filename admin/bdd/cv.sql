@@ -291,7 +291,7 @@ CREATE TABLE `t_utilisateurs` (
   `email` varchar(50) DEFAULT NULL,
   `telephone` int(10) UNSIGNED ZEROFILL DEFAULT NULL,
   `autre_tel` int(10) UNSIGNED ZEROFILL DEFAULT NULL,
-  `mdp` varchar(12) DEFAULT NULL,
+  `mdp` varchar(255) DEFAULT NULL,
   `pseudo` varchar(30) DEFAULT NULL,
   `avatar` varchar(20) DEFAULT NULL,
   `date_naissance` date DEFAULT NULL,
