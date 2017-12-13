@@ -15,9 +15,9 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
     $title = '';
     $msg = ''; // message pour l'utilisateur
 
-    if (!isset($_SESSION['titre_cv'])){
+    if (!isset($_SESSION['titre'])){
         $req = $pdoCV -> query("SELECT titre_cv, accroche FROM t_titre_cv WHERE id_utilisateur='1'");
-        $_SESSION['titre_cv'] = $req -> fetch(PDO::FETCH_ASSOC);
+        $_SESSION['titre'] = $req -> fetch(PDO::FETCH_ASSOC);
     }
 
     if (!isset($_SESSION['logos'])){

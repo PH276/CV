@@ -20,7 +20,7 @@ include('inc/head.inc.php');
         <div class="col-md-10 col-md-offset-1">
 
             <section class="thumbnail presentation">
-                <?= $_SESSION['titre_cv']['accroche']  ?>
+                <?= $_SESSION['titre']['accroche']  ?>
                 <!-- <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
                 <p>Mon projet est de devenir développeur web.</p>
                 <p>

@@ -28,7 +28,7 @@
             </div>
 
             <div class="col-md-8" id="titre">
-                <p><strong><?= $_SESSION['titre_cv']['titre_cv']?></strong></p>
+                <p><strong><?= $_SESSION['titre']['titre_cv']?></strong></p>
                 <!-- <p><span>!!! Site en construction !!!</span></p> -->
             </div>
 
@@ -61,17 +61,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <!-- <li class="active"><a href="index.php">Link <span class="sr-only">(current)</span></a></li> -->
-            <li><a href="index.php">Présentation<span class="sr-only">(current)</span></a></li>
-            <li><a href="parcours.php">Parcours professionnel</a></li>
-            <li><a href="formations.php">Formations</a></li>
-            <li><a href="competences.php">Compétences</a></li>
+            <li class="<?= ($page=='Présentation - ')?'active':'' ?>"><a href="index.php">Présentation<span class="sr-only">(current)</span></a></li>
+            <li class="<?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php">Parcours professionnel</a></li>
+            <li class="<?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php">Formations</a></li>
+            <li class="<?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php">Compétences</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-
-    <!-- <nav>
-        <ul>
-        </ul>
-    </nav> -->

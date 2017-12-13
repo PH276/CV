@@ -13,8 +13,6 @@
                     <a href="tel:<?= $_SESSION['utilisateur']['autre_tel'] ?>">
                         <?= wordwrap($_SESSION['utilisateur']['autre_tel'], 2, ' ', true)  ?></a><br>
 
-
-
                         <a href="mailto:<?= $_SESSION['utilisateur']['email'] ?>">
                             <?= $_SESSION['utilisateur']['email'] ?></a><br>
 

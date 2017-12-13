@@ -17,8 +17,8 @@ include('inc/head.inc.php');
                         <h2><strong><?= $formation['f_titre'] ?></strong></h2>
                     </div>
                     <div class="panel-body">
-                        <p><?= $formation['f_dates'] ?></p>
-                        <p><?= $formation['f_soustitre'] ?></p>
+                        <p><?= $formation['f_dates'] ?> -
+                        <?= $formation['f_soustitre'] ?></p>
                         <p><?= $formation['f_description'] ?></p>
 
                     </div>
