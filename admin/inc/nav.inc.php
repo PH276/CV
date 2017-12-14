@@ -40,12 +40,12 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <!-- <form class="navbar-form navbar-left">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Chercher</button>
-            </form>
+            </form> -->
             <?php if (userConnecte()) : ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
