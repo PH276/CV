@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 14 déc. 2017 à 17:36
+-- Généré le :  mer. 13 déc. 2017 à 13:17
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -158,7 +158,7 @@ INSERT INTO `t_logos` (`id`, `src`, `alt`, `id_utilisateur`) VALUES
 (3, 'js.png', 'javascript', 1),
 (4, 'jQuery.png', 'jQuery', 1),
 (5, 'wordpress.jpg', 'wordpress', 1),
-(6, 'php_0.png', 'PHP', 1),
+(6, 'PHP.jpg', 'PHP', 1),
 (7, 'MySQL.png', 'MySQL', 1),
 (8, 'silex.jpg', 'silex', 1);
 
@@ -183,27 +183,6 @@ INSERT INTO `t_loisirs` (`id`, `loisir`, `id_utilisateur`) VALUES
 (40, 'popo', 1),
 (41, 'yiyi', 1),
 (42, 'titi', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `t_messages`
---
-
-CREATE TABLE `t_messages` (
-  `id` int(3) NOT NULL,
-  `co_nom` varchar(50) NOT NULL,
-  `co_email` varchar(100) NOT NULL,
-  `co_sujet` varchar(50) NOT NULL,
-  `co_message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `t_messages`
---
-
-INSERT INTO `t_messages` (`id`, `co_nom`, `co_email`, `co_sujet`, `co_message`) VALUES
-(5, 'hui', 'hui@pa.fr', 'test', 'ceci est test');
 
 -- --------------------------------------------------------
 
@@ -331,7 +310,7 @@ CREATE TABLE `t_utilisateurs` (
 --
 
 INSERT INTO `t_utilisateurs` (`id`, `prenom`, `nom`, `email`, `telephone`, `autre_tel`, `mdp`, `pseudo`, `avatar`, `date_naissance`, `sexe`, `etat_civil`, `adresse`, `code_postal`, `ville`, `pays`, `site_web`, `statut`) VALUES
-(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@gmail.com', 0634018341, 0174546406, '$2y$10$eUkOm2.RK94UrCS.uGXUIOOxwdTapTJL/zt8VvFi/OcGqfCV8otQG', 'PH276', 'portrait.PNG', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 1);
+(1, 'Pascal', 'HUITOREL', 'pascal.huitorel@lepoles.com', 0634018341, 0174546406, '123456', 'PH276', 'portrait.PNG', '1966-07-22', 'H', 'M.', '10 rue Henri Barbusse', 92390, 'Villeneuve-la-Garenne', 'France', 'pascalhuitorel.fr', 1);
 
 --
 -- Index pour les tables déchargées
@@ -371,12 +350,6 @@ ALTER TABLE `t_logos`
 -- Index pour la table `t_loisirs`
 --
 ALTER TABLE `t_loisirs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `t_messages`
---
-ALTER TABLE `t_messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -449,12 +422,6 @@ ALTER TABLE `t_logos`
 --
 ALTER TABLE `t_loisirs`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
---
--- AUTO_INCREMENT pour la table `t_messages`
---
-ALTER TABLE `t_messages`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `t_points_forts`

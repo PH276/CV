@@ -67,6 +67,7 @@
             <li class="<?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php">Parcours professionnel</a></li>
             <li class="<?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php">Formations</a></li>
             <li class="<?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php">Compétences</a></li>
+            <li class="<?= ($page=='Contact - ')?'active':'' ?>"><a href="contact.php">Contact</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

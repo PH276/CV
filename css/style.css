@@ -43,6 +43,7 @@ main{
 	font-family: Times, "Times New Roman";
 	background: #FFFCEA;
 	/*background: white;*/
+	padding-bottom: 15px;
 }
 
 .italic{
@@ -70,6 +71,22 @@ main{
 }
 
 /*************************** fin index.php *****************************************/
+
+
+
+
+
+
+
+/***************************  contact.php *****************************************/
+span.error{
+    color: red;
+}
+
+/*************************** fin contact.php *****************************************/
+
+
+
 
 
 
