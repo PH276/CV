@@ -18,10 +18,10 @@
 
                         </p>
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-4 text-center col-xs-6">
                         <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
                     </div>
-                    <div class="col-md-4 text-right" id="logos_reseaux">
+                    <div class="col-md-4 text-right col-xs-6" id="logos_reseaux">
                         <ul>
 
                             <?php foreach ($_SESSION['logos_reseaux'] as $reseau) : ?>
@@ -46,7 +46,7 @@
                 <!-- <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script> -->
                 <!-- Latest compiled and minified JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-                
+
                 <script src = "https://use.fontawesome.com/0c1a81064b.js"></script>
 
             </footer>

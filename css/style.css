@@ -85,10 +85,6 @@ footer a{
 	color: white;
 }
 
-#logos_reseaux{
-
-}
-
 #logos_reseaux li{
 	display: inline-block;
 
@@ -96,14 +92,13 @@ footer a{
 
 #portrait img{
 	margin: auto;
-	width: 45%;
+	width: 125px;
 }
 
 #titre p{
 	font-family: arial;
 	font-weight:bold;
 	font-size: 4em;
-	line-height: 3em;
 	text-align: center;
 }
 
@@ -125,15 +120,11 @@ padding: 0 10px;
 
 #icones{
 	width: 80%;
-	margin-top:15%;
-	margin-left:10%;
+	margin: 15% auto;
+	/* margin-left:10%; */
 }
 
 #icones img{
 	width: 20%;
 	margin: 1px;
-}
-
-.cadre-rond{
-	border-radius: 50%;
 }
