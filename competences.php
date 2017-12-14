@@ -1,8 +1,8 @@
 <?php require_once('inc/init.inc.php');
-// if (!isset($_SESSION['competences'])){
+if (!isset($_SESSION['competences'])){
     $req = $pdoCV -> query("SELECT * FROM t_competences WHERE id_utilisateur='1'");
     $_SESSION['competences'] = $req -> fetchAll(PDO::FETCH_ASSOC);
-// }
+}
 
 $page = "Compétences - ";
 include('inc/head.inc.php');

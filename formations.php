@@ -1,8 +1,8 @@
 <?php require_once('inc/init.inc.php');
-// if (!isset($_SESSION['formations'])){
+if (!isset($_SESSION['formations'])){
     $req = $pdoCV -> query("SELECT * FROM t_formations WHERE id_utilisateur='1' ORDER BY f_dates DESC");
     $_SESSION['formations'] = $req -> fetchAll(PDO::FETCH_ASSOC);
-// }
+}
 
 $page = "Formations - ";
 include('inc/head.inc.php');
