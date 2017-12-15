@@ -9,6 +9,9 @@ if (!empty($_POST)) {
     $contact = new Contact($co_nom, $co_email, $co_sujet, $co_message);
     if ($contact->valid()){
         $contact->insertContact();
+        $contact->sendEmail();
+        header('location: index.php');
+
     } else {
         $erreurnom = (empty($co_nom)) ? 'Indiquez votre nom' : null;
         $erreuremail = (empty($co_email) || !filter_var($co_email, FILTER_VALIDATE_EMAIL)) ? 'Entrez un email valide' : null;

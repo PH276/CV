@@ -80,14 +80,7 @@ class Contact
     }
 
     public function valid(){
-        // $retour = false;
-        // $erreurnom = (empty($co_nom)) ? 'Indiquez votre nom' : null;
-        // $erreuremail = (empty($co_email) || !filter_var($co_email, FILTER_VALIDATE_EMAIL)) ? 'Entrez un email valide' : null;
-        // $erreursujet = (empty($co_sujet)) ? 'Indiquez un sujet' : null;
-        // $erreurmessage = (empty($co_message)) ? 'Parlez donc !!' : null;
-
-        $retour = (!empty($this->co_nom) && !empty($this->co_email) && filter_var($this->co_email, FILTER_VALIDATE_EMAIL) && !empty($this->co_sujet) && !empty($this->co_message));
-        return $retour;
+        return (!empty($this->co_nom) && !empty($this->co_email) && filter_var($this->co_email, FILTER_VALIDATE_EMAIL) && !empty($this->co_sujet) && !empty($this->co_message));
     }
 
 
@@ -107,15 +100,14 @@ class Contact
             $req->closeCursor();
         } // ---- fin function insertContact
 
-        // Bonus - envoi d'un email
-        public function sendEmail($to) {
-            // $to = 'miatti.sebastien@live.fr';
-            $headers = 'From: ' . $this->email . "\r\n"; //retours à la ligne
+        //
+        public function sendEmail() {
+            $to = "contact@pascalhuitorel.fr";
+            $headers = 'From: ' . $this->co_email . "\r\n"; //retours à la ligne
             $headers .= 'MIME-version: 1.0' . "\r\n";
             $headers .= 'Content-type : text/html; charset=utf-8' . "\r\n";
 
-            // on utilise la fonction mail() de PHP
-            mail($to, $this->sujet, $this->message, $headers);
+            // fonction mail() de PHP
+            mail($to, $this->co_sujet, $this->co_message, $headers);
         }
-
     }
