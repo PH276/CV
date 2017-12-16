@@ -22,9 +22,9 @@ include('inc/head.inc.php');
     <div class="row">
         <div class="col-md-12">
 
-            <section class="thumbnail presentation shadow">
+            <div class="thumbnail presentation shadow">
                 <?= $_SESSION['titre']['accroche']  ?>
-            </section>
+            </div>
         </div>
     </div>
     <div class="row">

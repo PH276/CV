@@ -35,7 +35,7 @@ include('inc/head.inc.php');
                     <div class="form-group">
                         <label for="nom">Nom :</label>
                         <span class="error"><?= (isset($erreurnom))?$erreurnom:''; ?></span>
-                        <input class="form-control" type="text" name="co_nom" value="<?php if(isset($co_nom)) echo $co_nom; ?>">
+                        <input id="nom" class="form-control" type="text" name="co_nom" value="<?php if(isset($co_nom)) echo $co_nom; ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">Email :</label>
@@ -45,12 +45,12 @@ include('inc/head.inc.php');
                     <div class="form-group">
                         <label for="sujet">Sujet :</label>
                         <span class="error"><?= (isset($erreursujet))?$erreursujet:''; ?></span>
-                        <input class="form-control" type="text" name="co_sujet" value="<?php if (isset($co_sujet)) echo $co_sujet; ?>">
+                        <input id="sujet" class="form-control" type="text" name="co_sujet" value="<?php if (isset($co_sujet)) echo $co_sujet; ?>">
                     </div>
                     <div class="form-group">
                         <label for="message">Message :</label>
                         <span class="error"><?= (isset($erreurmessage))?$erreurmessage:''; ?></span>
-                        <textarea class="form-control" name="co_message" cols="30" rows="10"><?php if (isset($co_message)) echo $co_message; ?></textarea>
+                        <textarea id="message" class="form-control" name="co_message" cols="30" rows="10"><?php if (isset($co_message)) echo $co_message; ?></textarea>
                     </div>
 
                     <input type="submit" class="btn btn-outline-info btn-block btn-submit" value="Envoyer" />
