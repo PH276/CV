@@ -1,15 +1,14 @@
 body{
-	/*background: #e3e8f8;*/
-	/*background: #FFFCEA;*/
-	background: url("../photos/99326.jpg") repeat;
+	background: url("../photos/99326.jpg");
 }
 
 header{
 	background: #A5F2E7;
-	/*background: cyan;*/
 	padding-bottom: 10px;
-	/*display: flex;
-	align-items: center;*/
+}
+
+#titre p{
+	margin-top: 3%;
 }
 
 h1{
@@ -27,7 +26,6 @@ h1::first-letter {
 }
 
 .navbar-default {
-	/*background: #bb8fce;*/
 	background: #8983F3;
 }
 
@@ -42,17 +40,20 @@ h1::first-letter {
 main{
 	font-family: Times, "Times New Roman";
 	background: #FFFCEA;
-	/*background: white;*/
 	padding-bottom: 15px;
 }
 
 .italic{
 	font-style: italic;
 }
+
+.shadow, .panel-info, #contact .thumbnail{
+	border: 2px solid silver;
+	box-shadow: 8px 8px 15px black;
+}
 /*************************** index.php *****************************************/
 
 #presentation{
-	/* background: white; */
 	margin-bottom: 20px;
 }
 
@@ -71,14 +72,19 @@ main{
 }
 
 /*************************** fin index.php *****************************************/
+/*************************** parcours.php *****************************************/
 
-
-
-
-
+#parcours h2{
+	margin-left: 15px;
+}
+/*************************** fin parcours.php *****************************************/
 
 
 /***************************  contact.php *****************************************/
+#contact .thumbnail{
+	padding: 10px;
+}
+
 span.error{
     color: red;
 }
@@ -113,7 +119,7 @@ footer a{
 
 #portrait img{
 	margin: auto;
-	width: 125px;
+	width: 100px;
 }
 
 #titre p{

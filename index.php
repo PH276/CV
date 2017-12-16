@@ -1,5 +1,9 @@
 <?php require_once('inc/init.inc.php');
+// variables pour la balise <head>
+$descriptionPage = strip_tags($_SESSION['titre']['accroche']);
+$motsClesPage = "Développeur web, Développeur full stack, Devops, PHP, MySQL, silex, symphony, javascript, jQuery";
 $page = "";
+
 if (!isset($_SESSION['points_forts'])){
     $req = $pdoCV -> query("SELECT * FROM t_points_forts WHERE id_utilisateur='1'");
     $_SESSION['points_forts'] = $req -> fetchAll(PDO::FETCH_ASSOC);
@@ -10,34 +14,23 @@ if (!isset($_SESSION['interets'])){
     $_SESSION['interets'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
-
 include('inc/head.inc.php');
-
-
 ?>
-<main id="presentation" class="container">
-    
 
+<main id="presentation" class="container">
     <h1>présentation</h1>
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
 
-            <section class="thumbnail presentation">
+            <section class="thumbnail presentation shadow">
                 <?= $_SESSION['titre']['accroche']  ?>
-                <!-- <p>Je suis passionné d'informatique, plus précisément de programmation.</p>
-                <p>Mon projet est de devenir développeur web.</p>
-                <p>
-                    Pour commencer, j'ai créé mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.
-                    <br>
-                    Pour renforcer mes compétences, je suis actuellement en formation d'intégrateur développeur web.
-                </p> -->
             </section>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3 col-md-offset-1">
 
-            <section id="forts" class="panel panel-info">
+            <section id="forts" class="panel panel-info shadow">
                 <div class="panel-heading"><h2>Points forts</h2></div>
                 <div class="panel-body">
                     <ul>
@@ -54,7 +47,7 @@ include('inc/head.inc.php');
         </div>
         <div class="col-md-4 col-md-offset-3">
 
-            <section id="interets" class="panel panel-info">
+            <section id="interets" class="panel panel-info shadow">
                 <div class="panel-heading"><h2>Centres d'intérêt</h2></div>
                 <div class="panel-body">
 

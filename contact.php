@@ -16,7 +16,7 @@ if (!empty($_POST)) {
         $erreurnom = (empty($co_nom)) ? 'Indiquez votre nom' : null;
         $erreuremail = (empty($co_email) || !filter_var($co_email, FILTER_VALIDATE_EMAIL)) ? 'Entrez un email valide' : null;
         $erreursujet = (empty($co_sujet)) ? 'Indiquez un sujet' : null;
-        $erreurmessage = (empty($co_message)) ? 'Parlez donc !!' : null;
+        $erreurmessage = (empty($co_message)) ? 'Quel est votre message ?' : null;
     }
 
 }
@@ -24,11 +24,11 @@ if (!empty($_POST)) {
 $page = "Contact - ";
 include('inc/head.inc.php');
 ?>
-<main class="container">
+<main class="container" id="contact">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2>Formulaire de contact</h2>
-            <h3>Réalisé en POO</h3>
+            <!-- <h3>Réalisé en POO</h3> -->
             <div class="thumbnail">
 
                 <form method="POST">
