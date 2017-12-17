@@ -33,14 +33,14 @@ img[alt="ciel étoilé"]{
     margin-top: 20px;
 }
 
-table{
+.container-fluid table{
     min-width : 200px;
     margin: 20px auto;
     background: #f9f9f9;
     border: 5px solid silver;
 }
 
-th, td{
+.container-fluid table th, .container-fluid table td{
     padding: 5px;
     border: 1px solid;
 }

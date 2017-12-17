@@ -8,7 +8,7 @@ if (!empty($_POST)) {
     extract($_POST);
     $contact = new Contact($co_nom, $co_email, $co_sujet, $co_message);
     if ($contact->valid()){
-        $contact->insertContact();
+        $contact->insertContact($pdoCV);
         $contact->sendEmail();
         header('location: index.php');
 
