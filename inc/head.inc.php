@@ -38,7 +38,7 @@
                 <div id="icones">
                     <!-- <div id="icones" class="col-md-10 col-md-offset-1"> -->
                     <?php foreach ($_SESSION['logos'] as $logo) : ?>
-                        <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>">
+                        <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>" title="<?= $logo['alt'] ?>">
                     <?php endforeach; ?>
                 </div>
             </div>

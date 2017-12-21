@@ -1,34 +1,24 @@
 body{
 	background: url("../photos/99326.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 header{
-	background: #DFFCB5;
+	background: #A5F2E7;
 	padding-bottom: 10px;
 }
 
 #titre p{
-	color: #9870FC;
-	text-transform: uppercase;
-	font-size: 0.8em;
-	margin-top: 1.2em;
-}
-
-h1, h2, h3, h4, h5, h6, .panel-heading{
-	font-family: arial;
+	margin-top: 3%;
 }
 
 h1{
-	text-transform: uppercase;
-	color: #9870FC;
 	padding: 25px 0;
 	font-size: 3.8em;
-	/* color:#2980b9; */
+
+	/*font-family: 'Anton', sans-serif;*/
+	color:#2980b9;
 	text-align: center;
 	letter-spacing: 1px;
-	font-weight: bold;
 }
 
 h1::first-letter {
@@ -36,7 +26,7 @@ h1::first-letter {
 }
 
 .navbar-default {
-	background: #ADD1FC;
+	background: #8983F3;
 }
 
 .navbar-header .navbar-toggle.collapsed {
@@ -49,7 +39,7 @@ h1::first-letter {
 
 main{
 	font-family: Times, "Times New Roman";
-	background: #DFFCB5;
+	background: #FFFCEA;
 	padding-bottom: 15px;
 }
 
@@ -59,7 +49,7 @@ main{
 
 .shadow, .panel-info, #contact .thumbnail{
 	border: 2px solid silver;
-	box-shadow: 20px 40px 0px rgba(88, 136, 72, 0.4);
+	box-shadow: 8px 8px 15px black;
 }
 /*************************** index.php *****************************************/
 
@@ -70,7 +60,7 @@ main{
 .presentation {
 	margin: 20px;
 	padding: 10px;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 2em;
 }
 
@@ -109,7 +99,7 @@ span.error{
 footer{
 	margin-top: 20px;
 	padding-top: 5px;
-	background: #ADD1FC;
+	background: #3A0077;
 	line-height: 1em;
 	font-family:
 	/*background: #383838;*/
@@ -135,7 +125,7 @@ footer a{
 #titre p{
 	font-family: arial;
 	font-weight:bold;
-	font-size: 2.8em;
+	font-size: 4em;
 	text-align: center;
 }
 
