@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 21 déc. 2017 à 15:43
+-- Généré le :  jeu. 14 déc. 2017 à 17:36
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -93,7 +93,7 @@ INSERT INTO `t_experiences` (`id`, `e_titre`, `e_soustitre`, `e_dates`, `e_descr
 CREATE TABLE `t_formations` (
   `id` int(3) NOT NULL,
   `f_titre` varchar(100) DEFAULT NULL,
-  `f_soustitre` varchar(100) DEFAULT NULL,
+  `f_soustitre` varchar(50) DEFAULT NULL,
   `f_dates` varchar(50) DEFAULT NULL,
   `f_description` text,
   `id_utilisateur` int(3) DEFAULT NULL
@@ -156,11 +156,11 @@ INSERT INTO `t_logos` (`id`, `src`, `alt`, `id_utilisateur`) VALUES
 (1, 'html-css.png', 'HTML5/CSS3', 1),
 (2, 'bootstrap-logo.png', 'Bootstrap', 1),
 (3, 'js.png', 'javascript', 1),
-(4, 'jQuery.gif', 'jQuery', 1),
-(5, 'wordpress_logo.png', 'wordpress', 1),
-(6, 'logo_php.png', 'PHP', 1),
+(4, 'jQuery.png', 'jQuery', 1),
+(5, 'wordpress.jpg', 'wordpress', 1),
+(6, 'php_0.png', 'PHP', 1),
 (7, 'MySQL.png', 'MySQL', 1),
-(8, 'silex.png', 'silex', 1);
+(8, 'silex.jpg', 'silex', 1);
 
 -- --------------------------------------------------------
 
@@ -203,15 +203,7 @@ CREATE TABLE `t_messages` (
 --
 
 INSERT INTO `t_messages` (`id`, `co_nom`, `co_email`, `co_sujet`, `co_message`) VALUES
-(5, 'hui', 'hui@pa.fr', 'test', 'ceci est test'),
-(6, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(7, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(8, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(9, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(10, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(11, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(12, 'hui', 'pascal.huitorel@gmail.com', 'test', 'test ret'),
-(13, 'dg ', 'dfvhj@sfgh.fr', 'lugn', 'lkjh,');
+(5, 'hui', 'hui@pa.fr', 'test', 'ceci est test');
 
 -- --------------------------------------------------------
 
@@ -305,7 +297,7 @@ CREATE TABLE `t_titre_cv` (
 --
 
 INSERT INTO `t_titre_cv` (`id`, `titre_cv`, `accroche`, `logo`, `id_utilisateur`) VALUES
-(3, 'Développeur web', '<p>Je suis passionné d\'informatique, plus précisément de programmation.</p>\n                <p>\n                    Pour commencer, j\'ai créé mon premier site web (<a href=\"https://mypetstar.fr\" target=\"_blank\">mypetstar.fr</a>) pour CRIS Production.\n                    <br>\n                    Pour renforcer mes compétences, je suis actuellement en formation d\'intégrateur développeur web.\n                </p>', '', 1);
+(1, 'intégrateur - développeur web junior', '<p>Je suis passionné d\'informatique, plus précisément de programmation.</p>\n                <p>Mon projet est de devenir développeur web.</p>\n                <p>\n                    Pour commencer, j\'ai créé mon premier site web (<a href=\"https://mypetstar.fr\" target=\"_blank\">mypetstar.fr</a>) pour CRIS Production à sa grande satisfaction.\n                    <br>\n                    Pour renforcer mes compétences, je suis actuellement en formation d\'intégrateur développeur web.\n                </p>', '', 1);
 
 -- --------------------------------------------------------
 
@@ -462,7 +454,7 @@ ALTER TABLE `t_loisirs`
 -- AUTO_INCREMENT pour la table `t_messages`
 --
 ALTER TABLE `t_messages`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `t_points_forts`
@@ -486,7 +478,7 @@ ALTER TABLE `t_reseaux`
 -- AUTO_INCREMENT pour la table `t_titre_cv`
 --
 ALTER TABLE `t_titre_cv`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `t_utilisateurs`

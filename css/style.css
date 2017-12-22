@@ -6,7 +6,7 @@ body{
 
 header{
 	background: #DFFCB5;
-	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 #titre p{
@@ -127,9 +127,13 @@ footer a{
 
 }
 
+#portrait p{
+	font-size: 1.5em;
+}
+
 #portrait img{
 	margin: auto;
-	width: 100px;
+	width: 150px;
 }
 
 #titre p{

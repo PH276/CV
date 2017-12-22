@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <meta name="keywords" content="<?= $motsClesPage ?>">
     <meta name="description" content="<?= $descriptionPage ?>">
     <!-- reset CSS -->
+    <link rel="icon" href="logo.png" >
+    <!-- <link rel="icon" href="favicon.ico" /> -->
     <link rel="stylesheet" href="css/reset.css">
 
     <!-- CSS bootstrap -->
@@ -16,7 +19,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title><?= $page."Pascal HUITOREL"; ?></title><!-- Latest compiled and minified CSS -->
+    <title><?= $page. $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ; ?></title><!-- Latest compiled and minified CSS -->
 
 </head>
 <body>
@@ -24,8 +27,8 @@
         <div class="row">
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
-                    <p><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong></p>
-                    <img class="img-circle" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait">
+                    <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong><br>
+                    <img class="img-circle" class="text-center" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait"></p>
                 </a>
             </div>
 
