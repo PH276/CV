@@ -28,7 +28,7 @@
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
                     <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong><br>
-                    <img class="img-circle" class="text-center" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait"></p>
+                    <img class="img-circle text-center" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait"></p>
                 </a>
             </div>
 
