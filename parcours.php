@@ -55,7 +55,15 @@ include('inc/head.inc.php');
                             <p><?= $parcours['e_soustitre'] ?></p>
                         </div>
                         <div class="panel-body">
-                            <p><?= $parcours['e_description'] ?></p>
+                            <?php $posEnvironnement = stripos($parcours['e_description'], 'environnement'); ?>
+                            <?php $description = str_replace (', -', ',</li><li> -', substr($parcours['e_description'], 0, $posEnvironnement)); ?>
+
+                                <?= ($posEnvironnement)?"<ul><li>".$description . "</li></ul><br>":$description; ?>
+
+                                <?php $environnement = substr($parcours['e_description'], $posEnvironnement); ?>
+                                <p class="<?= ($posEnvironnement)?'italic':''  ?>"><?= $environnement ?></p>
+
+
                         </div>
                     </article>
 
