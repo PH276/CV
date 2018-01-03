@@ -9,6 +9,10 @@ header{
 	padding-top: 10px;
 }
 
+#forts{
+	margin-top: 20px;
+}
+
 #titre p{
 	color: #9870FC;
 	text-transform: uppercase;
@@ -74,7 +78,7 @@ main{
 	font-size: 2em;
 }
 
-#presentation section ul{
+#presentation ul, #interets ul{
 	font-size: 1.5em;
 	list-style: disc;
 	margin-left: 20px;

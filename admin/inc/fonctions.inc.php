@@ -143,6 +143,16 @@ function table_choisie($table){
 			);
 			break;
 
+			// table t_points_forts
+			case 't_activites' :
+			$data =  array(
+				'table' => $table,
+				'affiche_nom_table' => 'activités associatives',
+				'colonnes' => array('activite' => 'activité associative'),
+				'largeur_tableau' => '3'
+			);
+			break;
+
 			default :
 			$data = 'erreur';
 

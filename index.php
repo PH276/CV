@@ -9,28 +9,21 @@ if (!isset($_SESSION['points_forts'])){
     $_SESSION['points_forts'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
-if (!isset($_SESSION['interets'])){
-    $req = $pdoCV -> query("SELECT * FROM t_interets WHERE id_utilisateur='1'");
-    $_SESSION['interets'] = $req -> fetchAll(PDO::FETCH_ASSOC);
-}
-
 include('inc/head.inc.php');
 ?>
 
 <main id="presentation" class="container">
-    <h1>présentation</h1>
+    <!-- <h1>présentation</h1> -->
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
 
             <div class="thumbnail presentation shadow">
                 <?= $_SESSION['titre']['accroche']  ?>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 col-md-offset-1">
+        <div class="col-md-4">
 
-            <section id="forts" class="panel panel-info shadow">
+            <div id="forts" class="panel panel-info shadow">
                 <div class="panel-heading"><h2>Points forts</h2></div>
                 <div class="panel-body">
                     <ul>
@@ -46,26 +39,7 @@ include('inc/head.inc.php');
                         </ul>
                     </div>
 
-                </section>
-            </div>
-            <div class="col-md-4 col-md-offset-3">
-
-                <section id="interets" class="panel panel-info shadow">
-                    <div class="panel-heading"><h2>Centres d'intérêt</h2></div>
-                    <div class="panel-body">
-
-                        <?php $nbEltI = count($_SESSION['interets']) ?>
-                        <ul>
-                            <li>
-                                <?php foreach ($_SESSION['interets'] as $key => $interet) : ?>
-
-                                    <?= $interet['centre'].(($nbEltI != $key+1)?",</li><li>":".") ?>
-
-                                <?php endforeach; ?>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                </div>
             </div>
         </div>
     </main>
