@@ -27,9 +27,9 @@ include('inc/head.inc.php');
                     </div>
                     <div class="panel-body">
                         <?php $posEnvironnement = stripos($parcours['e_description'], 'environnement'); ?>
-                        <?php $description = str_replace (', ', ',</li><li>', substr($parcours['e_description'], 0, $posEnvironnement)); ?>
+                        <?php $description = str_replace (', -', ',</li><li> -', substr($parcours['e_description'], 0, $posEnvironnement)); ?>
 
-                            <?= ($posEnvironnement)?"<ul><li>".$description . '.' . "</li></ul><br>":$description; ?>
+                            <?= ($posEnvironnement)?"<ul><li>".$description . "</li></ul><br>":$description; ?>
 
                             <?php $environnement = substr($parcours['e_description'], $posEnvironnement); ?>
                             <p class="<?= ($posEnvironnement)?'italic':''  ?>"><?= $environnement ?></p>
