@@ -26,44 +26,43 @@ include('inc/head.inc.php');
                         <p><?= $parcours['e_soustitre'] ?></p>
                     </div>
                     <div class="panel-body">
-                        <ul>
-                            <?php $posEnvironnement = stripos($parcours['e_description'], 'environnement'); ?>
-                            <?php $description = str_replace (', ', ',</li><li>', substr($parcours['e_description'], 0, $posEnvironnement)) ?>
+                        <?php $posEnvironnement = stripos($parcours['e_description'], 'environnement'); ?>
+                        <?php $description = str_replace (', ', ',</li><li>', substr($parcours['e_description'], 0, $posEnvironnement)); ?>
 
-                                <?= ($posEnvironnement)?"<ul><li>".$description . '.' . "</li></ul><br>":$description ?>
+                            <?= ($posEnvironnement)?"<ul><li>".$description . '.' . "</li></ul><br>":$description; ?>
 
-                                <?php $environnement = substr($parcours['e_description'], $posEnvironnement) ?>
-                                <p class="<?= ($posEnvironnement)?'italic':''  ?>"><?= $environnement ?></p>
+                            <?php $environnement = substr($parcours['e_description'], $posEnvironnement); ?>
+                            <p class="<?= ($posEnvironnement)?'italic':''  ?>"><?= $environnement ?></p>
 
-                            </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
+                </div>
 
-                <?php endforeach; ?>
+            <?php endforeach; ?>
 
-            </section>
+        </section>
 
-            <section class="row">
-                <h2>En indépendant</h2>
+        <section class="row">
+            <h2>En indépendant</h2>
 
-                <?php foreach ($_SESSION['parcours_independant'] as $parcours) : ?>
-                    <div class="col-md-4">
+            <?php foreach ($_SESSION['parcours_independant'] as $parcours) : ?>
+                <div class="col-md-4">
 
-                        <article class="panel panel-info">
-                            <div class="panel-heading">
-                                <p><?= $parcours['e_dates'] ?></p>
-                                <h3><strong><?= $parcours['e_titre'] ?></strong></h3>
-                                <p><?= $parcours['e_soustitre'] ?></p>
-                            </div>
-                            <div class="panel-body">
-                                <p><?= $parcours['e_description'] ?></p>
-                            </div>
-                        </article>
+                    <article class="panel panel-info">
+                        <div class="panel-heading">
+                            <p><?= $parcours['e_dates'] ?></p>
+                            <h3><strong><?= $parcours['e_titre'] ?></strong></h3>
+                            <p><?= $parcours['e_soustitre'] ?></p>
+                        </div>
+                        <div class="panel-body">
+                            <p><?= $parcours['e_description'] ?></p>
+                        </div>
+                    </article>
 
-                    </div>
-                <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
 
-            </section>
+        </section>
 
-        </main>
-        <?php include('inc/footer.inc.php'); ?>
+    </main>
+    <?php include('inc/footer.inc.php'); ?>
