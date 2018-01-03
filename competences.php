@@ -7,9 +7,9 @@ if (!isset($_SESSION['competences'])){
 $page = "Compétences - ";
 include('inc/head.inc.php');
 ?>
-<main class="container">
+<main id="competences" class="container">
     <h1>compétences</h1>
-    <section class="row">
+    <div class="row">
         <?php foreach ($_SESSION['competences'] as $competence) : ?>
             <div class="col-md-3">
                 <article class="panel panel-info">
@@ -27,6 +27,6 @@ include('inc/head.inc.php');
                 </article>
             </div>
         <?php endforeach; ?>
-    </section>
+    </div>
 </main>
 <?php include('inc/footer.inc.php'); ?>

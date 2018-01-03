@@ -70,7 +70,7 @@
                     <li class="<?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php">Parcours professionnel</a></li>
                     <li class="<?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php">Formations</a></li>
                     <li class="<?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php">Compétences</a></li>
-                    <li class="<?= ($page=='Centres d\'intérêts - ')?'active':'' ?>"><a href="interets.php">Centres d'intérêts</a></li>
+                    <li class="<?= ($page=='Centres d\'intérêt - ')?'active':'' ?>"><a href="interets.php">Centres d'intérêts</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="<?= ($page=='Contact - ')?'active':'' ?>"><a href="contact.php">Contact</a></li>

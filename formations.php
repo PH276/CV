@@ -9,7 +9,7 @@ include('inc/head.inc.php');
 ?>
 <main class="container">
     <h1>Formations</h1>
-    <section class="row">
+    <div class="row">
         <?php foreach ($_SESSION['formations'] as $formation) : ?>
             <div class="col-md-4">
                 <article class="panel panel-info">
@@ -26,6 +26,6 @@ include('inc/head.inc.php');
             </div>
         <?php endforeach; ?>
 
-    </section>
+    </div>
 </main>
 <?php include('inc/footer.inc.php'); ?>

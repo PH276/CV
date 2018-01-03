@@ -2,7 +2,7 @@
 // variables pour la balise <head>
 $descriptionPage = strip_tags($_SESSION['titre']['accroche']);
 $motsClesPage = "";
-$page = "Centre d'intérêts -";
+$page = "Centres d'intérêt - ";
 
 if (!isset($_SESSION['activites'])){
     $req = $pdoCV -> query("SELECT * FROM t_activites WHERE id_utilisateur='1'");
