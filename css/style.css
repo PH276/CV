@@ -9,6 +9,10 @@ header{
 	padding-top: 10px;
 }
 
+#main{
+	position: relative;
+}
+
 #forts{
 	margin-top: 20px;
 }
@@ -106,10 +110,6 @@ span.error{
 /*************************** fin contact.php *****************************************/
 
 
-
-
-
-
 footer{
 	margin-top: 20px;
 	padding-top: 5px;
@@ -121,6 +121,12 @@ footer{
 	color: white;
 }
 
+#presentation+footer, #interets+footer{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 footer a{
 	text-decoration: none;
 	color: white;
