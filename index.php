@@ -34,33 +34,39 @@ include('inc/head.inc.php');
                 <div class="panel-heading"><h2>Points forts</h2></div>
                 <div class="panel-body">
                     <ul>
-                        <?php foreach ($_SESSION['points_forts'] as $pointFort) : ?>
+                        <?php $nbEltPF = count($_SESSION['points_forts']) ?>
+                        <li>
+                            <?php foreach ($_SESSION['points_forts'] as $key => $pointFort) : ?>
 
-                            <li><?= $pointFort['point_fort'] ?></li>
+                                <?= $pointFort['point_fort'].(($nbEltPF != $key+1)?",</li><li>":".") ?>
 
-                        <?php endforeach; ?>
 
-                    </ul>
-                </div>
+                                <?php endforeach; ?>
+                            </li>
+                        </ul>
+                    </div>
 
-            </section>
+                </section>
+            </div>
+            <div class="col-md-4 col-md-offset-3">
+
+                <section id="interets" class="panel panel-info shadow">
+                    <div class="panel-heading"><h2>Centres d'intérêt</h2></div>
+                    <div class="panel-body">
+
+                        <?php $nbEltI = count($_SESSION['interets']) ?>
+                        <ul>
+                            <li>
+                                <?php foreach ($_SESSION['interets'] as $key => $interet) : ?>
+
+                                    <?= $interet['centre'].(($nbEltI != $key+1)?",</li><li>":".") ?>
+
+                                <?php endforeach; ?>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="col-md-4 col-md-offset-3">
-
-            <section id="interets" class="panel panel-info shadow">
-                <div class="panel-heading"><h2>Centres d'intérêt</h2></div>
-                <div class="panel-body">
-
-                    <ul>
-                        <?php foreach ($_SESSION['interets'] as $interet) : ?>
-
-                            <li><?= $interet['centre'] ?></li>
-
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
-</main>
-<?php include('inc/footer.inc.php'); ?>
+    </main>
+    <?php include('inc/footer.inc.php'); ?>
