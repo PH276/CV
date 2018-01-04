@@ -59,7 +59,7 @@ $pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(
                 }
             }
             else{
-                $msg .= '<div class="erreur">L\'email '.$_POST['email'].' n\'existe pas disponible, Veuillez en choisir un autre.</div>';
+                $msg .= '<div class="erreur">L\'email '.$_POST['email'].' n\'existe pas, Veuillez en choisir un autre.</div>';
             }
         }
         else{

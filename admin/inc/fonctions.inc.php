@@ -78,7 +78,7 @@ function table_choisie($table){
 			$data =  array(
 				'table' => $table,
 				'affiche_nom_table' => 'réalisations',
-				'colonnes' => array('r_titre' => 'Titre', 'r_soustitre' => 'Sous-titre', 'r_dates' => 'Dates','r_description' => 'Description'),
+				'colonnes' => array('r_titre' => 'Titre', 'r_soustitre' => 'Sous-titre', 'r_lien' => 'Lien', 'r_photos' => 'Photos', 'r_dates' => 'Dates','r_description' => 'Description'),
 				'largeur_tableau' => '8'
 			);
 			break;
