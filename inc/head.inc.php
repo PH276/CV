@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="author" lang="fr" content="HUITOREL Pascal">
     <meta name="keywords" content="<?= $motsClesPage ?>">
     <meta name="description" content="<?= $descriptionPage ?>">
     <!-- reset CSS -->
@@ -66,7 +67,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <!-- <li class="active"><a href="index.php">Link <span class="sr-only">(current)</span></a></li> -->
-                    <li class="<?= ($page=='')?'active':'' ?>"><a href="index.php">Présentation<span class="sr-only">(current)</span></a></li>
+                    <li class="<?= ($page=='Développeur web - ')?'active':'' ?>"><a href="index.php">Accueil<span class="sr-only">(current)</span></a></li>
                     <li class="<?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php">Parcours professionnel</a></li>
                     <li class="<?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php">Formations</a></li>
                     <li class="<?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php">Compétences</a></li>

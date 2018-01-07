@@ -1,8 +1,8 @@
 <?php require_once('inc/init.inc.php');
 // variables pour la balise <head>
 $descriptionPage = strip_tags($_SESSION['titre']['accroche']);
-$motsClesPage = "Développeur web, Développeur full stack, Devops, PHP, MySQL, silex, symphony, javascript, jQuery";
-$page = "";
+$motsClesPage = "Développeur web, 92390, Villeneuve-la-Garenne, Développeur full stack, Devops, PHP, MySQL, silex, symphony, javascript, jQuery";
+$page = "Développeur web - ";
 
 if (!isset($_SESSION['points_forts'])){
     $req = $pdoCV -> query("SELECT * FROM t_points_forts WHERE id_utilisateur='1'");
@@ -30,11 +30,8 @@ include('inc/head.inc.php');
                         <?php $nbEltPF = count($_SESSION['points_forts']) ?>
                         <li>
                             <?php foreach ($_SESSION['points_forts'] as $key => $pointFort) : ?>
-
                                 <?= $pointFort['point_fort'].(($nbEltPF != $key+1)?",</li><li>":".") ?>
-
-
-                                <?php endforeach; ?>
+                            <?php endforeach; ?>
                             </li>
                         </ul>
                     </div>

@@ -1,3 +1,11 @@
+/* couleurs :
+#DFFCB5
+#B7F5DE
+#ADD1FC
+#9870FC */
+
+
+
 body{
 	background-image: url("../photos/99326.jpg");
 	background-repeat: no-repeat;
@@ -40,7 +48,7 @@ h1{
 }
 
 h1::first-letter {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .navbar-default {
@@ -103,7 +111,7 @@ main{
 }
 
 span.error{
-    color: red;
+	color: red;
 }
 
 /*************************** fin contact.php *****************************************/
@@ -149,7 +157,6 @@ footer a{
 
 #logos_reseaux li{
 	display: inline-block;
-
 }
 
 #portrait p{
