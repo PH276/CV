@@ -26,8 +26,8 @@ include('inc/head.inc.php');
 ?>
 <main class="container" id="contact">
     <div class="row">
+        <h1>Formulaire de contact</h1>
         <div class="col-md-6 col-md-offset-3">
-            <h2>Formulaire de contact</h2>
             <!-- <h3>Réalisé en POO</h3> -->
             <div class="thumbnail">
 
@@ -58,6 +58,23 @@ include('inc/head.inc.php');
                 </form><!-- /form -->
             </div>
         </div><!-- /.col-md-6 col-md-offset-2 -->
+        <div class="col-md-3">
+            <h3>Mes coordonnées :</h3>
+            <p>
+                <?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?><br>
+                <?= $_SESSION['utilisateur']['adresse'] ?><br>
+                <?= $_SESSION['utilisateur']['code_postal'] ?> <?= $_SESSION['utilisateur']['ville'] ?><br>
+                <a href="tel:<?= $_SESSION['utilisateur']['telephone'] ?>">
+                    <?= wordwrap($_SESSION['utilisateur']['telephone'], 2, ' ', true)  ?></a><br>
+
+                    <a href="tel:<?= $_SESSION['utilisateur']['autre_tel'] ?>">
+                        <?= wordwrap($_SESSION['utilisateur']['autre_tel'], 2, ' ', true)  ?></a><br>
+
+                        <a href="mailto:<?= $_SESSION['utilisateur']['email'] ?>">
+                            <?= $_SESSION['utilisateur']['email'] ?></a><br>
+
+                        </p>
+        </div>
     </div><!-- /.row -->
 
 </main>

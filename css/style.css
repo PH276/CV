@@ -9,12 +9,12 @@
 body{
 	background-image: url("../photos/99326.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	/* background-size: cover; */
 }
 
 header{
 	background: #DFFCB5;
-	padding-top: 10px;
+	/* padding-top: 10px; */
 }
 
 #main{
@@ -28,19 +28,24 @@ header{
 #titre p{
 	color: #9870FC;
 	text-transform: uppercase;
-	font-size: 0.8em;
-	margin-top: 1.2em;
+	font-size: 2.8em;
+	/* margin-top: 1.2em; */
+	font-family: arial;
+	font-weight:bold;
+	text-align: center;
+	margin: 15px 0;
 }
 
 h1, h2, h3, h4, h5, h6, .panel-heading{
 	font-family: arial;
 }
 
+
 h1{
 	text-transform: uppercase;
 	color: #9870FC;
 	padding: 25px 0;
-	font-size: 3.8em;
+	font-size: 2.5em;
 	/* color:#2980b9; */
 	text-align: center;
 	letter-spacing: 1px;
@@ -52,6 +57,8 @@ h1::first-letter {
 }
 
 .navbar-default {
+	border: 0;
+	border-radius: 0;
 	background: #ADD1FC;
 }
 
@@ -68,6 +75,12 @@ main{
 	background: #DFFCB5;
 	padding-bottom: 15px;
 }
+
+#presentation, #interets{
+	padding-bottom: 120px;
+}
+
+
 
 .italic{
 	font-style: italic;
@@ -94,18 +107,31 @@ main{
 	font-size: 1.5em;
 	list-style: disc;
 	margin-left: 20px;
-
 }
 
 /*************************** fin index.php *****************************************/
 /*************************** parcours.php *****************************************/
 
+#parcours .panel-info{
+	max-height: 250px;
+}
+
+#parcours  .panel-body{
+	overflow: scroll;
+}
+
 #parcours h2{
 	margin-left: 15px;
 }
+
+
 /*************************** fin parcours.php *****************************************/
 
 /***************************  contact.php *****************************************/
+#contact h2{
+	text-align: center;
+}
+
 #contact .thumbnail{
 	padding: 10px;
 }
@@ -135,32 +161,40 @@ span.error{
 
 footer{
 	margin-top: 20px;
-	padding-top: 5px;
+	/* padding-top: 5px; */
 	background: #ADD1FC;
-	line-height: 1em;
+	/* line-height: 2em; */
 	font-family:
 	/*background: #383838;*/
-	padding: 10px;
+	/* padding: 10px; */
 	color: white;
 }
 
-#presentation+footer, #interets+footer{
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
 footer a{
 	text-decoration: none;
 	color: white;
+	line-height: 3em;
+}
+
+#logos_reseaux ul{
+	margin: 5px 0;
 }
 
 #logos_reseaux li{
 	display: inline-block;
 }
 
+#portrait a:hover{
+	text-decoration: none;
+}
+
 #portrait p{
+	margin: 28px 0;
 	font-size: 1.5em;
+}
+
+#portrait strong{
+	color: #9870FC;
 }
 
 #portrait img{
@@ -168,16 +202,9 @@ footer a{
 	width: 150px;
 }
 
-#titre p{
-	font-family: arial;
-	font-weight:bold;
-	font-size: 2.8em;
-	text-align: center;
-}
-
 #icones{
 	width: 80%;
-	margin: 15% auto;
+	margin: 5% auto;
 }
 
 #icones img{
