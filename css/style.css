@@ -112,13 +112,13 @@ main{
 /*************************** fin index.php *****************************************/
 /*************************** parcours.php *****************************************/
 
-#parcours .panel-info{
+/* #parcours .panel-info{
 	max-height: 250px;
 }
 
 #parcours  .panel-body{
 	overflow: scroll;
-}
+} */
 
 #parcours h2{
 	margin-left: 15px;
