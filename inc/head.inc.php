@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+
     <title><?= $page. $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ; ?></title><!-- Latest compiled and minified CSS -->
 
 </head>
@@ -29,7 +32,6 @@
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
                     <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong><br>
-                    <!-- <img class="img-circle text-center" src="photos/<?= $_SESSION['utilisateur']['avatar'] ?>" alt="portrait"></p> -->
                 </a>
             </div>
 

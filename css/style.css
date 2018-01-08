@@ -8,7 +8,7 @@
 
 body{
 	background-image: url("../photos/99326.jpg");
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	/* background-size: cover; */
 }
 
@@ -77,7 +77,7 @@ main{
 }
 
 #presentation, #interets{
-	padding-bottom: 120px;
+	padding-bottom: 150px;
 }
 
 
@@ -184,22 +184,21 @@ footer a{
 	display: inline-block;
 }
 
+#portrait a{
+	font-family: 'Orbitron', sans-serif;
+}
+
 #portrait a:hover{
 	text-decoration: none;
 }
 
 #portrait p{
-	margin: 28px 0;
+	margin: 10px 0;
 	font-size: 1.5em;
 }
 
 #portrait strong{
 	color: #9870FC;
-}
-
-#portrait img{
-	margin: auto;
-	width: 150px;
 }
 
 #icones{
