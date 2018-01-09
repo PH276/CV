@@ -42,16 +42,17 @@
                 </li>
             </ul>
             <!-- <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Chercher</button>
-            </form> -->
-            <?php if (userConnecte()) : ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
-                </ul>
-            <?php endif; ?>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Chercher</button>
+    </form> -->
+    <?php if (userConnecte()) : ?>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="messagerie.php"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li><a href="connexion.php?action=deconnexion">Déconnexion</a></li>
+        </ul>
+    <?php endif; ?>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>

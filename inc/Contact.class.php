@@ -10,7 +10,7 @@ class Contact
     private $co_sujet;
     private $co_message;
 
-    private $pdoCV;
+    // private $pdoCV;
 
     public function __construct($co_nom, $co_email, $co_sujet, $co_message){
 
@@ -19,7 +19,7 @@ class Contact
         $this->setCoSujet($co_sujet);
         $this->setCoMessage($co_message);
 
-        $this->pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+        // $this->pdoCV = new PDO("mysql:host=".HOST.";dbname=".BDD, USER , PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     }
 
     /**
@@ -86,10 +86,10 @@ class Contact
 
 
     // fonction d'insertion en BDD
-    public function insertContact() {
+    public function insertContact($pdo) {
 
         // on crée une requête puis on l'exécute
-        $req = $this->pdoCV->prepare('INSERT INTO t_messages (co_nom, co_email, co_sujet, co_message) VALUES (:co_nom, :co_email, :co_sujet, :co_message)');
+        $req = $pdo->prepare('INSERT INTO t_messages (co_nom, co_email, co_sujet, co_message) VALUES (:co_nom, :co_email, :co_sujet, :co_message)');
         $req->execute([
             ':co_nom'	=> $this->co_nom,//n attribue à la variable co_nom la valeur de l'objet en cours d'instanciation, le nom de l'auteur du message qui vient d'^tre posté
             ':co_email'	=> $this->co_email,
