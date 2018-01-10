@@ -58,7 +58,7 @@ function table_choisie($table){
 		$data = array(
 			'table' => $table,
 			'affiche_nom_table' => 'titres CV',
-			'colonnes' => array('titre_cv' => 'Titre', 'accroche' => 'Accroche', 'logo' => 'Logo'),
+			'colonnes' => array('titre_cv' => 'Titre', 'description' => 'Description', 'accroche' => 'Accroche', 'logo' => 'Logo'),
 			'largeur_tableau' => '6'
 		);
 		break;

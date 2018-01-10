@@ -1,7 +1,7 @@
 <?php require_once('inc/init.inc.php');
 // variables pour la balise <head>
-$descriptionPage = strip_tags($_SESSION['titre']['accroche']);
-$motsClesPage = "Développeur web, 92390, Villeneuve-la-Garenne, Développeur full stack, Devops, PHP, MySQL, silex, symphony, javascript, jQuery";
+$descriptionPage = strip_tags($_SESSION['titre']['description']);
+$motsClesPage = "Développeur web, 92390, Villeneuve-la-Garenne, Hauts-de-Seine, Développeur full stack, Devops, PHP, MySQL, Laravel, silex, symphony, javascript, jQuery";
 $page = "Développeur web - ";
 
 if (!isset($_SESSION['points_forts'])){
