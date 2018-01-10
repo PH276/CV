@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-2" id="portrait">
                 <a href="index.php">
-                    <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong><br>
+                    <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong></p>
                 </a>
             </div>
 
