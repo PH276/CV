@@ -1,7 +1,7 @@
 <?php require_once('inc/init.inc.php');
 // variables pour la balise <head>
-$descriptionPage = strip_tags($_SESSION['titre']['accroche']);
-$motsClesPage = "";
+$descriptionPage = "Mes activités associatives et mes loisirs";
+$motsClesPage = "président deu conseil syndical, trésorier d'une association, billad, tennis de table, broderie, marche";
 $page = "Centres d'intérêt - ";
 
 if (!isset($_SESSION['activites'])){

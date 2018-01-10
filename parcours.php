@@ -9,6 +9,8 @@ if (!isset($_SESSION['parcours_independant'])){
     $_SESSION['parcours_independant'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
+$descriptionPage = "Je suis développeur web. J'ai aussi été administrateur système, opérateur réseaux et télécoms, analyste programmeur et technicien en recyclage de PC";
+$motsClesPage = "développeur web, développeur PHP, administrateur système, opérateur réseaux et télécoms, analyste programmeur, informaticient polyvalent";
 $page = "Parcours - ";
 include('inc/head.inc.php');
 ?>

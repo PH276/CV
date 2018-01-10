@@ -4,6 +4,8 @@ if (!isset($_SESSION['competences'])){
     $_SESSION['competences'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
+$descriptionPage = "Mes compétences matériel, de langages informatique, de réseaux et autres";
+$motsClesPage = "PHP, MySql, HTML5, CSS3, Javascript, MVC, POO, Laravel, Silex, Symphony, Bootstrap, jQuery";
 $page = "Compétences - ";
 include('inc/head.inc.php');
 ?>

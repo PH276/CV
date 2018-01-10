@@ -21,6 +21,8 @@ if (!empty($_POST)) {
 
 }
 
+$descriptionPage = "Formulaire à remplir pour me laisser un message. Vous trouverz aussi mes cordonnées";
+$motsClesPage = "contact, adresse";
 $page = "Contact - ";
 include('inc/head.inc.php');
 ?>

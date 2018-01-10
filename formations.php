@@ -4,6 +4,8 @@ if (!isset($_SESSION['formations'])){
     $_SESSION['formations'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
+$descriptionPage = "Mes formations en informatique ainsi que celles en électrotechnique";
+$motsClesPage = "License MIAGE, DUT RT, DUT GEII, Bac F3, BEP et CAP d'électrotechnique";
 $page = "Formations - ";
 include('inc/head.inc.php');
 ?>
