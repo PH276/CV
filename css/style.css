@@ -96,6 +96,10 @@ main{
 	margin-bottom: 20px;
 }
 
+#presentation h1{
+	display: none;
+}
+
 .presentation {
 	margin: 20px;
 	padding: 10px;

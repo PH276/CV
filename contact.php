@@ -30,7 +30,6 @@ include('inc/head.inc.php');
     <div class="row">
         <h1>Formulaire de contact</h1>
         <div class="col-md-6 col-md-offset-3">
-            <!-- <h3>Réalisé en POO</h3> -->
             <div class="thumbnail">
 
                 <form method="POST">
@@ -61,7 +60,7 @@ include('inc/head.inc.php');
             </div>
         </div><!-- /.col-md-6 col-md-offset-2 -->
         <div class="col-md-3">
-            <h3>Mes coordonnées :</h3>
+            <h2>Mes coordonnées :</h2>
             <p>
                 <?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?><br>
                 <?= $_SESSION['utilisateur']['adresse'] ?><br>

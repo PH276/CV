@@ -16,7 +16,7 @@ include('inc/head.inc.php');
     <!-- <h1>présentation</h1> -->
     <div class="row">
         <div class="col-md-8">
-
+            <h1>Développeur web</h1>
             <div class="thumbnail presentation shadow">
                 <?= $_SESSION['titre']['accroche']  ?>
             </div>
