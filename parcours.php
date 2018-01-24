@@ -10,7 +10,7 @@ if (!isset($_SESSION['parcours_independant'])){
 }
 
 $descriptionPage = "Je suis développeur web. J'ai aussi été administrateur système, opérateur réseaux et télécoms, analyste programmeur et technicien en recyclage de PC";
-$motsClesPage = "développeur web, développeur PHP, administrateur système, opérateur réseaux et télécoms, analyste programmeur, informaticient polyvalent";
+$motsClesPage = "développeur web, développeur PHP, administrateur système, opérateur réseaux et télécoms, analyste programmeur, informaticien polyvalent";
 $page = "Parcours - ";
 include('inc/head.inc.php');
 ?>
