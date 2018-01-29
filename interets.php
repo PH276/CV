@@ -22,7 +22,7 @@ include('inc/head.inc.php');
     <div class="row">
         <div class="col-md-4 col-md-offset-1">
             <div class="panel panel-info shadow">
-                <div class="panel-heading"><h2>activités associatives</h2></div>
+                <div class="panel-heading"><h2>Activités associatives</h2></div>
                 <div class="panel-body">
 
                     <?php $nbEltA = count($_SESSION['activites']) ?>
@@ -40,7 +40,7 @@ include('inc/head.inc.php');
             </div>
             <div class="col-md-4 col-md-offset-2">
                 <div class="panel panel-info shadow">
-                    <div class="panel-heading"><h2>loisirs</h2></div>
+                    <div class="panel-heading"><h2>Loisirs</h2></div>
                     <div class="panel-body">
 
                         <?php $nbEltI = count($_SESSION['loisirs']) ?>
