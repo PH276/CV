@@ -204,11 +204,14 @@ footer div>a{
 }
 
 #icones{
-	width: 60%;
 	margin: 5% auto;
 }
 
+#icones li{
+	padding: 0;
+}
+
 #icones img{
-	width: 20%;
-	margin: 1px;
+	width: 75%;
+	margin: auto;
 }

@@ -39,14 +39,15 @@
                 <p><strong><?= $_SESSION['titre']['titre_cv']?></strong></p>
                 <!-- <p><span>!!! Site en construction !!!</span></p> -->
             </div>
-
             <div class="col-md-2">
-                <div id="icones">
+                <ul id="icones" >
                     <!-- <div id="icones" class="col-md-10 col-md-offset-1"> -->
                     <?php foreach ($_SESSION['logos'] as $logo) : ?>
-                        <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>" title="<?= $logo['alt'] ?>">
+                        <li class="col-xs-3">
+                            <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>" title="<?= $logo['alt'] ?>">
+                        </li>
                     <?php endforeach; ?>
-                </div>
+                </ul>
             </div>
         </div>
 
