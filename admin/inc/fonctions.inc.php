@@ -161,8 +161,16 @@ function table_choisie($table){
 	}
 
 	function table_liste($pdoCV, $table){
-		$noUtilisateur = ($table != "t_utilisateurs")?" WHERE id_utilisateur=".$_SESSION['utilisateur_bo']['id']:"";
-		$req= $pdoCV->prepare("SELECT * FROM ".$table.$noUtilisateur);
+		$champs = array_keys($_SESSION['table']['colonnes']);
+		$champ_date = false;
+		foreach($champs as $champ){
+			if (substr($champ, -6, 6) == "_dates"){
+				$champ_date = $champ;
+			}
+		}
+		$order = ($champ_date != false)?" ORDER BY " . $champ_date . " DESC": "";
+		$noUtilisateur = ($table != "t_utilisateurs")?" AND id_utilisateur=".$_SESSION['utilisateur_bo']['id']:"";
+		$req= $pdoCV->prepare("SELECT * FROM " . $table . " WHERE 1" . $noUtilisateur . $order);
 		$req->execute();
 		$nbr_lignes = $req-> rowCount();
 		$retour = array();
