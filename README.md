@@ -1,2 +1,2 @@
 # CV
-version v1 et v2
+version v1 avec back office
