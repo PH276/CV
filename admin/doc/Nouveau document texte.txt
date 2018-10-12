@@ -1,0 +1,8 @@
+
+<p>En tant que développeur web, j'ai commencé par créer mon premier site web (<a href="https://mypetstar.fr" target="_blank">mypetstar.fr</a>) pour CRIS Production.</p>
+<p>Pour renforcer mes compétences, j'ai suivi une formation d'intégrateur développeur web, organisé par LePoleS avec Webforce3.
+<a href="https://www.grandeecolenumerique.fr/" target="_blank"><img width="40" src="img/LGEN.jpg" alt="La Grande École du Numérique" style="display:inline-block;"></a> 
+<a href="http://lepoles.org/" target="_blank"><img width="50" src="img/LePoleS.jpg" alt="LePoleS" style="display:inline-block;"></a>
+<a href="http://www.wf3.fr/"  target="_blank"><img width="100" src="img/wf3.jpg" alt="Webforce3" style="display:inline-block;"></a>
+<br>
+Je suis actuellement en stage pour finaliser cette formation.</p>

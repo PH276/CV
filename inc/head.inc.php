@@ -22,8 +22,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 
-
-    <title><?= $page. $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ; ?></title><!-- Latest compiled and minified CSS -->
+<?php
+    $page = ($page == "index")?"Développeur PHP Full stack - ":$page;
+ ?>
+    <title><?= $page . $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ; ?></title><!-- Latest compiled and minified CSS -->
 
 </head>
 <body>

@@ -67,7 +67,11 @@ h1::first-letter {
 }
 
 .navbar-default .navbar-nav>li>a{
-	color: white;
+	color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	background: white;
 }
 
 main{
@@ -165,13 +169,14 @@ span.error{
 
 footer{
 	margin-top: 20px;
-	background: #ADD1FC;
-	color: white;
+	background: #DFFCB5;
+	/* background: #ADD1FC; */
 }
 
 footer a{
 	text-decoration: none;
-	color: white;
+	/* color: #9870FC; */
+	color: black;
 }
 
 footer div>a{

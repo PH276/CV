@@ -2,7 +2,7 @@
 // variables pour la balise <head>
 $descriptionPage = strip_tags($_SESSION['titre']['description']);
 $motsClesPage = "Développeur web, 92390, Villeneuve-la-Garenne, Hauts-de-Seine, PHP, MySQL, Laravel, silex, symphony, javascript, jQuery";
-$page = "Développeur web (PHP, Symfony, Silex, Laravel, MySQL, Javascript, jQuery) - ";
+$page = "index";
 
 if (!isset($_SESSION['points_forts'])){
     $req = $pdoCV -> query("SELECT * FROM t_points_forts WHERE id_utilisateur='1'");

@@ -2,7 +2,7 @@
     <div class="row">
 
         <div class="col-xs-6 text-center">
-            <a href="doc/HUITORELPascalDeveloppeurWebCV.pdf" target="_blank">Mon CV en document</a>
+            <a href="doc/HUITORELPascalDeveloppeurPHPFullstackCV.pdf" target="_blank">Mon CV en document</a>
         </div>
         <div class="col-xs-6 text-center" id="logos_reseaux">
             <ul>
