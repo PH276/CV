@@ -13,12 +13,12 @@ include('inc/head.inc.php');
     <h1>compétences</h1>
     <div class="row">
         <?php foreach ($_SESSION['competences'] as $competence) : ?>
-            <div class="col-md-3">
-                <article class="panel panel-info">
-                    <div class="panel-heading">
+            <div class="col-lg-4">
+                <article class="card shadows my-4">
+                    <div class="card-header">
                         <h2><strong><?= $competence['competence'] ?></strong></h2>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <ul>
                             <?php $description = str_replace (', ', ',</li><li>', $competence['c_description']) ?>
                             <li>

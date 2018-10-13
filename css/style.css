@@ -36,7 +36,7 @@ header{
 	margin: 15px 0;
 }
 
-h1, h2, h3, h4, h5, h6, .panel-heading{
+h1, h2, h3, h4, h5, h6, .card-header{
 	font-family: arial;
 }
 
@@ -56,21 +56,22 @@ h1::first-letter {
 	text-transform: uppercase;
 }
 
-.navbar-default {
+.navbar-expand-lg {
 	border: 0;
 	border-radius: 0;
 	background: #ADD1FC;
+	margin-bottom: 20px;
 }
 
-.navbar-header .navbar-toggle.collapsed {
+.navbar-header .navbar-toggler {
 	background: white;
 }
 
-.navbar-default .navbar-nav>li>a{
+.navbar-expand-lg .navbar-nav>li>a{
 	color: black;
 }
 
-.navbar-default .navbar-nav>li>a:hover{
+.navbar-expand-lg .navbar-nav>li>a:hover{
 	background: white;
 }
 
@@ -90,18 +91,17 @@ main{
 	font-style: italic;
 }
 
-.shadow, .panel-info, #contact .thumbnail{
+.shadows{
 	border: 2px solid silver;
 	box-shadow: 20px 40px 0px rgba(88, 136, 72, 0.4);
 }
-/*************************** index.php *****************************************/
 
+.card-header{
+	background-color: #d9edf7;
+}
+/*************************** index.php *****************************************/
 #presentation{
 	margin-bottom: 20px;
-}
-
-#presentation h1{
-	display: none;
 }
 
 .presentation {
@@ -120,18 +120,9 @@ main{
 /*************************** fin index.php *****************************************/
 /*************************** parcours.php *****************************************/
 
-/* #parcours .panel-info{
-	max-height: 250px;
-}
-
-#parcours  .panel-body{
-	overflow: scroll;
-} */
-
 #parcours h2{
 	margin-left: 15px;
 }
-
 
 /*************************** fin parcours.php *****************************************/
 

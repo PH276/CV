@@ -16,36 +16,37 @@
     <!-- CSS bootstrap -->
     <!-- <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css"> -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 
-<?php
+    <?php
     $page = ($page == "index")?"Développeur PHP Full stack - ":$page;
- ?>
+    ?>
     <title><?= $page . $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ; ?></title><!-- Latest compiled and minified CSS -->
 
 </head>
 <body>
     <header class="container-fluid">
         <div class="row">
-            <div class="col-md-2" id="portrait">
+            <div class="col-lg-2" id="portrait">
                 <a href="index.php">
                     <p class="text-center"><strong><?= $_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom'] ?></strong></p>
                 </a>
             </div>
 
-            <div class="col-md-8" id="titre">
+            <div class="col-lg-8" id="titre">
                 <p><strong><?= $_SESSION['titre']['titre_cv']?></strong></p>
                 <!-- <p><span>!!! Site en construction !!!</span></p> -->
             </div>
-            <div class="col-md-2">
-                <ul id="icones" >
-                    <!-- <div id="icones" class="col-md-10 col-md-offset-1"> -->
+            <div class="col-lg-2">
+                <ul id="icones" class="row" >
+
                     <?php foreach ($_SESSION['logos'] as $logo) : ?>
-                        <li class="col-xs-3">
+                        <li class="col-lg-2 col-sm-1 col-3 py-1">
                             <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>" title="<?= $logo['alt'] ?>">
                         </li>
                     <?php endforeach; ?>
@@ -55,31 +56,27 @@
 
     </header>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-expand-lg py-lg-0">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- <a class="navbar-brand" href="#">Brand</a> -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>                <!-- <a class="navbar-brand" href="#">Brand</a> -->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <!-- <li class="active"><a href="index.php">Link <span class="sr-only">(current)</span></a></li> -->
-                    <li class="<?= ($page=='Développeur web - ')?'active':'' ?>"><a href="index.php">Accueil<span class="sr-only">(current)</span></a></li>
-                    <li class="<?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php">Parcours professionnel</a></li>
-                    <li class="<?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php">Formations</a></li>
-                    <li class="<?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php">Compétences</a></li>
-                    <li class="<?= ($page=='Centres d\'intérêt - ')?'active':'' ?>"><a href="interets.php">Centres d'intérêt</a></li>
+                    <li class="nav-item <?= ($page=='Développeur web - ')?'active':'' ?>"><a href="index.php" class="nav-link px-3">Accueil<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item <?= ($page=='Parcours - ')?'active':'' ?>"><a href="parcours.php" class="nav-link px-3">Parcours professionnel</a></li>
+                    <li class="nav-item <?= ($page=='Formations - ')?'active':'' ?>"><a href="formations.php" class="nav-link px-3">Formations</a></li>
+                    <li class="nav-item <?= ($page=='Compétences - ')?'active':'' ?>"><a href="competences.php" class="nav-link px-3">Compétences</a></li>
+                    <li class="nav-item <?= ($page=='Centres d\'intérêt - ')?'active':'' ?>"><a href="interets.php" class="nav-link px-3">Centres d'intérêt</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="<?= ($page=='Contact - ')?'active':'' ?>"><a href="contact.php">Contact</a></li>
+                <ul class="navbar-nav mr-0">
+                    <li class="nav-item <?= ($page=='Contact - ')?'active':'' ?>"><a class="nav-link" href="contact.php">Contact</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

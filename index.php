@@ -14,24 +14,24 @@ include('inc/head.inc.php');
 
 <main id="presentation" class="container">
     <!-- <h1>présentation</h1> -->
+    <h1>Présentation</h1>
     <div class="row">
-        <div class="col-md-8">
-            <h1>Développeur web</h1>
-            <div class="thumbnail presentation shadow">
+        <div class="col-lg-8">
+            <div class="jumbotron presentation shadows">
                 <?= $_SESSION['titre']['accroche']  ?>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4">
 
-            <div id="forts" class="panel panel-info shadow">
-                <div class="panel-heading"><h2>Points forts</h2></div>
-                <div class="panel-body">
+            <div id="forts" class="card shadows">
+                <div class="card-header"><h2 class="card-title">Points forts</h2></div>
+                <div class="card-body">
                     <ul>
                         <?php $nbEltPF = count($_SESSION['points_forts']) ?>
                         <li>
                             <?php foreach ($_SESSION['points_forts'] as $key => $pointFort) : ?>
                                 <?= $pointFort['point_fort'].(($nbEltPF != $key+1)?",</li><li>":".") ?>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </li>
                         </ul>
                     </div>

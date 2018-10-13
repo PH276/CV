@@ -13,17 +13,19 @@ include('inc/head.inc.php');
     <h1>Formations</h1>
     <div class="row">
         <?php foreach ($_SESSION['formations'] as $formation) : ?>
-            <div class="col-md-4">
-                <article class="panel panel-info">
-                    <div class="panel-heading">
+            <div class="col-lg-4">
+                <article class="card shadows my-4">
+                    <div class="card-header">
                         <h2><strong><?= $formation['f_titre'] ?></strong></h2>
-                    </div>
-                    <div class="panel-body">
                         <p><?= $formation['f_dates'] ?> -
-                        <?= $formation['f_soustitre'] ?></p>
+                            <?= $formation['f_soustitre'] ?></p>
+                    </div>
+                    <?php if ($formation['f_description']) : ?>
+                    <div class="card-body">
                         <p><?= $formation['f_description'] ?></p>
 
                     </div>
+                <?php endif; ?>
                 </article>
             </div>
         <?php endforeach; ?>
