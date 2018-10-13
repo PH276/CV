@@ -1,11 +1,11 @@
 <?php require_once('inc/init.inc.php');
 if (!isset($_SESSION['parcours_entreprise'])){
-    $req = $pdoCV -> query("SELECT * FROM t_experiences WHERE id_utilisateur='1' AND e_type = 'entreprise' ORDER BY e_dates DESC");
+    $req = $pdoCV -> query("SELECT * FROM t_experiences WHERE id_utilisateur='1' AND e_type = 'entreprise' ORDER BY SUBSTRING(e_dates, 1, 4) DESC");
     $_SESSION['parcours_entreprise'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
 if (!isset($_SESSION['parcours_independant'])){
-    $req = $pdoCV -> query("SELECT * FROM t_experiences WHERE id_utilisateur='1' AND e_type = 'indépendant'");
+    $req = $pdoCV -> query("SELECT * FROM t_experiences WHERE id_utilisateur='1' AND e_type = 'indépendant' ORDER BY SUBSTRING(e_dates, 1, 4) DESC");
     $_SESSION['parcours_independant'] = $req -> fetchAll(PDO::FETCH_ASSOC);
 }
 
