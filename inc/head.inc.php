@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/reset.css">
 
     <!-- CSS bootstrap -->
-    <!-- <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css"> -->
-    <!-- Latest compiled and minified CSS -->
+
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Cookie|Dancing+Script|Grand+Hotel|Homemade+Apple|Lobster+Two|Mr+Dafoe|Pacifico|Parisienne|Rochester|Shadows+Into+Light|Tangerine|Yellowtail" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -43,8 +43,7 @@
                 <!-- <p><span>!!! Site en construction !!!</span></p> -->
             </div>
             <div class="col-lg-2">
-                <ul id="icones" class="row" >
-
+                <ul id="icones" class="row">
                     <?php foreach ($_SESSION['logos'] as $logo) : ?>
                         <li class="col-lg-2 col-sm-1 col-3 py-1">
                             <img src="img/<?= $logo['src'] ?>"  alt="<?= $logo['alt'] ?>" title="<?= $logo['alt'] ?>">

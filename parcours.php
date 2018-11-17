@@ -48,10 +48,8 @@ include('inc/head.inc.php');
 
     <h2 class="mt-3">En indépendant</h2>
     <section class="row">
-
         <?php foreach ($_SESSION['parcours_independant'] as $parcours) : ?>
             <div class="col-md-4">
-
                 <article class="card shadows my-4 dropdown" >
                     <button class="card-body dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <p><?= $parcours['e_dates'] ?></p>
@@ -61,20 +59,13 @@ include('inc/head.inc.php');
                     <div class="dropdown-menu p-4" aria-labelledby="dropdownMenu2">
                         <?php $posEnvironnement = stripos($parcours['e_description'], 'environnement'); ?>
                         <?php $description = str_replace (', -', ',</li><li> -', substr($parcours['e_description'], 0, $posEnvironnement)); ?>
-
                             <?= ($posEnvironnement)?"<ul><li>".$description . "</li></ul><br>":$description; ?>
-
                             <?php $environnement = substr($parcours['e_description'], $posEnvironnement); ?>
                             <p class="<?= ($posEnvironnement)?'italic':''  ?>"><?= $environnement ?></p>
-
-
                         </div>
                     </article>
-
                 </div>
             <?php endforeach; ?>
-
         </section>
-
     </main>
     <?php include('inc/footer.inc.php'); ?>
